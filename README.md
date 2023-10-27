@@ -128,58 +128,121 @@ Text description
 # User Experience
 
 ### Target Audience
-Text
+EasyKeyboardMaker is designed for the following target audience:
 
-- Example
+- Keyboard enthusiasts and individuals looking to purchase mechanical keyboards and accessories.
+- Shoppers interested in exploring a variety of keyboard types, brands, and designs.
+- Gamers, streamers, and developers who rely on keyboards as a key tool for their work or leisure.
+- Users who want to easily browse, select, and purchase mechanical keyboards and related products.
+- Individuals seeking a platform to stay updated with the latest keyboard trends and innovations.
+- People interested in sharing their own product reviews, recommendations, and experiences.
 
 ### User Requirements and Expectations
-Text
+When using the E-commerce EasyKeyboardMaker, users can expect the following features and characteristics to meet their needs:
 
-- Example
+- An intuitive and user-friendly interface for effortless navigation and product discovery.
+- High-quality product listings, including detailed descriptions, specifications, and user reviews.
+- Responsive design for an optimal shopping experience on various devices, including desktop and mobile.
+- Personalized user profiles with order history, saved payment information, and preferences.
+- Interactive features, such as product reviews, ratings.
+- Updates and special promotions to keep users informed.
 
-Text
+EasyKeyboardMaker is a e-commerce platform for users, including gamers, streamers, and developers, to explore, select, and purchase mechanical keyboards and accessories while staying updated with the latest trends.
+
 
 ### User Stories
 
+#### **- SPRINT 1 -**
+
+- [Set Up Project Skeleton](https://github.com/KimBergstroem/PP5/issues/1) 
+- [Planning and Documentation](https://github.com/KimBergstroem/PP5/issues/2) 
+
+#### **- SPRINT 2 -**
+After completing sprint 2, the project will be ready for its initial demonstration, showcasing the Minimum Viable Product (MVP). This milestone will be reached two weeks after the start of development.
+
 #### Epic 1: Viewing and Navigation (Shopper) [#3](https://github.com/KimBergstroem/PP5/issues/3)
 
-- [USER-STORY](https://github.com/KimBergstroem/PP4/issues/12) #12 SPRINT 4
+- [Easy Product Browsing and Selection](https://github.com/KimBergstroem/PP5/issues/12) _(must-have)_
+- [Detailed Product Information Viewing](https://github.com/KimBergstroem/PP5/issues/13) _(must-have)_
+- [Quick Identification of Discounts and Special Offers](https://github.com/KimBergstroem/PP5/issues/14) _(must-have)_
+- [Easy Access to Total Cost of Selected Items](https://github.com/KimBergstroem/PP5/issues/15) _(should-have)_   
+
 
 #### Epic 2: Registration and User Accounts (Site User) [#4](https://github.com/KimBergstroem/PP5/issues/4)
 
-- [USER-STORY](https://github.com/KimBergstroem/PP4/issues/12) #12 SPRINT 4
+- [Convenient User Registration](https://github.com/KimBergstroem/PP5/issues/16) _(must-have)_
+- [Easy User Login and Logout](https://github.com/KimBergstroem/PP5/issues/17) _(must-have)_
+- [Password Recovery for User Account Access](https://github.com/KimBergstroem/PP5/issues/18) _(must-have)_ 
+- [Email Confirmation for Registration](https://github.com/KimBergstroem/PP5/issues/19) _(must-have)_
 
 #### Epic 3: Sorting and Searching (Shopper) [#5](https://github.com/KimBergstroem/PP5/issues/5)
-- [USER-STORY](https://github.com/KimBergstroem/PP4/issues/12) #12 SPRINT 4
 
-#### Epic 4: Purchasing and Checkout (Shopper) [#6](https://github.com/KimBergstroem/PP5/issues/6)
+- [Product Sorting Options](https://github.com/KimBergstroem/PP5/issues/20) _(must-have)_
+- [Category-Specific Product Sorting](https://github.com/KimBergstroem/PP5/issues/21) _(should-have)_
+- [Product Search by Name or Description](https://github.com/KimBergstroem/PP5/issues/22) _(should-have)_
+- [Search History and Result Count](https://github.com/KimBergstroem/PP5/issues/23) _(wont-have)_
 
-- [USER-STORY](https://github.com/KimBergstroem/PP4/issues/12) #12 SPRINT 4
+#### **Epic 4**: Purchasing and Checkout (Shopper) [#6](https://github.com/KimBergstroem/PP5/issues/65)
+
+- [Product Size and Quantity Selection](https://github.com/KimBergstroem/PP5/issues/24) _(should-have)_
+- [Review Shopping Bag and Confirm Purchase](https://github.com/KimBergstroem/PP5/issues/25) _(must-have)_
+- [Flexible Item Quantity Adjustment in Shopping Bag](https://github.com/KimBergstroem/PP5/issues/26) _(must-have)_
+
+#### **- SPRINT 3 -**
+
+#### Epic 4: Purchasing and Checkout (Shopper) [#6](https://github.com/KimBergstroem/PP5/issues/6) - Continued
+
+- [User-Friendly Payment Information Entry and Swift Checkout](https://github.com/KimBergstroem/PP5/issues/27) _(must-have)_
+- [Assurance of Personal and Payment Information Security](https://github.com/KimBergstroem/PP5/issues/28) _(should-have)_
+- [Order Confirmation on Website](https://github.com/KimBergstroem/PP5/issues/29) _(must-have)_
+- [Email Confirmation for Purchase Record](https://github.com/KimBergstroem/PP5/issues/30) _(should-have)_
 
 #### Epic 5: Admin and Store Management (Store Owner) [#7](https://github.com/KimBergstroem/PP5/issues/7)
 
-- [USER-STORY](https://github.com/KimBergstroem/PP4/issues/12) #12 SPRINT 4
+- [Add New Products to the Store](https://github.com/KimBergstroem/PP5/issues/31) _(must-have)_
+- [Edit/Update Product Details](https://github.com/KimBergstroem/PP5/issues/32) _(must-have)_
+- [Delete Products from the Store](https://github.com/KimBergstroem/PP5/issues/33) _(must-have)_  
 
 #### Epic 6: User Profiles and Order History (Site User) [#8](https://github.com/KimBergstroem/PP5/issues/8)
 
-- [USER-STORY](https://github.com/KimBergstroem/PP4/issues/12) #12 SPRINT 4
+- [Update User Profile Information](https://github.com/KimBergstroem/PP5/issues/34)  _(could-have)_
+- [View Detailed Order History](https://github.com/KimBergstroem/PP5/issues/35)  _(could-have)_
+- [Track Delivery Status of Current Orders](https://github.com/KimBergstroem/PP5/issues/36) _(wont-have)_
+- [Order Confirmation Email with Shipment Details](https://github.com/KimBergstroem/PP5/issues/37) _(could-have)_
+
 
 #### Epic 7: Product Reviews and Ratings (Site User) [#9](https://github.com/KimBergstroem/PP5/issues/9)
 
-- [USER-STORY](https://github.com/KimBergstroem/PP4/issues/12) #12 SPRINT 4
+- [Read and Write Product Reviews](https://github.com/KimBergstroem/PP5/issues/38)  _(should-have)_
+- [Rate Products and Provide Feedback](https://github.com/KimBergstroem/PP5/issues/39)  _(could-have)_
+- [Sort and Filter Products by User Ratings and Reviews](https://github.com/KimBergstroem/PP5/issues/40)  _(could-have)_
+- [Receive Review Notifications](https://github.com/KimBergstroem/PP5/issues/41)  _(wont-have)_
+
+
+#### **- SPRINT 4 -**
+After finishing sprint 4, the project will be presented as the finished product. During this presentation, there will also be introduce new features planned for future implementation.
 
 #### Epic 8: Blog (Site Owner) [#10](https://github.com/KimBergstroem/PP5/issues/10)
 
-- [USER-STORY](https://github.com/KimBergstroem/PP4/issues/12) #12 SPRINT 4
+- [Access to Blog Section for Reading](https://github.com/KimBergstroem/PP5/issues/42) _(should-have)_
+- [Search and Filter Blog Posts by Topics](https://github.com/KimBergstroem/PP5/issues/43) _(could-have)_
+- [Leave Comments on Blog Posts](https://github.com/KimBergstroem/PP5/issues/44) _(wont-have)_
+- [Create, Edit, and Delete Blog Posts](https://github.com/KimBergstroem/PP5/issues/45)  _(must-have)_
+
 
 #### Epic 9: SEO and Marketing (Site Owner) [#11](https://github.com/KimBergstroem/PP5/issues/11)
 
-- [USER-STORY](https://github.com/KimBergstroem/PP4/issues/12) #12 SPRINT 4
-
+- [Optimize Website for Search Engines](https://github.com/KimBergstroem/PP5/issues/46) _(must-have)_
+- [Share Product Pages and Blog Posts on Social Media](https://github.com/KimBergstroem/PP5/issues/47) _(could-have)_
+- [Receive Email Newsletters](https://github.com/KimBergstroem/PP5/issues/48) _(could-have)_
+- [Track Website Traffic and User Behavior](https://github.com/KimBergstroem/PP5/issues/49) _(could-have)_
+---
+- [Final Testing and Bug Fixes](https://github.com/KimBergstroem/PP5/issues/50) 
+- [Final Documentation](https://github.com/KimBergstroem/PP5/issues/51)
 
 <br>
 
-The user stories and epics are organized into four distinct sprints (milestones) to establish a well-defined work structure. You can access the details of these sprints by clicking [here](https://github.com/KimBergstroem/PP5/milestones), which will redirect you to the sprint information.
+The **38** user stories are implemented into **9** Epics and they are organized into **4** distinct sprints (milestones) to establish a well-defined work structure. You can access the details of these sprints by clicking [here](https://github.com/KimBergstroem/PP5/milestones), which will redirect you to the sprint information and find all the user stories and epics.
 
 <p align="center">
   <img src="docs/readme.md/readme-Milstones.png" />
