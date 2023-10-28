@@ -152,93 +152,92 @@ EasyKeyboardMaker is a e-commerce platform for users, including gamers, streamer
 
 ### User Stories
 
-#### **- SPRINT 1 -**
+<p style="font-weight:bold;font-size:16px;" align="center">SPRINT 1 (Nov 1st - Nov 8th, 2023)</p>
 
 - [Set Up Project Skeleton](https://github.com/KimBergstroem/PP5/issues/1) 
 - [Planning and Documentation](https://github.com/KimBergstroem/PP5/issues/2) 
 
-#### **- SPRINT 2 -**
+<p style="font-weight:bold;font-size:16px;" align="center">SPRINT 2 (Nov 8th - Nov 15th, 2023)</p>
 After completing sprint 2, the project will be ready for its initial demonstration, showcasing the Minimum Viable Product (MVP). This milestone will be reached two weeks after the start of development.
 
 #### Epic 1: Viewing and Navigation (Shopper) [#3](https://github.com/KimBergstroem/PP5/issues/3)
-
-- [Easy Product Browsing and Selection](https://github.com/KimBergstroem/PP5/issues/12) _(must-have)_
-- [Detailed Product Information Viewing](https://github.com/KimBergstroem/PP5/issues/13) _(must-have)_
-- [Quick Identification of Discounts and Special Offers](https://github.com/KimBergstroem/PP5/issues/14) _(must-have)_
-- [Easy Access to Total Cost of Selected Items](https://github.com/KimBergstroem/PP5/issues/15) _(should-have)_   
+- <a href="https://github.com/KimBergstroem/PP5/issues/12" style="text-decoration:none">USER STORY: Easy Product Browsing and Selection</a> _(must-have)_
+- <a href="https://github.com/KimBergstroem/PP5/issues/13" style="text-decoration:none">USER STORY: Detailed Product Information Viewing</a> _(must-have)_
+- <a href="https://github.com/KimBergstroem/PP5/issues/14" style="text-decoration:none">USER STORY: Quick Identification of Discounts and Special Offers</a> _(must-have)_
+- <a href="https://github.com/KimBergstroem/PP5/issues/15" style="text-decoration:none">USER STORY: Easy Access to Total Cost of Selected Items</a> _(should-have)_     
 
 
 #### Epic 2: Registration and User Accounts (Site User) [#4](https://github.com/KimBergstroem/PP5/issues/4)
 
-- [Convenient User Registration](https://github.com/KimBergstroem/PP5/issues/16) _(must-have)_
-- [Easy User Login and Logout](https://github.com/KimBergstroem/PP5/issues/17) _(must-have)_
-- [Password Recovery for User Account Access](https://github.com/KimBergstroem/PP5/issues/18) _(must-have)_ 
-- [Email Confirmation for Registration](https://github.com/KimBergstroem/PP5/issues/19) _(must-have)_
+- <a href="https://github.com/KimBergstroem/PP5/issues/16" style="text-decoration:none">USER STORY: Convenient User Registration</a> _(must-have)_
+- <a href="https://github.com/KimBergstroem/PP5/issues/17" style="text-decoration:none">USER STORY: Easy User Login and Logout</a> _(must-have)_
+- <a href="https://github.com/KimBergstroem/PP5/issues/18" style="text-decoration:none">USER STORY: Password Recovery for User Account Access</a> _(must-have)_ 
+- <a href="https://github.com/KimBergstroem/PP5/issues/19" style="text-decoration:none">USER STORY: Email Confirmation for Registration</a> _(must-have)_
 
 #### Epic 3: Sorting and Searching (Shopper) [#5](https://github.com/KimBergstroem/PP5/issues/5)
 
-- [Product Sorting Options](https://github.com/KimBergstroem/PP5/issues/20) _(must-have)_
-- [Category-Specific Product Sorting](https://github.com/KimBergstroem/PP5/issues/21) _(should-have)_
-- [Product Search by Name or Description](https://github.com/KimBergstroem/PP5/issues/22) _(should-have)_
-- [Search History and Result Count](https://github.com/KimBergstroem/PP5/issues/23) _(wont-have)_
+- <a href="https://github.com/KimBergstroem/PP5/issues/20" style="text-decoration:none">USER STORY: Product Sorting Options</a> _(must-have)_
+- <a href="https://github.com/KimBergstroem/PP5/issues/21" style="text-decoration:none">USER STORY: Category-Specific Product Sorting</a> _(should-have)_
+- <a href="https://github.com/KimBergstroem/PP5/issues/22" style="text-decoration:none">USER STORY: Product Search by Name or Description</a> _(should-have)_
+- <a href="https://github.com/KimBergstroem/PP5/issues/23" style="text-decoration:none">USER STORY: Search History and Result Count</a> _(wont-have)_
 
 #### **Epic 4**: Purchasing and Checkout (Shopper) [#6](https://github.com/KimBergstroem/PP5/issues/65)
 
-- [Product Size and Quantity Selection](https://github.com/KimBergstroem/PP5/issues/24) _(should-have)_
-- [Review Shopping Bag and Confirm Purchase](https://github.com/KimBergstroem/PP5/issues/25) _(must-have)_
-- [Flexible Item Quantity Adjustment in Shopping Bag](https://github.com/KimBergstroem/PP5/issues/26) _(must-have)_
+- <a href="https://github.com/KimBergstroem/PP5/issues/24" style="text-decoration:none">USER STORY: Product Size and Quantity Selection</a> _(should-have)_
+- <a href="https://github.com/KimBergstroem/PP5/issues/25" style="text-decoration:none">USER STORY: Review Shopping Bag and Confirm Purchase</a> _(must-have)_
+- <a href="https://github.com/KimBergstroem/PP5/issues/26" style="text-decoration:none">USER STORY: Flexible Item Quantity Adjustment in Shopping Bag</a> _(must-have)_
 
-#### **- SPRINT 3 -**
+<p style="font-weight:bold;font-size:16px;" align="center">SPRINT 3 (Nov 15th - Nov 29th, 2023)</p>
 
 #### Epic 4: Purchasing and Checkout (Shopper) [#6](https://github.com/KimBergstroem/PP5/issues/6) - Continued
 
-- [User-Friendly Payment Information Entry and Swift Checkout](https://github.com/KimBergstroem/PP5/issues/27) _(must-have)_
-- [Assurance of Personal and Payment Information Security](https://github.com/KimBergstroem/PP5/issues/28) _(should-have)_
-- [Order Confirmation on Website](https://github.com/KimBergstroem/PP5/issues/29) _(must-have)_
-- [Email Confirmation for Purchase Record](https://github.com/KimBergstroem/PP5/issues/30) _(should-have)_
+- <a href="https://github.com/KimBergstroem/PP5/issues/27" style="text-decoration:none">USER STORY: User-Friendly Payment Information Entry and Swift Checkout</a> _(must-have)_
+- <a href="https://github.com/KimBergstroem/PP5/issues/28" style="text-decoration:none">USER STORY: Assurance of Personal and Payment Information Security</a> _(should-have)_
+- <a href="https://github.com/KimBergstroem/PP5/issues/29" style="text-decoration:none">USER STORY: Order Confirmation on Website</a> _(must-have)_
+- <a href="https://github.com/KimBergstroem/PP5/issues/30" style="text-decoration:none">USER STORY: Email Confirmation for Purchase Record</a> _(should-have)_
 
 #### Epic 5: Admin and Store Management (Store Owner) [#7](https://github.com/KimBergstroem/PP5/issues/7)
 
-- [Add New Products to the Store](https://github.com/KimBergstroem/PP5/issues/31) _(must-have)_
-- [Edit/Update Product Details](https://github.com/KimBergstroem/PP5/issues/32) _(must-have)_
-- [Delete Products from the Store](https://github.com/KimBergstroem/PP5/issues/33) _(must-have)_  
+- <a href="https://github.com/KimBergstroem/PP5/issues/31" style="text-decoration:none">USER STORY: Add New Products to the Store</a> _(must-have)_
+- <a href="https://github.com/KimBergstroem/PP5/issues/32" style="text-decoration:none">USER STORY: Edit/Update Product Details</a> _(must-have)_
+- <a href="https://github.com/KimBergstroem/PP5/issues/33" style="text-decoration:none">USER STORY: Delete Products from the Store</a> _(must-have)_ 
 
 #### Epic 6: User Profiles and Order History (Site User) [#8](https://github.com/KimBergstroem/PP5/issues/8)
 
-- [Update User Profile Information](https://github.com/KimBergstroem/PP5/issues/34)  _(could-have)_
-- [View Detailed Order History](https://github.com/KimBergstroem/PP5/issues/35)  _(could-have)_
-- [Track Delivery Status of Current Orders](https://github.com/KimBergstroem/PP5/issues/36) _(wont-have)_
-- [Order Confirmation Email with Shipment Details](https://github.com/KimBergstroem/PP5/issues/37) _(could-have)_
+- <a href="https://github.com/KimBergstroem/PP5/issues/34" style="text-decoration:none">USER STORY: Update User Profile Information</a>  _(could-have)_
+- <a href="https://github.com/KimBergstroem/PP5/issues/35" style="text-decoration:none">USER STORY: View Detailed Order History</a>  _(could-have)_
+- <a href="https://github.com/KimBergstroem/PP5/issues/36" style="text-decoration:none">USER STORY: Track Delivery Status of Current Orders</a> _(wont-have)_
+- <a href="https://github.com/KimBergstroem/PP5/issues/37" style="text-decoration:none">USER STORY: Order Confirmation Email with Shipment Details</a> _(could-have)_
 
 
 #### Epic 7: Product Reviews and Ratings (Site User) [#9](https://github.com/KimBergstroem/PP5/issues/9)
 
-- [Read and Write Product Reviews](https://github.com/KimBergstroem/PP5/issues/38)  _(should-have)_
-- [Rate Products and Provide Feedback](https://github.com/KimBergstroem/PP5/issues/39)  _(could-have)_
-- [Sort and Filter Products by User Ratings and Reviews](https://github.com/KimBergstroem/PP5/issues/40)  _(could-have)_
-- [Receive Review Notifications](https://github.com/KimBergstroem/PP5/issues/41)  _(wont-have)_
+- <a href="https://github.com/KimBergstroem/PP5/issues/38" style="text-decoration:none">USER STORY: Read and Write Product Reviews</a>  _(should-have)_
+- <a href="https://github.com/KimBergstroem/PP5/issues/39" style="text-decoration:none">USER STORY: Rate Products and Provide Feedback</a>  _(could-have)_
+- <a href="https://github.com/KimBergstroem/PP5/issues/40" style="text-decoration:none">USER STORY: Sort and Filter Products by User Ratings and Reviews</a>  _(could-have)_
+- <a href="https://github.com/KimBergstroem/PP5/issues/41" style="text-decoration:none">USER STORY: Receive Review Notifications</a>  _(wont-have)_
 
 
-#### **- SPRINT 4 -**
+<p style="font-weight:bold;font-size:16px;" align="center">SPRINT 4 (Nov 29th - Dec 12th, 2023)</p>
 After finishing sprint 4, the project will be presented as the finished product. During this presentation, there will also be introduce new features planned for future implementation.
 
 #### Epic 8: Blog (Site Owner) [#10](https://github.com/KimBergstroem/PP5/issues/10)
 
-- [Access to Blog Section for Reading](https://github.com/KimBergstroem/PP5/issues/42) _(should-have)_
-- [Search and Filter Blog Posts by Topics](https://github.com/KimBergstroem/PP5/issues/43) _(could-have)_
-- [Leave Comments on Blog Posts](https://github.com/KimBergstroem/PP5/issues/44) _(wont-have)_
-- [Create, Edit, and Delete Blog Posts](https://github.com/KimBergstroem/PP5/issues/45)  _(must-have)_
+- <a href="https://github.com/KimBergstroem/PP5/issues/42" style="text-decoration:none">USER STORY: Access to Blog Section for Reading</a> _(should-have)_
+- <a href="https://github.com/KimBergstroem/PP5/issues/43" style="text-decoration:none">USER STORY: Search and Filter Blog Posts by Topics</a> _(could-have)_
+- <a href="https://github.com/KimBergstroem/PP5/issues/44" style="text-decoration:none">USER STORY: Leave Comments on Blog Posts</a> _(wont-have)_
+- <a href="https://github.com/KimBergstroem/PP5/issues/45" style="text-decoration:none">USER STORY: Create, Edit, and Delete Blog Posts</a>  _(must-have)_
 
 
 #### Epic 9: SEO and Marketing (Site Owner) [#11](https://github.com/KimBergstroem/PP5/issues/11)
 
-- [Optimize Website for Search Engines](https://github.com/KimBergstroem/PP5/issues/46) _(must-have)_
-- [Share Product Pages and Blog Posts on Social Media](https://github.com/KimBergstroem/PP5/issues/47) _(could-have)_
-- [Receive Email Newsletters](https://github.com/KimBergstroem/PP5/issues/48) _(could-have)_
-- [Track Website Traffic and User Behavior](https://github.com/KimBergstroem/PP5/issues/49) _(could-have)_
+- <a href="https://github.com/KimBergstroem/PP5/issues/46" style="text-decoration:none">USER STORY: Optimize Website for Search Engines</a> _(must-have)_
+- <a href="https://github.com/KimBergstroem/PP5/issues/47" style="text-decoration:none">USER STORY: Share Product Pages and Blog Posts on Social Media</a> _(could-have)_
+- <a href="https://github.com/KimBergstroem/PP5/issues/48" style="text-decoration:none">USER STORY: Receive Email Newsletters</a> _(could-have)_
+- <a href="https://github.com/KimBergstroem/PP5/issues/49" style="text-decoration:none">USER STORY: Track Website Traffic and User Behavior</a> _(could-have)_
 ---
-- [Final Testing and Bug Fixes](https://github.com/KimBergstroem/PP5/issues/50) 
-- [Final Documentation](https://github.com/KimBergstroem/PP5/issues/51)
+- <a href="https://github.com/KimBergstroem/PP5/issues/50" style="text-decoration:none">Final Testing and Bug Fixes</a>
+- <a href="https://github.com/KimBergstroem/PP5/issues/51" style="text-decoration:none">Final Documentation</a>
 
 <br>
 
