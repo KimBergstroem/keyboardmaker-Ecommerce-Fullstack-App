@@ -1,7 +1,7 @@
-# Easy Keyboard Maker - Your Ultimate Keyboard Shopping Experience
+# Easy Keyboard Maker
         Keyboard enthusiast since ᴡɪɴᴅᴏᴡs 98.
 
-Easy Keyboard Maker is a Django-based e-commerce application designed for keyboard enthusiasts. The project offers a comprehensive platform for buying and selling keyboards, including new, retail, exclusive, and limited-edition models. Users can also craft customized keyboards to suit their preferences.
+Django-based E-COMMERCE application designed for keyboard enthusiasts. The project offers a comprehensive platform for buying and selling keyboards, including new, retail, exclusive, and limited-edition models. Users can also craft customized keyboards to suit their preferences.
 
 The application is engineered for easy navigation and efficient shopping, providing a seamless experience for users. 
 
@@ -35,24 +35,37 @@ Developer: [Kim Bergström](https://github.com/KimBergstroem) <br>
 
 ## Table of Content
 
-- 📄[Project Goals](#project-goals)
+- 📄[**Bussniess model & Marketing**](#project-goals)
+  + [Business Overview](#user-goals)
+  + [Site User](#user-goals)
+  + [Goals for the website](#user-goals)
+  + [Marketing Strategy](#user-goals)
+    - [Social Media](#epic-2--user-engagement-and-interaction--registered-user-)
+  + [SEO Search Engine Optimization](#user-goals)
+    - [SEO Project planning](#epic-1--user-experience--visitor-)
   + [User Goals](#user-goals)
   + [Site Owner Goals](#site-owner-goals)
-- 📄[User Experience](#user-experience)
+- 📄[**User Experience UX**](#user-experience)
   + [Target Audience](#target-audience)
   + [User Requirements and Expectations](#user-requirements-and-expectations)
+- 📄[**Methodology**](#methodology)
+  + [Agile Project Management with GitHub Projects](#agile-project-management-with-github-projects)
+  + [User Stories as GitHub Issues](#user-stories-as-github-issues)
+  + [Iterative Development Approach](#iterative-development-approach)
   + [User Stories](#user-stories)
     - [Epic 1: User Experience (Visitor)](#epic-1--user-experience--visitor-)
     - [Epic 2: User Engagement and Interaction (Registered User)](#epic-2--user-engagement-and-interaction--registered-user-)
     - [Epic 3: Administration and Content Management (Admin/Content Moderator)](#epic-3--administration-and-content-management--admin-content-moderator-)
-- 📄[Database](#database)
+  + [Bug Tracking for Seamless Development](#bug-tracking-for-seamless-development)
+  + [Future Backlog and Progress](#future-backlog-and-progress)
+- 📄[**Database**](#database)
   + [Blog Application Database Schema](#blog-application-database-schema)
     - [GameCategory Table](#gamecategory-table)
     - [UserProfile Table](#userprofile-table)
     - [User Table](#user-table)
     - [Post Table](#post-table)
     - [Comment Table](#comment-table)
-- 📄[Design](#design)
+- 📄[**Design UI**](#design)
   + [Design Choices](#design-choices)
   + [Color](#color)
   + [Fonts](#fonts)
@@ -61,36 +74,30 @@ Developer: [Kim Bergström](https://github.com/KimBergstroem) <br>
     - [After Logging In:](#after-logging-in-)
     - [Profile Navigation:](#profile-navigation-)
   + [Wireframes](#wireframes)
-- 📄[Technologies Used](#technologies-used)
+- 📄[**Technologies Used**](#technologies-used)
   + [Languages](#languages)
   + [Frameworks](#frameworks)
   + [Database](#database-1)
   + [Tools](#tools)
   + [Supporting Libraries and Packages](#supporting-libraries-and-packages)
-- 📄[Methodology](#methodology)
-  + [Agile Project Management with GitHub Projects](#agile-project-management-with-github-projects)
-  + [User Stories as GitHub Issues](#user-stories-as-github-issues)
-  + [Bug Tracking for Seamless Development](#bug-tracking-for-seamless-development)
-  + [Iterative Development Approach](#iterative-development-approach)
-  + [Future Backlog and Progress](#future-backlog-and-progress)
-- 📄[Features](#features)
+- 📄[**Features**](#features)
   + [Landing Page:](#landing-page-)
   + [Blog Pages:](#blog-pages-)
   + [Blog Detail Page:](#blog-detail-page-)
   + [User Account Management:](#user-account-management-)
   + [Navigation:](#navigation-)
   + [Future Features](#future-features)
-- 📄[Testing](#testing)
-- 📄[Bugs](#bugs)
+- 📄[**Testing**](#testing)
+- 📄[**Bugs**](#bugs)
   + [Known bugs](#known-bugs)
   + [Fixed bugs](#fixed-bugs)
-- 📄[Deployment](#deployment)
+- 📄[**Deployment**](#deployment)
   + [App Deployment](#app-deployment)
   + [Cloudinary](#cloudinary)
   + [Version Control](#version-control)
   + [Forking the Repository:](#forking-the-repository-)
   + [Clone of the Repository:](#clone-of-the-repository-)
-- 📄[Credits](#credits)
+- 📄[**Credits**](#credits)
   + [Media](#media)
   + [Django Documentation:](#django-documentation-)
   + [W3 Schools:](#w3-schools-)
@@ -98,7 +105,7 @@ Developer: [Kim Bergström](https://github.com/KimBergstroem) <br>
   + [Geeksforgeeks:](#geeksforgeeks-)
   + [Various tutorials and YouTube channels:](#various-tutorials-and-youtube-channels-)
   + [Content](#content)
-- 📄[Acknowledgments](#acknowledgments)
+- 📄[**Acknowledgments**](#acknowledgments)
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc and modified by myself</a></i></small>
 
@@ -106,11 +113,80 @@ Developer: [Kim Bergström](https://github.com/KimBergstroem) <br>
   <img src="docs/readme.md/readme-divider3.png" />
 </p>
 
-# Project Goals 
+# Bussniess model & Marketing 
 Example text
 
 - **example:** 
 
+
+### Business Overview
+- Example
+
+### Site User
+- Example
+
+### Goals for the website
+- Example
+
+### Marketing Strategy
+The business's marketing strategy for the future includes the following elements:
+
+1. Utilizing the company's Social media pages for store promotion and building community.
+
+2. Sharing the page with friends and family and encouraging them to like and share it within their extended network.
+
+3. Organizing a soft online launch sale to stimulate early adoption and attract potential clients for initial purchases.
+
+4. Building a subscriber base through the Mailchimp option on the website and subsequently sending out special offers and promotions to foster customer loyalty.
+
+5. Crafting informative and valuable articles and blog posts to enhance the store's SEO ranking on search engines like Google.
+
+6. Exploring the possibility of using paid advertising channels such as Google Ads and other social Ads to target the desired demographic.
+
+7. Creating multiple ads with distinct product cover images, monitoring the click-through rates, and focusing on the most successful ones.
+
+8. Depending on the available budget, the business may consider collaborating with influencers in its niche to promote custom-made products. This could involve providing complimentary items or a modest fee in exchange for a shout-out or product review. The target influencers would ideally have a following of at least 10,000 in the relevant niche, which is feasible even for a business with limited initial funding and can help drive traffic to the website.
+
+
+#### Social Media
+Easy Keyboard Maker E-Commerce will primarily utilize social media platforms such as Twitter, Facebook, Instagram, and TikTok for promotion. Additionally, we will establish and operate a Discord Server and live stream on our Twitch channel for content and interactive sessions. There is also a possibility of creating a YouTube channel to compile all the highlights in the future.
+
+Our social media links and e-commerce webshop were combined on a single page to enhance navigation and foster a sense of community. You can access all our social links through our main link, [EasyKeyboardMaker](https://linktr.ee/easykeyboardmaker), which is managed using LINKTR. Below, you can find images of every page for documentation purposes.
+
+
+<details><summary>Instagram Page</summary>
+<img src="docs/readme.md/readme-socials-instagram.png">
+</details>
+<details><summary>TikTok Page</summary>
+<img src="docs/readme.md/readme-socials-tiktok.png">
+</details>
+<details><summary>Facebook Page</summary>
+<img src="docs/readme.md/">
+</details>
+<details><summary>Twitter Page</summary>
+<img src="docs/readme.md/readme-socials-twitter.png">
+</details>
+<details><summary>Twitch</summary>
+<img src="docs/readme.md/readme-socials-twitch.png">
+</details>
+<details><summary>Discord Server</summary>
+<img src="docs/readme.md/readme-socials-discord.png">
+</details>
+
+
+### SEO Search Engine Optimization
+By optimizing the e-commerce for search engines, it will increase and reach the right audience, build trust, and stay competitive in the market. SEO is our cost-effective strategy for enhancing user experience and attracting both local and global customers.
+
+#### SEO Project planning
+After finalizing the business model for keyboard selling in the e-commerce sector, I began the process of strategizing how to market the website and identify target keywords. I leveraged Google Trends to uncover popular search terms and employed a tool named SEO quake to assess the competition and learn from their successful tactics. Additionally, I conducted keyword research on wordtracker.com by signing up for a trial to maximize its benefits. This comprehensive approach led to the compilation of a list of both short and long-tail keywords intended for use in this project.
+
+#### Keywords 
+
+#### Sitemap.xml
+
+#### Robots.txt
+
+#### Logo
 
 ### User Goals
 - Example
@@ -118,14 +194,12 @@ Example text
 ### Site Owner Goals
 - Example
 
-Text description
-
 <p align="right">(<a href="#table-of-content">back to top</a>)</p>
 <p align="center">
   <img src="docs/readme.md/readme-divider3.png" />
 </p>
 
-# User Experience
+# User Experience UX
 
 ### Target Audience
 EasyKeyboardMaker is designed for the following target audience:
@@ -149,15 +223,57 @@ When using the E-commerce EasyKeyboardMaker, users can expect the following feat
 
 EasyKeyboardMaker is a e-commerce platform for users, including gamers, streamers, and developers, to explore, select, and purchase mechanical keyboards and accessories while staying updated with the latest trends.
 
+<p align="right">(<a href="#table-of-content">back to top</a>)</p>
+<p align="center">
+  <img src="docs/readme.md/readme-divider3.png" />
+</p>
+
+# Methodology
+
+The EasyKeyboardMaker project follows a methodology inspired by AGILE principles, fostering collaboration, flexibility, and gradual development. The outlined approach has guided the project's evolution.
+
+### Agile Project Management with GitHub Projects
+To streamline project management, GitHub Projects is employed as a central hub. User stories and tasks are structured as GitHub issues, creating an organized workflow. The GitHub project board serves as a visual representation, tracking progress effectively.
+
+### User Stories as GitHub Issues
+Transforming user stories into GitHub issues captures user-centric functionalities. These issues interlink with respective user stories, simplifying access to criteria, tasks, and discussions.
+
+### Iterative Development Approach
+The EasyKeyboardMaker project adheres to an iterative development approach, facilitating continuous enhancements within a predefined timeline. Despite its condensed schedule, the project accommodates future iterations and expansions.
+
+To ensure efficient prioritization, our project employs the MuSCoW (Must have, Should have, Could have, Won't have) method. User stories critical to the app's success are categorized as Must-haves, followed by Should-haves, Could-haves, and Won't-haves. You can refer to our [Kanban board](https://github.com/users/KimBergstroem/projects/10) to view the prioritization.
+
+Within each sprint, a MoSCoW method is used to further prioritize user stories. They are classified as Must Do, Should Do, Could Do, and Won't Do, representing the remaining user stories that will not be included in the sprints. This approach ensures a clear differentiation between our overall project prioritization and the prioritization within each sprint, minimizing any potential confusion.
+
+**Labels and User Story Distribution (MoSCoW):**
+
+- **Must-Have:** 22/38
+- **Should-Have:** 7/38
+- **Could-Have:** 5/38
+- **Wont-Have:** 4/38
+- **Task:** 4
+- **Documentation:** 2
+
+<br>
 
 ### User Stories
 
-<p style="font-weight:bold;font-size:16px;" align="center">SPRINT 1 (Nov 1st - Nov 8th, 2023)</p>
+<div style="text-align: center;">
+
+### **SPRINT 1 (Nov 1st - Nov 8th, 2023)**
+
+</div>
 
 - [Set Up Project Skeleton](https://github.com/KimBergstroem/PP5/issues/1) 
-- [Planning and Documentation](https://github.com/KimBergstroem/PP5/issues/2) 
+- [Planning and Documentation](https://github.com/KimBergstroem/PP5/issues/2)
+- [Marketing](https://github.com/KimBergstroem/PP5/issues/#52)  
 
-<p style="font-weight:bold;font-size:16px;" align="center">SPRINT 2 (Nov 8th - Nov 15th, 2023)</p>
+<div style="text-align: center;">
+
+### **SPRINT 2 (Nov 8th - Nov 15th, 2023)**
+
+</div>
+
 After completing sprint 2, the project will be ready for its initial demonstration, showcasing the Minimum Viable Product (MVP). This milestone will be reached two weeks after the start of development.
 
 #### Epic 1: Viewing and Navigation (Shopper) [#3](https://github.com/KimBergstroem/PP5/issues/3)
@@ -187,7 +303,11 @@ After completing sprint 2, the project will be ready for its initial demonstrati
 - <a href="https://github.com/KimBergstroem/PP5/issues/25" style="text-decoration:none">USER STORY: Review Shopping Bag and Confirm Purchase</a> _(must-have)_
 - <a href="https://github.com/KimBergstroem/PP5/issues/26" style="text-decoration:none">USER STORY: Flexible Item Quantity Adjustment in Shopping Bag</a> _(must-have)_
 
-<p style="font-weight:bold;font-size:16px;" align="center">SPRINT 3 (Nov 15th - Nov 29th, 2023)</p>
+<div style="text-align: center;">
+
+### **SPRINT 3 (Nov 15th - Nov 29th, 2023)**
+
+</div>
 
 #### Epic 4: Purchasing and Checkout (Shopper) [#6](https://github.com/KimBergstroem/PP5/issues/6) - Continued
 
@@ -217,8 +337,12 @@ After completing sprint 2, the project will be ready for its initial demonstrati
 - <a href="https://github.com/KimBergstroem/PP5/issues/40" style="text-decoration:none">USER STORY: Sort and Filter Products by User Ratings and Reviews</a>  _(could-have)_
 - <a href="https://github.com/KimBergstroem/PP5/issues/41" style="text-decoration:none">USER STORY: Receive Review Notifications</a>  _(wont-have)_
 
+<div style="text-align: center;">
 
-<p style="font-weight:bold;font-size:16px;" align="center">SPRINT 4 (Nov 29th - Dec 12th, 2023)</p>
+### **SPRINT 4 (Nov 29th - Dec 12th, 2023)**
+
+</div>
+
 After finishing sprint 4, the project will be presented as the finished product. During this presentation, there will also be introduce new features planned for future implementation.
 
 #### Epic 8: Blog (Site Owner) [#10](https://github.com/KimBergstroem/PP5/issues/10)
@@ -247,8 +371,19 @@ The **38** user stories are implemented into **9** Epics and they are organized 
   <img src="docs/readme.md/readme-Milstones.png" />
 </p>
 
-<p align="right">(<a href="#table-of-content">back to top</a>)</p>
+### Bug Tracking for Seamless Development
+Bugs uncovered during development are documented as GitHub issues, offering insights into each bug's characteristics, impact, and reproduction steps. By hyperlinking these issues in README.md, users can stay updated on bug resolutions and contribute insights.
 
+### Future Backlog and Progress
+The project board efficiently manages user stories, with the "Not started" column representing upcoming iterations. This backlog previews user stories set for subsequent development phases.
+
+Emphasizing that the project timeline is expedited, the iterative approach maintains adaptability, enabling ongoing refinements and improvements aligned with evolving user needs.
+
+
+<p align="right">(<a href="#table-of-content">back to top</a>)</p>
+<p align="center">
+  <img src="docs/readme.md/readme-divider3.png" />
+</p>
 
 # Database
 When creating the database structure schema for this project, I utilized the [dbdiagram.io](https://dbdiagram.io/) website. This online tool allowed me to visually design and document the database schema, making it easier to plan and implement the database for the e-commerce application.
@@ -285,31 +420,42 @@ This database schema defines the structure and relationships for a e-commerce ap
   <img src="docs/readme.md/readme-divider3.png" />
 </p>
 
-# Design
-Text
+# Design UI
+This E-commerce project embraces a light theme, a user-centric platform where products take center stage. With a focus on professionalism and user engagement, the design thinking revolves around the harmonious use of color, the strategic allocation of visual elements, and the integration of purple and blue accents to enhance interactivity and capture users attention.
 
 ### Design Choices
-Text
+Design choices were thoughtfully curated to resonate with professionals, developers, work enthusiasts, and keyboard aficionados. Crafted an environment that exudes professionalism and caters to the diverse interests of our audience.
 
-### Color
-Decision to adopt the 60-30-10 rule in our UI design is driven by its ability to create a cohesive and engaging user experience. This approach guarantees consistency by allocating 60% of our color palette to the dominant color, fostering brand recognition and trust. The 30% dedicated to the secondary color enables us to strike a visual balance, allowing for variations in content, headers, and backgrounds without overwhelming users. The remaining 10% allocated to the accent color serves to highlight interactive elements and calls to action, though we recommend choosing a contrasting shade for improved visibility and user engagement. This strategy ensures that our web application not only looks appealing but also functions effectively, guiding users to key elements while maintaining a harmonious and dependable design.
+### Main Colors
+Decision to adopt the 60-30-10 rule in our UI design is driven by its ability to create a cohesive and engaging user experience. This approach guarantees consistency by allocating 60% of our color palette to the dominant color, fostering brand recognition and trust. The 30% dedicated to the secondary color enables a visual balance, allowing for variations in content, headers, and backgrounds without overwhelming users. The remaining 10% allocated to the accent color serves to highlight interactive elements and calls to action. This strategy ensures that the web application not only looks appealing but also functions effectively, guiding users to key elements while maintaining a harmonious and dependable design.
 
 ![Color Palette image](/docs/readme.md/readme-color-palette.png)
+
 **Dominant (60%):** 
 
-Text
+Our dominant color, which makes up 60% of our color palette, is a subtle departure from pure white. It features a hint of gray to enhance its visual appeal, contributing to a more captivating and elegant appearance. This nuanced modification to the dominant color elevates the user experience and contributes to a light and inviting theme.
 
 **Secondary (30%):** 
 
-Text
+The secondary color, comprising 30% of our color palette, is characterized by its vibrant and distinctive shade of deep lavender (#8739F9). This color serves as a key supporting element in our design, offering a balanced and visually engaging backdrop for content, headers, and backgrounds. Its presence complements the dominant color and allows for creative variations while maintaining a cohesive and user-friendly aesthetic.
 
 **Accent (10%):** 
 
-Text
+Our accent color, accounting for the remaining 10% of our color palette, is a lively and captivating shade of bright cyan (#37B9F1). This bold color is strategically employed to accentuate interactive elements and calls to action throughout the web application, enhancing user engagement and guiding users to key features.
 
+**Text colors:**
+![Font color image](/docs/readme.md/readme-color-text.png)
 
 ### Fonts
-EasyKeyboard E-commerce embraces the default fonts offered by Bootstrap 5, without any specific alterations, as they significantly enhance the overall aesthetics and user experience.
+
+**Lato (Headers):**
+![Font color image](/docs/readme.md/readme-text-lato.png)
+Lato as the primary font for headers, titles, and navigation elements in our e-commerce project. This modern and elegant sans-serif font offers versatility and a clean design, making it an ideal choice for highlighting essential information. Lato not only exudes professionalism but also adds a touch of style to our website's visual identity.
+
+**Poppins (Text Paragraphs):**
+![Font color image](/docs/readme.md/readme-text-poppins.png)
+For text paragraphs, product descriptions, and other textual content, we've opted for Poppins. This sans-serif font is recognized for its exceptional readability and clarity, ensuring that our textual content is easily legible and visually engaging. Poppins contributes to a clean and modern appearance that aligns perfectly with our commitment to providing a seamless user experience.
+
 
 ### Structure
 
@@ -344,25 +490,25 @@ Text
 
 
 ### Wireframes
-The wireframes serve as a visual blueprint for our web application, outlining the structure and functionality of each page. They provide a detailed representation of the user interface and overall user experience. These wireframes were meticulously crafted using Figma, a design tool renowned for its ability to facilitate rapid and intuitive prototyping. Click on each page to view the wireframe.
+The wireframes serve as a visual blueprint for our web application, outlining the structure and functionality of each page. They provide a detailed representation of the user interface and overall user experience. These wireframes were meticulously crafted using [Figma](https://www.figma.com/), a design tool renowned for its ability to facilitate rapid and intuitive prototyping. Click on each page to view the wireframe.
 
-<details><summary>Example page</summary>
-<img src="docs/wireframes/">
+<details><summary>Index - Navigation - Landing page</summary>
+<img src="docs/wireframes/wire-frame-Index.png">
 </details>
-<details><summary>Example page</summary>
-<img src="docs/wireframes/">
+<details><summary>Footer</summary>
+<img src="docs/wireframes/wireframe-Footer.png">
 </details>
-<details><summary>Example page</summary>
-<img src="docs/wireframes/">
+<details><summary>Product layout</summary>
+<img src="docs/wireframes/wireframe-Product.png">
 </details>
-<details><summary>Example page</summary>
-<img src="docs/wireframes/">
+<details><summary>Articles / Blog page</summary>
+<img src="docs/wireframes/wireframe-Articles.png">
 </details>
-<details><summary>Example page</summary>
-<img src="docs/wireframes/">
+<details><summary>Contact us</summary>
+<img src="docs/wireframes/wireframe-Support.png">
 </details>
-<details><summary>Example page</summary>
-<img src="docs/wireframes/">
+<details><summary>Checkout layout</summary>
+<img src="docs/wireframes/wireframe-Checkout.png">
 </details>
 
 <p align="right">(<a href="#table-of-content">back to top</a>)</p>
@@ -402,42 +548,6 @@ The wireframes serve as a visual blueprint for our web application, outlining th
 
 ### Supporting Libraries and Packages
 - Copy the fully requirements.txt file at the end of the project and paste it here.
-
-<p align="right">(<a href="#table-of-content">back to top</a>)</p>
-<p align="center">
-  <img src="docs/readme.md/readme-divider3.png" />
-</p>
-
-# Methodology
-
-The EasyKeyboardMaker project follows a methodology inspired by agile principles, fostering collaboration, flexibility, and gradual development. The outlined approach has guided the project's evolution:
-
-### Agile Project Management with GitHub Projects
-To streamline project management, GitHub Projects is employed as a central hub. User stories and tasks are structured as GitHub issues, creating an organized workflow. The GitHub project board serves as a visual representation, tracking progress effectively.
-
-### User Stories as GitHub Issues
-Transforming user stories into GitHub issues captures user-centric functionalities. These issues interlink with respective user stories, simplifying access to criteria, tasks, and discussions.
-
-### Bug Tracking for Seamless Development
-Bugs uncovered during development are documented as GitHub issues, offering insights into each bug's characteristics, impact, and reproduction steps. By hyperlinking these issues in README.md, users can stay updated on bug resolutions and contribute insights.
-
-### Iterative Development Approach
-The EasyKeyboardMaker project adheres to an iterative development approach, facilitating continuous enhancements within a predefined timeline. Despite its condensed schedule, the project accommodates future iterations and expansions.
-
-### Future Backlog and Progress
-The project board efficiently manages user stories, with the "Not started" column representing upcoming iterations. This backlog previews user stories set for subsequent development phases.
-
-Emphasizing that the project timeline is expedited, the iterative approach maintains adaptability, enabling ongoing refinements and improvements aligned with evolving user needs.
-
-**Labels and User Story Distribution (MoSCoW):**
-
-- **Must-Have:** 6/19 EXAMPLE FILL IN
-- **Should-Have:** 
-- **Could-Have:** 
-- **Wont-Have:** 
-- **Task:** 
-
-For a comprehensive view of the project's trajectory, user stories, and bug tracking, explore the [Kanban board](https://github.com/users/KimBergstroem/projects/10).
 
 <p align="right">(<a href="#table-of-content">back to top</a>)</p>
 <p align="center">
