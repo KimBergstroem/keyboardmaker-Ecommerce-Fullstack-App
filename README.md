@@ -59,12 +59,7 @@ Developer: [Kim Bergström](https://github.com/KimBergstroem) <br>
   + [Bug Tracking for Seamless Development](#bug-tracking-for-seamless-development)
   + [Future Backlog and Progress](#future-backlog-and-progress)
 - 📄[**Database**](#database)
-  + [Blog Application Database Schema](#blog-application-database-schema)
-    - [GameCategory Table](#gamecategory-table)
-    - [UserProfile Table](#userprofile-table)
-    - [User Table](#user-table)
-    - [Post Table](#post-table)
-    - [Comment Table](#comment-table)
+  + [E-commerce Application Database Schema](#blog-application-database-schema)
 - 📄[**Design UI**](#design)
   + [Design Choices](#design-choices)
   + [Color](#color)
@@ -72,7 +67,6 @@ Developer: [Kim Bergström](https://github.com/KimBergstroem) <br>
   + [Structure](#structure)
     - [Before Logging In:](#before-logging-in-)
     - [After Logging In:](#after-logging-in-)
-    - [Profile Navigation:](#profile-navigation-)
   + [Wireframes](#wireframes)
 - 📄[**Technologies Used**](#technologies-used)
   + [Languages](#languages)
@@ -114,19 +108,49 @@ Developer: [Kim Bergström](https://github.com/KimBergstroem) <br>
 </p>
 
 # Bussniess model & Marketing 
-Example text
-
-- **example:** 
-
 
 ### Business Overview
-- Example
+Easy Keyboard Maker is a thriving **B2C e-commerce** platform with a mission to provide high-quality keyboard-related products to our valued customers through our online store. Product range includes keyboards, mechanical keyboards, and essential keyboard accessories.
+
+#### Key Advantages for the Business:
+1. **Scalability:** Business can grow seamlessly as our customer base expands.
+2. **Online Presence:** Saving on physical locations, focusing resources on product quality and customer satisfaction.
+3. **Global Reach:** Can reach customers worldwide, eliminating geographical restrictions.
+4. **Niche Focus:** Cater to keyboard enthusiasts, building a brand that resonates with our audience.
+5. **Cost-Efficiency:** Low startup costs allow us to allocate a significant budget for customer acquisition and marketing.
+6. **Impulse Buying:** Competitive pricing encourages spontaneous purchases from customers exploring keyboard options.
+
+
+#### Challenges to Address:
+1. **Getting Customers:** It may be hard to attract customers in a crowded market. Effective marketing strategies are essential.
+2. **Building a Brand:** Creating a brand from scratch takes time. Immediate success requires a well-planned marketing strategy.
+3. **Marketing Efforts:** Attracting organic customers takes time. We'll need to actively promote our business and consider paid advertising.
+4. **Building Trust:** Operating online can make it harder to build trust and loyalty. Offering discounts and promotions may help.
+5. **Order Volume:** Due to competitive pricing, we need a reasonable number of orders to ensure business viability.
+
+
+#### Subscription Model Consideration
+Considering the pros and cons of our business model, implementing a subscription-based approach may not be viable initially. Such a model requires an established customer base and some degree of brand loyalty, which may take time to cultivate.
+
+#### Preferred Approach
+Primary strategy is to offer products in a traditional pay-as-you-go e-commerce format. As our business grows and customer loyalty deepens, the implementation of a subscription model may become a more viable option in the future. This approach ensures our immediate success while allowing flexibility for future expansion.
 
 ### Site User
-- Example
+- **User 1:** The typical site user for Easy Keyboard Maker would be an individual, male and female, aged between 18 and 50. They have a strong interest in computer IT, gaming, and customizing their keyboard setups. They may range from beginners to advanced users, including gamers, programmers, and professionals looking for ergonomic solutions.
 
-### Goals for the website
-- Example
+- **User 2:** In addition to the primary site users, we also consider partners and gift shoppers. These individuals may visit our site to explore gift options for the keyboard enthusiasts in their lives. They could be of any gender and age, looking for thoughtful and unique presents, such as customized keycaps or accessories, to surprise and delight the keyboard enthusiasts they know.
+
+- **User 3:** Represents individuals who are deeply immersed in Asian culture, particularly those who have a strong affinity for anime. There is a significant overlap between anime culture and keyboard customization in Asia, making it a promising target audience. By offering unique keycaps and keyboard customization options that resonate with anime themes.
+
+
+### Goals for the Website
+- Create a user-friendly website with a clear purpose.
+- Provide products that meet user expectations.
+- Enable users to access, read, and engage with informative articles.
+- Offer insights and tips on keyboard care to build trust and loyalty.
+- Allow users to checkout quickly and easily.
+- Allow users to create profiles for order history and profile updates.
+
 
 ### Marketing Strategy
 The business's marketing strategy for the future includes the following elements:
@@ -151,7 +175,7 @@ The business's marketing strategy for the future includes the following elements
 #### Social Media
 Easy Keyboard Maker E-Commerce will primarily utilize social media platforms such as Twitter, Facebook, Instagram, and TikTok for promotion. Additionally, we will establish and operate a Discord Server and live stream on our Twitch channel for content and interactive sessions. There is also a possibility of creating a YouTube channel to compile all the highlights in the future.
 
-Our social media links and e-commerce webshop were combined on a single page to enhance navigation and foster a sense of community. You can access all our social links through our main link, [EasyKeyboardMaker](https://linktr.ee/easykeyboardmaker), which is managed using LINKTR. Below, you can find images of every page for documentation purposes.
+Our social media links and e-commerce webshop were combined on a single page to enhance navigation and foster a sense of community. You can access all our social links through our main link, [EasyKeyboardMaker](https://linktr.ee/easykeyboardmaker), which is managed using [LINKTR](https://linktr.ee/). Below, you can find images of every page for documentation purposes.
 
 
 <details><summary>Instagram Page</summary>
@@ -172,6 +196,17 @@ Our social media links and e-commerce webshop were combined on a single page to 
 <details><summary>Discord Server</summary>
 <img src="docs/readme.md/readme-socials-discord.png">
 </details>
+
+#### Customer Engagement Strategy: Social Media Contests and Giveaways
+Regular social media contests and giveaways on our platforms. These contests will feature enticing prizes, such as free keyboards and accessories, to create excitement and attract potential customers.
+
+To participate, individuals will be required to complete simple actions, including liking our posts, sharing content, tagging friends, or leaving comments. These activities not only foster engagement but also increase brand visibility as participants interact with our content.
+
+This is to build a sense of community among keyboard enthusiasts, where participants engage not only with our brand but with each other. This approach fosters brand loyalty and extends beyond the giveaways.
+
+Additionally, reward our most active and engaged customers with exclusive discounts or opportunities.
+
+Success in this strategy will be measured through engagement rates, new followers, and customer conversion data, guiding our ongoing social media efforts.
 
 
 ### SEO Search Engine Optimization
@@ -258,21 +293,16 @@ Within each sprint, a MoSCoW method is used to further prioritize user stories. 
 
 ### User Stories
 
-<div style="text-align: center;">
+<h3 align="center">SPRINT 1 (Nov 1st - Nov 8th, 2023)</h3>
 
-### **SPRINT 1 (Nov 1st - Nov 8th, 2023)**
-
-</div>
 
 - [Set Up Project Skeleton](https://github.com/KimBergstroem/PP5/issues/1) 
 - [Planning and Documentation](https://github.com/KimBergstroem/PP5/issues/2)
 - [Marketing](https://github.com/KimBergstroem/PP5/issues/#52)  
 
-<div style="text-align: center;">
+<br>
 
-### **SPRINT 2 (Nov 8th - Nov 15th, 2023)**
-
-</div>
+<h3 align="center">SPRINT 2 (Nov 8th - Nov 15th, 2023)</h3>
 
 After completing sprint 2, the project will be ready for its initial demonstration, showcasing the Minimum Viable Product (MVP). This milestone will be reached two weeks after the start of development.
 
@@ -303,11 +333,9 @@ After completing sprint 2, the project will be ready for its initial demonstrati
 - <a href="https://github.com/KimBergstroem/PP5/issues/25" style="text-decoration:none">USER STORY: Review Shopping Bag and Confirm Purchase</a> _(must-have)_
 - <a href="https://github.com/KimBergstroem/PP5/issues/26" style="text-decoration:none">USER STORY: Flexible Item Quantity Adjustment in Shopping Bag</a> _(must-have)_
 
-<div style="text-align: center;">
+<br>
 
-### **SPRINT 3 (Nov 15th - Nov 29th, 2023)**
-
-</div>
+<h3 align="center">SPRINT 3 (Nov 15th - Nov 29th, 2023)</h3>
 
 #### Epic 4: Purchasing and Checkout (Shopper) [#6](https://github.com/KimBergstroem/PP5/issues/6) - Continued
 
@@ -337,11 +365,9 @@ After completing sprint 2, the project will be ready for its initial demonstrati
 - <a href="https://github.com/KimBergstroem/PP5/issues/40" style="text-decoration:none">USER STORY: Sort and Filter Products by User Ratings and Reviews</a>  _(could-have)_
 - <a href="https://github.com/KimBergstroem/PP5/issues/41" style="text-decoration:none">USER STORY: Receive Review Notifications</a>  _(wont-have)_
 
-<div style="text-align: center;">
+<br>
 
-### **SPRINT 4 (Nov 29th - Dec 12th, 2023)**
-
-</div>
+<h3 align="center">SPRINT 4 (Nov 29th - Dec 12th, 2023)</h3>
 
 After finishing sprint 4, the project will be presented as the finished product. During this presentation, there will also be introduce new features planned for future implementation.
 
@@ -396,24 +422,114 @@ When creating the database structure schema for this project, I utilized the [db
 
 ### E-commerce Application Database Schema
 
-#### Example Table
-- Example
+<details><summary>Checkout App</summary>
+
+#### Order Table
+- Represents order information.
+- Fields:
+  - order_number (CharField)
+  - user_profile (foreign key to UserProfile)
+  - full_name (CharField)
+  - email (EmailField)
+  - phone_number (CharField)
+  - country (CountryField)
+  - postcode (CharField)
+  - town_or_city (CharField)
+  - street_address1 (CharField)
+  - street_address2 (CharField)
+  - county (CharField)
+  - date (DateTimeField)
+  - delivery_cost (DecimalField)
+  - order_total (DecimalField)
+  - grand_total (DecimalField)
+  - original_bag (TextField)
+  - stripe_pid (CharField)
+
+#### OrderLineItem Table
+- Stores individual items within an order.
+- Fields:
+  - order (foreign key to Order)
+  - product (foreign key to Product)
+  - product_size (CharField)
+  - quantity (IntegerField)
+  - lineitem_total (DecimalField)
+</details>
+<details><summary>Products App</summary>
+
+#### Category Table
+- Stores categories for products.
+- Fields:
+  - name (CharField)
+  - friendly_name (CharField)
+
+#### Product Table
+- Stores information about products available.
+- Fields:
+  - category (foreign key to Category), sku (CharField), name (CharField), has_sizes (BooleanField), description (TextField), price (DecimalField), rating (DecimalField), reviews (IntegerField), image_url (URLField), image (ImageField)
+</details>
+<details><summary>Profiles App</summary>
+
+#### UserProfile Table
+- Extends the User model to store additional user-specific information.
+- Fields:
+  - user_id (OneToOneField to User)
+  - first_name (CharField)
+  - last_name (CharField)
+  - email (CharField)
+  - phone (IntegerField)
+  - street1 (CharField)
+  - street2 (CharField)
+  - city (CharField)
+  - country (CharField)
+  - postcode (CharField)
+  - newsletter (BooleanField)
 
 
-#### Example Table
-- Example
+</details>
+<details><summary>Blog App</summary>
 
-#### Example Table
-- Example
+#### Comment Table
+- Represents user comments on products.
+- Fields:
+  - comment_id (IntegerField)
+  - body (TextField)
+  - email (CharField)
+  - approved (BooleanField)
+  - created_on (DateTimeField)
+  - product_id (foreign key to Product)
+  - user_id (foreign key to User)
 
-#### Example Table
-- Example
+#### Post Table
+- Represents blog posts.
+- Fields:
+  - title (CharField)
+  - slug (SlugField)
+  - author_id (foreign key to User)
+  - content (TextField)
+  - created_on (DateTimeField)
+  - featured_image (AmazonWebServicesField)
+</details>
+<details><summary>Home App</summary>
 
-#### Example Table
-- Example
+#### Newsletter Table
+- Stores information related to newsletters.
+- Fields:
+  - user_id (foreign key to UserProfile)
+  - first_name (CharField)
+  - last_name (CharField)
+  - email (CharField, primary key)
+
+#### User Table
+- Represents user information.
+- Fields:
+  - user_id (IntegerField, primary key)
+  - username (CharField)
+  - email (CharField)
+  - password (CharField)
+</details>
 
 <br>
-This database schema defines the structure and relationships for a e-commerce application, including "example of all tables here".
+This database schema defines the structure and relationships for an e-commerce, including blog application, users, posts, comments, review, newsletter, user profiles, products, cart, payment checkout and more.
 
 <p align="right">(<a href="#table-of-content">back to top</a>)</p>
 <p align="center">
@@ -461,32 +577,50 @@ For text paragraphs, product descriptions, and other textual content, we've opte
 
 User-friendly structure, ensuring seamless navigation and easy access to the website's content. Here's an overview of the website's structure:
 
-#### Before Logging In:
+#### For Visitors (Not Logged In)
 
-- **Example Page:** Text<br>
-- **Example Page:** Text<br>
-- **Example Page:** Text<br>
-- **Example Page:** Text<br>
+**Landing Page:**
+   - *Description:* The landing page serves as the initial entry point to the website.
+   - *Content:* This page contains introductory text, visuals, and key highlights about the website's offerings and promotions. It also displays a footer section and a newsletter subscription option.
+
+**All Products Pages:**
+   - *Description:* These pages provide access to various products.
+   - *Content:* Visitors can explore products such as keyboards, accessories, and the complete range of items available in the shop. These pages also feature a search function and a list view update that displays price ranges and other information.
+
+**Blog Page:**
+   - *Description:* The blog page is a hub for articles related to products and relevant topics.
+   - *Content:* Users can read articles, reviews, and guides about various products, making informed decisions.
+
+**Support Page:**
+   - *Description:* The support page is a resource for user assistance and information.
+   - *Content:* Visitors can find details about the company, contact information, warranty policies, and delivery information, making it a valuable resource for inquiries and understanding the company's policies.
+
+**Signup Page:**
+   - *Description:* This page allows new users to register for an account.
+   - *Content:* Users can sign up using their email and create an account to access additional features and services.
+
+**Login Page:**
+   - *Description:* The login page is for returning users to access their accounts.
+   - *Content:* Registered users can log in with their credentials to access personalized features and information.
 
 
-#### After Logging In:
-Text
+#### For Visitors (Logged In):
 
-- **Example Page:** Text<br>
-- **Example Page:** Text<br>
-- **Example Page:** Text<br>
-- **Example Page:** Text<br>
+In addition to the pages available to visitors who are not logged in, logged-in users will have access to the following pages:
 
-Text
+**Profile Page:**
+   - *Description:* The profile page allows users to manage their personal information and preferences.
+   - *Content:* Users can update their profile details, change their password, and customize their user settings.
 
-#### Profile Navigation:
+**Order History:**
+   - *Description:* The order history page provides a comprehensive overview of the user's past orders.
+   - *Content:* Users can view details of their previous orders, including order numbers, products purchased, order dates, and order status.
 
-Text
+**Shipping Details:**
+   - *Description:* The shipping details page allows users to manage their shipping information.
+   - *Content:* Users can add, edit, or delete shipping addresses, making it convenient for order placements and deliveries.
 
-- **Example Page:** Text<br>
-- **Example Page:** Text<br>
-- **Example Page:** Text<br>
-- **Example Page:** Text<br>
+These additional pages enhance the user experience for logged-in visitors, providing them with tools to manage their profiles, track their order history, and simplify the process of providing shipping details for orders.
 
 
 ### Wireframes
