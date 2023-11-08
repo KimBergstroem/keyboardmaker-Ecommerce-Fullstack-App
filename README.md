@@ -153,7 +153,7 @@ Primary strategy is to offer products in a traditional pay-as-you-go e-commerce 
 
 
 ### Marketing Strategy
-The business's marketing strategy for the future includes the following elements:
+The business's marketing strateg2y for the future includes the following elements:
 
 1. Utilizing the company's Social media pages for store promotion and building community.
 
@@ -175,26 +175,30 @@ The business's marketing strategy for the future includes the following elements
 #### Social Media
 Easy Keyboard Maker E-Commerce will primarily utilize social media platforms such as Twitter, Facebook, Instagram, and TikTok for promotion. Additionally, we will establish and operate a Discord Server and live stream on our Twitch channel for content and interactive sessions. There is also a possibility of creating a YouTube channel to compile all the highlights in the future.
 
-Our social media links and e-commerce webshop were combined on a single page to enhance navigation and foster a sense of community. You can access all our social links through our main link, [EasyKeyboardMaker](https://linktr.ee/easykeyboardmaker), which is managed using [LINKTR](https://linktr.ee/). Below, you can find images of every page for documentation purposes.
+Our social media links and e-commerce webshop were combined on a single page to enhance navigation and foster a sense of community. You can access all our social links through our main link, which is managed using [LINKTR](https://linktr.ee/).  
+
+[**EasyKeyboardMaker**](https://linktr.ee/easykeyboardmaker) 
+
+Below, you can find images of every page for documentation purposes.
 
 
 <details><summary>Instagram Page</summary>
-<img src="docs/readme.md/readme-socials-instagram.png">
+<img src="docs/readme.md/socials/readme-socials-instagram.png">
 </details>
 <details><summary>TikTok Page</summary>
-<img src="docs/readme.md/readme-socials-tiktok.png">
+<img src="docs/readme.md/socials/readme-socials-tiktok.png">
 </details>
 <details><summary>Facebook Page</summary>
-<img src="docs/readme.md/">
+<img src="docs/readme.md/socials/readme-socials-facebook.png">
 </details>
 <details><summary>Twitter Page</summary>
-<img src="docs/readme.md/readme-socials-twitter.png">
+<img src="docs/readme.md/socials/readme-socials-twitter.png">
 </details>
 <details><summary>Twitch</summary>
-<img src="docs/readme.md/readme-socials-twitch.png">
+<img src="docs/readme.md/socials/readme-socials-twitch.png">
 </details>
 <details><summary>Discord Server</summary>
-<img src="docs/readme.md/readme-socials-discord.png">
+<img src="docs/readme.md/socials/readme-socials-discord.png">
 </details>
 
 #### Customer Engagement Strategy: Social Media Contests and Giveaways
@@ -394,7 +398,7 @@ After finishing sprint 4, the project will be presented as the finished product.
 The **38** user stories are implemented into **9** Epics and they are organized into **4** distinct sprints (milestones) to establish a well-defined work structure. You can access the details of these sprints by clicking [here](https://github.com/KimBergstroem/PP5/milestones), which will redirect you to the sprint information and find all the user stories and epics.
 
 <p align="center">
-  <img src="docs/readme.md/readme-Milstones.png" />
+  <img src="docs/readme.md/readme-milstones.png" />
 </p>
 
 ### Bug Tracking for Seamless Development
@@ -545,7 +549,7 @@ Design choices were thoughtfully curated to resonate with professionals, develop
 ### Main Colors
 Decision to adopt the 60-30-10 rule in our UI design is driven by its ability to create a cohesive and engaging user experience. This approach guarantees consistency by allocating 60% of our color palette to the dominant color, fostering brand recognition and trust. The 30% dedicated to the secondary color enables a visual balance, allowing for variations in content, headers, and backgrounds without overwhelming users. The remaining 10% allocated to the accent color serves to highlight interactive elements and calls to action. This strategy ensures that the web application not only looks appealing but also functions effectively, guiding users to key elements while maintaining a harmonious and dependable design.
 
-![Color Palette image](/docs/readme.md/readme-color-palette.png)
+![Color Palette image](/docs/readme.md/ui/readme-color-palette.png)
 
 **Dominant (60%):** 
 
@@ -560,16 +564,21 @@ The secondary color, comprising 30% of our color palette, is characterized by it
 Our accent color, accounting for the remaining 10% of our color palette, is a lively and captivating shade of bright cyan (#37B9F1). This bold color is strategically employed to accentuate interactive elements and calls to action throughout the web application, enhancing user engagement and guiding users to key features.
 
 **Text colors:**
-![Font color image](/docs/readme.md/readme-color-text.png)
+
+![Font color image](/docs/readme.md/ui/readme-color-text.png)
 
 ### Fonts
 
 **Lato (Headers):**
-![Font color image](/docs/readme.md/readme-text-lato.png)
+
+![Font color image](/docs/readme.md/ui/readme-text-lato.png)
+
 Lato as the primary font for headers, titles, and navigation elements in our e-commerce project. This modern and elegant sans-serif font offers versatility and a clean design, making it an ideal choice for highlighting essential information. Lato not only exudes professionalism but also adds a touch of style to our website's visual identity.
 
 **Poppins (Text Paragraphs):**
-![Font color image](/docs/readme.md/readme-text-poppins.png)
+
+![Font color image](/docs/readme.md/ui/readme-text-poppins.png)
+
 For text paragraphs, product descriptions, and other textual content, we've opted for Poppins. This sans-serif font is recognized for its exceptional readability and clarity, ensuring that our textual content is easily legible and visually engaging. Poppins contributes to a clean and modern appearance that aligns perfectly with our commitment to providing a seamless user experience.
 
 
@@ -596,8 +605,8 @@ User-friendly structure, ensuring seamless navigation and easy access to the web
    - *Content:* Visitors can find details about the company, contact information, warranty policies, and delivery information, making it a valuable resource for inquiries and understanding the company's policies.
 
 **Signup Page:**
-   - *Description:* This page allows new users to register for an account.
-   - *Content:* Users can sign up using their email and create an account to access additional features and services.
+- *Description:* This page allows new users to register for an account.
+- *Content:* Users can sign up using their email and create an account to access additional features and services.
 
 **Login Page:**
    - *Description:* The login page is for returning users to access their accounts.
@@ -627,22 +636,22 @@ These additional pages enhance the user experience for logged-in visitors, provi
 The wireframes serve as a visual blueprint for our web application, outlining the structure and functionality of each page. They provide a detailed representation of the user interface and overall user experience. These wireframes were meticulously crafted using [Figma](https://www.figma.com/), a design tool renowned for its ability to facilitate rapid and intuitive prototyping. Click on each page to view the wireframe.
 
 <details><summary>Index - Navigation - Landing page</summary>
-<img src="docs/wireframes/wire-frame-Index.png">
+<img src="docs/readme.md/wireframes/readme-wireframe-index.png">
 </details>
 <details><summary>Footer</summary>
-<img src="docs/wireframes/wireframe-Footer.png">
+<img src="docs/readme.md/wireframes/readme-wireframe-footer.png">
 </details>
 <details><summary>Product layout</summary>
-<img src="docs/wireframes/wireframe-Product.png">
+<img src="docs/readme.md/wireframes/readme-wireframe-product.png">
 </details>
 <details><summary>Articles / Blog page</summary>
-<img src="docs/wireframes/wireframe-Articles.png">
+<img src="docs/readme.md/wireframes/readme-wireframe-articles.png">
 </details>
 <details><summary>Contact us</summary>
-<img src="docs/wireframes/wireframe-Support.png">
+<img src="docs/readme.md/wireframes/readme-wireframe-support.png">
 </details>
 <details><summary>Checkout layout</summary>
-<img src="docs/wireframes/wireframe-Checkout.png">
+<img src="docs/readme.md/wireframes/readme-wireframe-checkout.png">
 </details>
 
 <p align="right">(<a href="#table-of-content">back to top</a>)</p>
