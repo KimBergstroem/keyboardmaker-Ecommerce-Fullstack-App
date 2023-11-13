@@ -107,6 +107,15 @@
                 </ul>
             </div>
         </div>
+        <div class="row bg-white">
+            <nav class="navbar navbar-expand-lg navbar-light w-100">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                {% include 'includes/mobile-top-header.html' %}
+                {% include 'includes/main-nav.html' %}
+            </nav>
+        </div>
     </header>
 
     {% if messages %}
@@ -122,6 +131,76 @@
     {% block postloadjs %}
     {% endblock %}
 
-    
+        <footer class="footer-dark">
+            <div class="container">
+                <div class="row d-flex justify-content-center">
+                  <div class="col col-md-2 m-3 item">
+                    <h3>Products</h3>
+                        <ul>
+                            <li><a href="#">Keyboards</a></li>
+                            <li><a href="#">Keycaps</a></li>
+                            <li><a href="#">Switches</a></li>
+                            <li><a href="#">Cables</a></li>
+                            <li><a href="#">Tools</a></li>
+                        </ul>
+                  </div>
+                  <div class="col col-md-2 m-3 item">
+                    <h3>Support</h3>
+                        <ul>
+                            <li><a href="#">FAQs</a></li>
+                            <li><a href="#">Search</a></li>
+                            <li><a href="#">Download</a></li>
+                            <li><a href="#">Warranty</a></li>
+                            <li><a href="#">Order issue</a></li>
+                        </ul>
+                  </div>
+                  <div class="col col-md-2 m-3 item">
+                    <h3>About</h3>
+                        <ul>
+                            <li><a href="#">Company</a></li>
+                            <li><a href="#">Partner</a></li>
+                            <li><a href="#">Affiliate program</a></li>
+                            <li><a href="#">Join our group</a></li>
+                            <li><a href="#">Contact us</a></li>
+                        </ul>
+                  </div>
+                  <div class="col col-md-2 m-3 item">
+                    <h3>Policy</h3>
+                        <ul>
+                            <li><a href="#">Refund</a></li>
+                            <li><a href="#">Shipping</a></li>
+                            <li><a href="#">Payment</a></li>
+                            <li><a href="#">Privacy</a></li>
+                            <li><a href="#">Terms of service</a></li>
+                        </ul>
+                  </div>
+                </div>
+                    <div class="row mt-5 mb-2">
+                        <div class="col-6">
+                            <div class=" item social text-center">
+                                <a href="#"><i class="fab fa-facebook"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-snapchat"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div> 
+                        <div class="col-6">
+                            <div class="item social pt-2 pb-2">
+                                <i class="fa-brands fa-cc-mastercard fa-2xl mb-4"></i>
+                                <i class="fa-brands fa-cc-visa fa-2xl"></i>
+                                <i class="fa-brands fa-cc-discover fa-2xl"></i>
+                                <i class="fa-brands fa-cc-amex fa-2xl"></i>
+                                <i class="fa-brands fa-cc-paypal fa-2xl"></i>
+                            </div>
+                        </div>
+                    </div>
+                <div class="row mt-5">
+                    <div class="col mb-3 copyright">
+                        <p>EasyKeyboardMaker.eu. All Right reserve.</p>
+                    </div>
+                </div>
+              </div>
+        </footer>
+
   </body>
 </html>
