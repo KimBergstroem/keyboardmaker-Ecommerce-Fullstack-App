@@ -2,14 +2,17 @@
 {% load static %}
 
 {% block page_header %}
-    <div class="container header-container">
-        <div class="row">
-            <div class="col"></div>
-        </div>
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
     </div>
+</div>
 {% endblock %}
 
 {% block content %}
+
+<!-- Header/Image section -->
+<section class="header-bg h-100 section-margin-bottom">
     <div class="container h-100">
         <div class="row h-100">
             <div class="col-7 col-md-6 my-auto">
@@ -19,10 +22,111 @@
                 </h1>
                 <div class="my-5">
                     <h4>
-                        <a href="#" class="shop-now-button btn btn-lg rounded-5 text-uppercase py-3">Shop Now</a>
+                        <a href="{% url 'products' %}"
+                            class="shop-now-button btn btn-lg rounded-5 text-uppercase py-3">Shop Now</a>
                     </h4>
                 </div>
             </div>
         </div>
     </div>
+</section>
+
+<!-- Shop by category section -->
+<section class="section-margin-bottom">
+    <div class="container">
+        <div class="col-12 mb-4 mt-5">
+            <h3 class="text-black text-underline text-center">
+                Shop by Category
+            </h3>
+        </div>
+    </div>
+
+    <div class="container mb-5 d-flex justify-content-center">
+        <div class="row">
+            <div class="col">
+                <div class="card-category">
+                    <div class="text-center mt-3">Keyboards</div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card-category">
+                    <div class="text-center mt-3">Keycaps</div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card-category">
+                    <div class="text-center mt-3">Switches</div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card-category">
+                    <div class="text-center mt-3">Tools</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Deals section -->
+<section class="section-margin-bottom">
+    <div class="container mt-5">
+        <div class="col-12 mb-4">
+            <h3 class="text-black text-center">
+                Deals
+            </h3>
+        </div>
+    </div>
+    <div class="container mb-5 d-flex justify-content-center">
+        <div class="row">
+            <div class="col">
+                <div class="card-category">
+                    <div class="text-center mt-3">Keyboards</div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card-category">
+                    <div class="text-center mt-3">Keycaps</div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card-category">
+                    <div class="text-center mt-3">Switches</div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card-category">
+                    <div class="text-center mt-3">Tools</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Subscribe section -->
+<section class="container-grid p-5 position-relative overflow-hidden section-margin-bottom">
+    <div class="container d-flex justify-content-center align-items-center">
+        <div class="row">
+            <div class="subscribe-content bg-black d-flex flex-wrap justify-content-center align-items-center p-4">
+                <div class="col-md-6 col-sm-12 "> <!-- Center the content within the column -->
+                    <div class="display-header pe-3">
+                        <h2 class="text-uppercase text-white">Subscribe Now</h2>
+                        <p class="text-muted text-small">Get the latest news, updates, and deals directly mailed to your
+                            inbox.</p>
+                    </div>
+                </div>
+                <div class="col-md-5 col-sm-12 text-center"> <!-- Center the content within the column -->
+                    <form class="subscription-form validate">
+                        <div class="input-group flex-wrap">
+                            <input class="form-control rounded-0" type="email" name="EMAIL" placeholder="Your email"
+                                required="">
+                            <button class="btn btn-medium btn-primary rounded-0 text-uppercase" type="submit"
+                                name="subscribe">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 {% endblock %}

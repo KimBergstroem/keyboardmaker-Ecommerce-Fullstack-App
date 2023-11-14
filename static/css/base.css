@@ -8,7 +8,7 @@ h1, h2, h3, h4, h5, h6 { /* Apply Lato Bold 700 to all header elements */
 }
 
 body { /* Apply Poppins 400 Regular to all other text */
-    background: url('/media/homepage_background_cropped.jpg') no-repeat center center fixed;
+    background: white;
     background-size: cover;
     height: calc(100vh - 164px);
     color: #555;
@@ -78,6 +78,36 @@ body { /* Apply Poppins 400 Regular to all other text */
   position: fixed;
   background: white;
   z-index: -1;
+}
+
+.card-category{
+  width: 250px;
+  height: 250px;
+  border: 2px solid black;
+}
+
+.header-bg {
+  background: url('/media/homepage_background_cropped.jpg') no-repeat center center fixed;
+  width: 100%;
+}
+
+.container-newsletter{
+  border: 2px solid black;
+}
+
+.section-margin-bottom {
+  margin-bottom: 150px;
+}
+
+
+/* -------------------------------- Subscribe */
+
+@media only screen and (max-width: 1199px) {
+ .subscription-form input.form-control,
+ .subscription-form button {
+     width: 100%;
+     margin-bottom: 10px;
+ }
 }
 
 /* -------------------------------- Footer */
