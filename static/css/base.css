@@ -20,6 +20,15 @@ body { /* Apply Poppins 400 Regular to all other text */
     opacity: 0.5;
 }
 
+/* -------------------------------- Cycle Odd and Even class bg color */
+.even {
+  background-color: #f2f2f2; 
+}
+
+.odd {
+  background-color: #ffffff;
+}
+
 /* -------------------------------- from Bulma */
 
 .icon { /* will make all icons display perfectly */
