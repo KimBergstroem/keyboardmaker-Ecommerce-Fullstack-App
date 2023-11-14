@@ -20,7 +20,8 @@ body { /* Apply Poppins 400 Regular to all other text */
     opacity: 0.5;
 }
 
-/* from Bulma */
+/* -------------------------------- from Bulma */
+
 .icon { /* will make all icons display perfectly */
     align-items: center;
     display: inline-flex;
@@ -191,17 +192,34 @@ font-size:13px;
 margin-bottom:0;
 }
 
+/* pad the top a bit when navbar is collapsed on mobile */
+/* This is often used to ensure that the page content fits 
+within the viewport, and the top padding (116px) 
+is subtracted from the available height */
+@media (max-width: 991px){
+  .header-container {
+      padding-top: 116px;
+  }
+
+  body {
+      height: calc(100vh - 116px);
+  }
+
+  .smaller-text{
+      font-size: 14px;
+  }
+}
+
 /* -------------------------------- Media Queries */
 
-/* Slightly larger container on xl screens */
-@media (min-width: 1200px) {
+
+@media (min-width: 1200px) { /* Slightly larger container on xl screens */
   .container {
     max-width: 80%;
   }
 }
 
-/* fixed top navbar only on medium and up */
-@media (min-width: 992px) {
+@media (min-width: 992px) { /* fixed top navbar only on medium and up */
     .fixed-top-desktop-only {
         position: fixed;
         top: 0;
