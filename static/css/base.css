@@ -118,6 +118,10 @@ a.category-badge > span.badge:hover {
   cursor: pointer;
 }
 
+.main-content-container {
+  min-height: 60vh;
+}
+
 /* -------------------------------- Subscribe */
 
 @media only screen and (max-width: 1199px) {
