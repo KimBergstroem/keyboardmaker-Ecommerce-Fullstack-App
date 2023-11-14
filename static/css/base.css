@@ -122,6 +122,18 @@ a.category-badge > span.badge:hover {
   min-height: 60vh;
 }
 
+.btn-outline-black {
+  background: white;
+  color: black !important;
+  border: 1px solid black;
+}
+.btn-outline-black:hover,
+.btn-outline-black:active,
+.btn-outline-black:focus {
+  background: black;
+  color: white !important;
+}
+
 /* -------------------------------- Subscribe */
 
 @media only screen and (max-width: 1199px) {
