@@ -42,7 +42,7 @@
 
 </head>
   <body>
-    <!-- Main Navbar section -->
+    <!-- Main navbar section -->
     <header class="container-fluid fixed-top">
         <div id="topnav" class="row bg-white pt-lg-2 d-none d-lg-flex">
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
@@ -51,8 +51,8 @@
                             class="text-white header-text">
                 </a>
             </div>
-            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
-                <form method="GET" action="">
+            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0"> <!-- Search bar section -->
+                <form method="GET" action="{% url 'products' %}">
                     <div class="input-group w-100">
                         <input class="form-control border border-black rounded-0" type="text" name="q" placeholder="Search our site">
                         <div class="input-group-append">
@@ -65,7 +65,7 @@
                     </div>
                 </form>
             </div>
-            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
+            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0"> <!-- My account navbar section -->
                 <ul class="list-inline list-unstyled text-center text-lg-right my-0">
                     <li class="list-inline-item dropdown">
                         <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -78,7 +78,7 @@
                                 {% endif %}
                             </div>
                         </a>
-                        <div class="dropdown-menu border-0" aria-labelledby="user-options">
+                        <div class="dropdown-menu border-0" aria-labelledby="user-options"> <!-- Authentication display navbar menu -->
                             {% if request.user.is_authenticated %}
                                 {% if request.user.is_superuser %}
                                     <a href="" class="dropdown-item">Product Management</a>
@@ -91,7 +91,7 @@
                             {% endif %}
                         </div>
                     </li>
-                    <li class="list-inline-item">
+                    <li class="list-inline-item"> <!-- Checking current price section -->
                         <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="">
                             <div class="text-center">
                                 <div><i class="fas fa-cart-shopping fa-lg"></i></div>
@@ -108,7 +108,7 @@
                 </ul>
             </div>
         </div>
-        <div class="row bg-white">
+        <div class="row bg-white"> <!-- Include snippets for main navbar section -->
             <nav class="navbar navbar-expand-lg navbar-light w-100">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -118,8 +118,7 @@
             </nav>
         </div>
 
-        <!--Free shipping label section-->
-        <div id="delivery-banner" class="row text-center">
+        <div id="delivery-banner" class="row text-center"> <!-- Free shipping label section -->
             <div class="col bg-black text-white">
                 <h4 class="logo-font my-1 smaller-text">
                     Free delivery on orders over ${{ free_delivery_threshold }} !
