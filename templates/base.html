@@ -47,7 +47,7 @@
         <div id="topnav" class="row bg-white pt-lg-2 d-none d-lg-flex">
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
                 <a href="{% url 'home' %}" class="nav-link main-logo-link">
-                    <image width="185px" class="ml-3 img-fluid" src="{{ MEDIA_URL }}header-logo.png" alt="Header Logo" /><span
+                    <image width="185px" class="ml-3 img-fluid" src="{% static 'images/header-logo.png' %}" alt="Header Logo" /><span
                             class="text-white header-text">
                 </a>
             </div>
@@ -128,7 +128,21 @@
     </header>
 
     {% if messages %}
-        <div class="message-container"></div>
+        <div class="message-container">
+            {% for message in messages %}
+                {% with message.level as level %}
+                    {% if level == 40 %} <!-- 40 = error message -->
+                        {% include 'includes/toasts/toast_error.html' %}
+                    {% elif level == 30 %} <!-- 30 = warning message -->
+                        {% include 'includes/toasts/toast_warning.html' %}
+                    {% elif level == 25 %} <!-- 25 = success message -->
+                        {% include 'includes/toasts/toast_success.html' %}
+                    {% else %} <!-- else = info message -->
+                        {% include 'includes/toasts/toast_info.html' %}
+                    {% endif %}
+                {% endwith %}
+            {% endfor %}
+        </div>
     {% endif %}
 
     {% block page_header %}
@@ -138,6 +152,9 @@
     {% endblock %}
 
     {% block postloadjs %}
+        <script type="text/javascript">
+            $('.toast').toast('show');
+        </script>
     {% endblock %}
 
         <!-- Footer section -->
