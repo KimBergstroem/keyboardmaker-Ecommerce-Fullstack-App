@@ -143,6 +143,13 @@ a.category-badge > span.badge:hover {
   color: white !important;
 }
 
+.btt-link,
+.update-link,
+.remove-item {
+    cursor: pointer;
+}
+
+
 /* -------------------------------- Subscribe */
 
 @media only screen and (max-width: 1199px) {
