@@ -76,10 +76,8 @@
                                     </div>
                                 </div>
                             </form>
-                            <a href="" class="update-link text-info"><small>Update</small></a>
-                            <a href="" class="remove-item text-danger float-right" id="remove_{{ item.item.id }}"
-                                        data-size="{{ item.size }}">
-                                        <small>Update</small></a>
+                            <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}">
+                                <small class="font-weight-bold">Remove</small></a>
                         </td>
                         <td class="py-3">
                             <p class="my-0">${{ item.product.price | calc_subtotal:item.quantity }}</p>
@@ -136,11 +134,26 @@
     {% include 'products/includes/quantity_input_script.html' %}
 
     <script type="text/javascript">
-        // Update quantity on click
-        $('.update-link').click(function(e) {
-            var form = $(this).prev('.update-form');
-            form.submit();
-        })
+        // Update quantity and subtotal on click for both + and - buttons
+        $('.increment-qty, .decrement-qty').click(function (e) {
+            e.preventDefault();
+            // Elements and data attributes
+            var inputField = $(this).closest('.input-group').find('.qty_input');
+            var itemId = inputField.data('item_id');
+            var currentQuantity = parseInt(inputField.data('quantity'));
+            if ($(this).hasClass('increment-qty')) {
+                // If the "+" button is clicked, increment the quantity
+                var newQuantity = currentQuantity + 1;
+            } else if ($(this).hasClass('decrement-qty')) {
+                // If the "-" button is clicked, decrement the quantity (with a minimum of 1)
+                var newQuantity = Math.max(currentQuantity - 1, 1);
+            }
+            // Update the input field and data-attribute
+            inputField.val(newQuantity);
+            inputField.data('quantity', newQuantity);
+            // Submit the form to update the backend
+            $(this).closest('form').submit();
+        });
         // Remove item and reload on click
         $('.remove-item').click(function(e) {
             var csrfToken = "{{ csrf_token }}";
