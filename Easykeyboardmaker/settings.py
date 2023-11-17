@@ -202,6 +202,13 @@ FREE_DELIVERY_THRESHOLD = 75
 STANDARD_DELIVERY_PRECENTAGE = 10
 DEFAULT_FROM_EMAIL = 'easykeyboard@example.com'
 
+# Stripe
+FREE_DELIVERY_THRESHOLD = 75
+STANDARD_DELIVERY_PRECENTAGE = 10
+STRIPE_CURRENCY = 'usd'
+STRIPE_PUBLIC_KEY = os.environ.get("STRIPE_PUBLIC_KEY")
+STRIPE_SECRET_KEY = os.environ.get("STRIPE_SECRET_KEY")
+
 # Email
 if 'DEVELOPMENT' in os.environ:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
