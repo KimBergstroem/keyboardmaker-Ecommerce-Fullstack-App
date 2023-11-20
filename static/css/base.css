@@ -20,6 +20,12 @@ body { /* Apply Poppins 400 Regular to all other text */
     opacity: 0.5;
 }
 
+.card-img-top {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
 /* ----------------------------------- Cycle Odd and Even class bg color */
 .even {
   background-color: #f2f2f2; 
