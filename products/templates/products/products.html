@@ -30,8 +30,10 @@
     <div class="row">
         <div class="product-contain col-10 offset-1">
             <div class="row mt-1 mb-2"> <!-- Render product by dropdown, note the order-md-last -->
-                <div class="col-12 col-md-6 my-auto order-md-last d-flex justify-content-center justify-content-md-end">
-                    <div class="sort-select-wrapper w-50">
+                <div class="col-12 col-md-6 my-auto order-md-last d-flex justify-content-center justify-content-md-end">           
+                    <div class="sort-select-wrapper w-50 d-flex">
+                        <i class="material-icons md-34 switch-view2 btt-link">view_module</i>
+                        <i class="material-icons md-34 switch-view1 btt-link">view_list</i>
                         <select id="sort-selector" class="custom-select custom-select-sm rounded-0 border border-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
                             <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...</option>
                             <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price (low to high)</option>
@@ -56,8 +58,8 @@
             </div>
             <div class="row">
                 {% for product in products %}
-                <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3"><!-- Responsive grid display -->
-                    <div class="card h-100 border-0">
+                <div class="product-contain1 col-sm-6 col-md-6 col-lg-4 col-xl-3 grid-view"><!-- Responsive grid display -->
+                    <div class="card h-100 border-0 bg-transparent">
                         {% if product.image %} <!-- Image rendering -->
                         <a href="{% url 'product_detail' product.id %}">
                             <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
@@ -69,13 +71,12 @@
                         </a>
                         {% endif %}
                         <div class="card-body pb-0"> <!-- Product name rendering -->
-                            <p class="mb-0">{{ product.name }}</p>
+                            <p class="mb-1">{{ product.name }}</p>
                         </div>
-                        <div class="card-footer bg-white pt-0 border-0 text-left"> <!-- Product information rendering -->
+                        <div class="card-footer bg-transparent pt-0 border-0"> <!-- Product information rendering -->
                             <div class="row">
                                 <div class="col">
-                                    <p class="lead mb-0 text-left font-weight-bold">${{ product.price }}</p>
-                                    <p class="lead mb-0 text-left font-weight-bold">${{ product.price }}</p>
+                                    <p class="lead mb-0 font-weight-bold">${{ product.price }}</p>
                                     {% if product.category %}
                                         <p class="small mt-1 mb-0">
                                             <a href="{% url 'products' %}?category={{ product.category.name }}" class="text-muted">
@@ -90,7 +91,7 @@
                                     <small class="text-muted">No Rating</small>
                                     {% endif %}
                                     {% if request.user.is_superuser %}
-                                        <small class="ml-3">
+                                        <small class="ml-3 text-left">
                                             <a href="{% url 'edit_product' product.id %}">Edit</a> |
                                             <a href="{% url 'delete_product' product.id %}" class="text-danger">Delete </a>
                                         </small>
@@ -141,5 +142,54 @@
             $('.btt-link').click(function(e) {
                 window.scrollTo(0,0)
             })
+
+            $('#sort-selector').change(function() {
+                var selector = $(this);
+                var currentUrl = new URL(window.location);
+
+                var selectedVal = selector.val();
+                if(selectedVal != "reset"){
+                    var sort = selectedVal.split("_")[0]
+                    var direction = selectedVal.split("_")[1]
+
+                    currentUrl.searchParams.set("sort", sort);
+                    currentUrl.searchParams.set("direction", direction);
+
+                    window.location.replace(currentUrl);
+                } else {
+                    currentUrl.searchParams.delete("sort");
+                    currentUrl.searchParams.delete("direction");
+
+                    window.location.replace(currentUrl);
+                }
+            });
+
+            $('.switch-view1').click(function(e) {
+                e.preventDefault();
+                var productContainer = $('.product-contain1');
+                if (productContainer.hasClass('grid-view')) {
+
+                    productContainer.removeClass('col-sm-6 col-md-6 col-lg-4 col-xl-3 grid-view');
+                    productContainer.addClass('list-view col-12 container text-center');
+                    // Add HR line after each product
+                    productContainer.after('<hr class="col-6">');
+                    updateProductLayout();
+                }
+            });
+
+            $('.switch-view2').click(function(e) {
+                e.preventDefault();
+                var productContainer = $('.product-contain1');
+                if (productContainer.hasClass('list-view')) {
+                    productContainer.removeClass('list-view col-12 container text-center');
+                    productContainer.addClass('col-sm-6 col-md-6 col-lg-4 col-xl-3 grid-view');
+
+                    // Remove HR lines added in list view
+                    $('.product-contain1 + hr').remove();
+                    updateProductLayout();
+                }
+            });
+
         </script>
+        
 {% endblock %}
