@@ -24,36 +24,20 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-12 col-lg-4">
+            <div class="col-12 col-lg-6">
                 <p class="text-muted">User Image</p>
-                <img src="{{ request.user.userprofile.profile_picture }}" class="" alt="Profile Picture">
+                <img src="#" alt="Profile img">
             </div>
-            <div class="col-12 col-lg-4 mb-5">
+            <div class="col-12 col-lg-6 mb-5">
                 <p class="text-muted">User Information</p>
                 <div class="order-history table-responsive">
-                    <p>First Name: {{ request.user.userprofile.first_name }}</p>
-                    <p>Last Name: {{ request.user.userprofile.last_name }}</p>
-                    <p>Email: {{ request.user.email }}</p>
-                    <p>Bio: {{ request.user.userprofile.bio }}</p>
-                    <p>Country: {{ request.user.userprofile.country }}</p>
-                    <a href="{% url 'profile_update' %}" class="btn btn-black rounded-0 text-uppercase"><i class="fas fa-user-edit"></i> Update</a>
+                    <form action="{% url 'profile_update' %}" method="POST">
+                        {% csrf_token %}
+                        {{ personal_form|crispy }}
+                        <button type="submit" class="btn btn-black rounded-0 text-uppercase">Update</button>
+                    </form>
                 </div>
             </div>
-            <div class="col-12 col-lg-4">
-                <div class="container">
-                    <div class="row">
-                        <p class="text-muted">Account Settings</p>
-                        <div class="col-12">
-                            <a href="{% url 'profile_update' %}" class="btn btn-black rounded-0 text-uppercase ml-3 mb-2 w-100"> Change Password</a></div>
-
-                        <div class="col-12">
-                            <a href="{% url 'profile_update' %}" class="btn btn-black rounded-0 text-uppercase ml-3 mb-2 w-100"> User Agreement</a></div>
-
-                        <div class="col-12">
-                            <a href="{% url 'profile_update' %}" class="btn btn-black rounded-0 text-uppercase ml-3 mb-2 w-100"> Delete Account</a></div>
-                    </div>
-                </div>
-            </div>       
         </div>
         <div class="row">
             <div class="col-12 col-lg-6">

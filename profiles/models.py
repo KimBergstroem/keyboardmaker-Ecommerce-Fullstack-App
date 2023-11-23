@@ -6,10 +6,11 @@ from django.dispatch import receiver
 
 class UserProfile(models.Model):
     """
-    A user profile model for maintaining default
-    delivery information and order history
+    A extended user profile model for maintaining default
+    delivery information and order history from allauth django user model
     """
     user = models.OneToOneField(User, on_delete=models.CASCADE)
+    # Shipping detials
     default_phone_number = models.CharField(max_length=20, null=True, blank=True)
     default_country = CountryField(blank_label='Country', null=True, blank=True) 
     default_postcode = models.CharField(max_length=20, null=True, blank=True)
@@ -18,6 +19,18 @@ class UserProfile(models.Model):
     default_street_address2 = models.CharField(max_length=80, null=True, blank=True)
     default_county = models.CharField(max_length=80, null=True, blank=True)
     
+    # User's personal information
+    first_name = models.CharField(max_length=20, blank=True)
+    last_name = models.CharField(max_length=20, blank=True)
+    email = models.EmailField(max_length=40, default="User@ekm.com")
+    bio = models.TextField(
+        max_length=150, default="Currently no bio", blank=True
+        )
+    profile_picture = models.ImageField(blank=True, upload_to='userprofile/')
+    country = models.CharField(
+        max_length=30, default="Citizen of the Cyber world", blank=True
+    )
+
     def __str__(self):
         return self.user.username
     

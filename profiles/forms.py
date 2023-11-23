@@ -5,8 +5,9 @@ from .models import UserProfile
 class UserProfileForm(forms.ModelForm):
     class Meta:
         model = UserProfile
-        exclude = ('user',)
-
+        exclude = ('user','email','bio','first_name',
+                   'last_name','profile_picture', 
+                   'country')
 
     def __init__(self, *args, **kwargs):
         """
@@ -32,3 +33,23 @@ class UserProfileForm(forms.ModelForm):
                 self.fields[field].widget.attrs['placeholder'] = placeholder
             self.fields[field].widget.attrs['class'] = 'border-black rounded-0 profile-form-input'
             self.fields[field].label = False
+
+
+class UpdatePersonalInfoForm(forms.ModelForm):
+    class Meta:
+        model = UserProfile
+        fields = ('first_name', 'last_name', 'email', 'bio', 'profile_picture', 'country')
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        placeholders = {
+            'first_name': 'First Name',
+            'last_name': 'Last Name',
+            'email': 'Email',
+            'bio': 'Something about Yourself',
+            'profile_picture': 'Profile Picture',
+            'country': 'In which Country do you live?',
+        }
+
+        for field_name, placeholder in placeholders.items():
+            self.fields[field_name].widget.attrs['placeholder'] = placeholder

@@ -1,15 +1,15 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import UserProfile
-from .forms import UserProfileForm
+from .forms import UserProfileForm, UpdatePersonalInfoForm
 from django.contrib import messages
 from checkout.models import Order
 from django.contrib.auth.decorators import login_required
 
-
 @login_required
 def profile(request):
     """
-    Display the user's profile
+    Display the user's profile with
+    order history and defualt shipping form
     """
     profile = get_object_or_404(UserProfile, user=request.user)
     if request.method == 'POST':
@@ -30,6 +30,33 @@ def profile(request):
         # set this boolean to true and then in the code, AND NOT
     }
     return render(request, template, context)
+
+
+@login_required
+def profile_update(request):
+    """
+    View for updating the user's personal information
+    """
+    profile = get_object_or_404(UserProfile, user=request.user)
+    orders = profile.orders.all()
+    form = UserProfileForm(request.POST, instance=profile)
+    if request.method == 'POST':
+        personal_form = UpdatePersonalInfoForm(request.POST, instance=profile)
+        if personal_form.is_valid():
+            personal_form.save()
+            messages.success(request, 'Personal information updated successfully')
+            return redirect('profile')
+        else:
+            messages.error(request, 'Update failed. Please ensure the form is valid.')
+    else:
+        personal_form = UpdatePersonalInfoForm(instance=profile)
+
+    context = {
+        'personal_form': personal_form,
+        'orders': orders,
+        'form': form,
+    }
+    return render(request, 'profiles/profile_update.html', context)
 
 
 def order_history(request, order_number):
