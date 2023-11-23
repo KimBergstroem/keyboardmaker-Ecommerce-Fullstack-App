@@ -3,7 +3,13 @@ from .models import UserProfile
 from .forms import UserProfileForm, UpdatePersonalInfoForm
 from django.contrib import messages
 from checkout.models import Order
+from django.contrib.auth import logout
+from django.urls import reverse_lazy
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
+from django.views.decorators.http import require_POST
+
 
 @login_required
 def profile(request):
@@ -59,6 +65,19 @@ def profile_update(request):
     return render(request, 'profiles/profile_update.html', context)
 
 
+@login_required
+def profile_delete(request, pk):
+    """
+    Handles the deletion of a user profile and related objects
+    """
+    user = get_object_or_404(User, id=pk)
+    logout(request)
+    user.delete() 
+    messages.warning(request, "Your account has been deleted")  
+    # Redirect to the home page
+    return redirect("home")
+
+
 def order_history(request, order_number):
     """
     Display users order history
@@ -74,3 +93,10 @@ def order_history(request, order_number):
         'from_profile': True,
     }
     return render(request, template, context)
+
+
+def profile_agreement(request):
+    """
+    Render the profil_agreement.html template
+    """
+    return render(request, "profiles/profile_agreement.html")
