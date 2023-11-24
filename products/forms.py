@@ -35,7 +35,7 @@ class ReviewForm(forms.ModelForm):
         model = Review
         fields = ("text", "rating")
         widgets = {
-            'text': forms.Textarea(attrs={'rows': 4}),
+            'text': forms.Textarea(attrs={'rows': 3, 'placeholder': 'Your review...'}),
         }
 
     RATING_CHOICES = [
@@ -46,4 +46,11 @@ class ReviewForm(forms.ModelForm):
         (5, '5'),
     ]
 
-    rating = forms.ChoiceField(choices=RATING_CHOICES, widget=forms.RadioSelect())
+    rating = forms.ChoiceField(choices=RATING_CHOICES, widget=forms.RadioSelect(attrs={'class': 'star-rating'}))
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        for field_name, field in self.fields.items():
+            field.widget.attrs['class'] = 'border-black rounded-0 profile-form-input'
+            field.label = False  # This removes the label from the form field
+

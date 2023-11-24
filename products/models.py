@@ -1,6 +1,7 @@
 from django.db import models
 from PIL import Image
 from django.contrib.auth.models import User
+from django.core.validators import MinValueValidator, MaxValueValidator
 
 
 class Category(models.Model):
@@ -64,8 +65,18 @@ class Review(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
     text = models.TextField(max_length=300)
-    rating = models.DecimalField(max_digits=2, decimal_places=1, null=True, blank=True)
+    rating = models.DecimalField(max_digits=2, decimal_places=1)
     created_at = models.DateTimeField(auto_now_add=True)
+
+    def clean(self):
+        super().clean()
+        if self.rating is not None:
+            validators = [
+                MinValueValidator(1, message="Rating must be at least 1."),
+                MaxValueValidator(5, message="Rating must be at most 5."),
+            ]
+            for validator in validators:
+                validator(self.rating)
 
     class Meta:
         """

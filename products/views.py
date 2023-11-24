@@ -2,9 +2,9 @@ from django.shortcuts import render, reverse, redirect, get_object_or_404
 from django.db.models.functions import Lower
 from django.contrib import messages
 from django.db.models import Q # This is for searching queries
-from .models import Product, Category
+from .models import Product, Category, Review
 from .forms import ProductForm, ReviewForm
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required, user_passes_test
 
 
 def all_products(request):
@@ -94,7 +94,7 @@ def product_detail(request, product_id):
 
     if request.method == "POST":
         review_form = ReviewForm(request.POST)
-        if form.is_valid():
+        if review_form.is_valid():
             review = review_form.save(commit=False)
             review.user = request.user
             review.product = product
@@ -105,14 +105,34 @@ def product_detail(request, product_id):
     reviews = product.review_set.all().order_by("-created_at")
     review_form = ReviewForm()
 
+    # Calculate the average rating
+    average_rating = product.average_rating()
+
+    # Calculate the percentage of each star rating based on the average
+    star_percentages = {rating: (average_rating / 5) * 100 for rating in range(1, 6)}
+
     context = {
         "product": product,
         "reviews": reviews,
         "review_form": review_form,
+        "average_rating": average_rating,
+        "star_percentages": star_percentages,
         "review_count": reviews.count(),
         'on_product_page': True # For making the success message only display the message
     }
     return render(request, "products/product_detail.html", context)
+
+
+@user_passes_test(lambda u: u.is_superuser, login_url='home')
+@login_required
+def delete_review(request, review_id):
+    """ 
+    Delete a review if the user is a superuser
+    """
+    review = get_object_or_404(Review, pk=review_id)
+    review.delete()
+    messages.success(request, 'Review is deleted!')
+    return redirect('product_detail', product_id=review.product.id)
 
 
 @login_required
