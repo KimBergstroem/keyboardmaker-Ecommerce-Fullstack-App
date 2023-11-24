@@ -8,6 +8,14 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="author" content="Easy Keyboard Maker">
+        <meta name="description" content="Discover quality and affordable mechanical keyboards and keycaps at our e-commerce store. Shop now for the best mechanical keyboards available!">
+        <meta name="keywords" content="Mechanical Keyboard, Keycaps, Wireless Keyboard, Gaming Keyboard, Gaming, Custom keycaps, Custom, Keyboard Accessories">
+        <meta property="og:title" content="EasyKeyboardMaker | Keyboards">
+        <meta property="og:description" content="Explore our e-commerce store for quality and affordable mechanical keyboards and keycaps. Shop now for the best mechanical keyboards available!">
+        <meta property="og:url" content="{{ request.build_absolute_uri }}">
+        <!--Favicon-->
+        <link rel="shortcut icon" href="#" type="image/x-icon">
     {% endblock %}
 
     {% block extra_meta %}
@@ -167,11 +175,11 @@
                   <div class="col col-md-2 m-3 item">
                     <h3>Products</h3>
                         <ul>
-                            <li><a href="#">Keyboards</a></li>
-                            <li><a href="#">Keycaps</a></li>
-                            <li><a href="#">Switches</a></li>
-                            <li><a href="#">Cables</a></li>
-                            <li><a href="#">Tools</a></li>
+                            <li><a href="{% url 'products' %}?category=100,75,65,60,40,mechanical">Keyboards</a></li>
+                            <li><a href="{% url 'products' %}?category=abs,pbt,rubber,custom_made">Keycaps</a></li>
+                            <li><a href="{% url 'products' %}?category=switches">Switches</a></li>
+                            <li><a href="{% url 'products' %}?category=cables">Cables</a></li>
+                            <li><a href="{% url 'products' %}?category=tools">Tools</a></li>
                         </ul>
                   </div>
                   <div class="col col-md-2 m-3 item">
@@ -190,7 +198,7 @@
                             <li><a href="#">Company</a></li>
                             <li><a href="#">Partner</a></li>
                             <li><a href="#">Affiliate program</a></li>
-                            <li><a href="#">Join our group</a></li>
+                            <li><a href="https://discord.gg/2ZembYRaJB" target="_blank">Join our group</a></li>
                             <li><a href="#">Contact us</a></li>
                         </ul>
                   </div>
@@ -208,10 +216,10 @@
                     <div class="row mt-5 mb-2">
                         <div class="col-6">
                             <div class=" item social text-center">
-                                <a href="#"><i class="fab fa-facebook"></i></a>
-                                <a href="#"><i class="fab fa-twitter"></i></a>
-                                <a href="#"><i class="fab fa-snapchat"></i></a>
-                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="https://www.facebook.com/profile.php?id=100086486033251" target="_blank"><i class="fab fa-facebook"></i></a>
+                                <a href="https://twitter.com/keyboard_maker" target="_blank"><i class="fab fa-twitter"></i></a>
+                                <a href="https://discord.gg/2ZembYRaJB" target="_blank"><i class="fab fa-discord"></i></a>
+                                <a href="https://www.instagram.com/easykeyboardmaker/" target="_blank"><i class="fab fa-instagram"></i></a>
                             </div>
                         </div> 
                         <div class="col-6">
