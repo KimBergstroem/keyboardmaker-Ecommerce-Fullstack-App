@@ -3,7 +3,7 @@ from django.db.models.functions import Lower
 from django.contrib import messages
 from django.db.models import Q # This is for searching queries
 from .models import Product, Category
-from .forms import ProductForm
+from .forms import ProductForm, ReviewForm
 from django.contrib.auth.decorators import login_required
 
 
@@ -17,7 +17,6 @@ def all_products(request):
     categories = None
     sort = None
     direction = None
-
 
     if request.GET: 
         # Check if sorting and filtering parameters are present in the GET request
@@ -83,21 +82,37 @@ def all_products(request):
         'current_categories': categories,
         'current_sorting': current_sorting,
     }
-
     return render(request, 'products/products.html', context)
 
 
 def product_detail(request, product_id):
     """
-    A view to show specific product detail page
+    Display the details of a specific product, handle review submission,
+    and show existing reviews
     """
     product = get_object_or_404(Product, pk=product_id)
 
-    context = {
-        'product': product,
-    }
+    if request.method == "POST":
+        review_form = ReviewForm(request.POST)
+        if form.is_valid():
+            review = review_form.save(commit=False)
+            review.user = request.user
+            review.product = product
+            review.save()
+            messages.success(request, 'Review have been submitted')
+            return redirect("product_detail", product_id=product_id)
 
-    return render(request, 'products/product_detail.html', context)
+    reviews = product.review_set.all().order_by("-created_at")
+    review_form = ReviewForm()
+
+    context = {
+        "product": product,
+        "reviews": reviews,
+        "review_form": review_form,
+        "review_count": reviews.count(),
+        'on_product_page': True # For making the success message only display the message
+    }
+    return render(request, "products/product_detail.html", context)
 
 
 @login_required
@@ -125,7 +140,6 @@ def add_product(request):
     context = {
         'form': form,
     }
-
     return render(request, template, context)
 
 

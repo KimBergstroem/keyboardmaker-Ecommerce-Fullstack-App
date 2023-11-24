@@ -1,5 +1,5 @@
 from django import forms
-from .models import Product, Category
+from .models import Product, Category, Review
 from .widgets import CustomClearableFileInput
 
 class ProductForm(forms.ModelForm):
@@ -28,3 +28,22 @@ class ProductForm(forms.ModelForm):
             self.save_m2m()
 
         return instance
+
+
+class ReviewForm(forms.ModelForm):
+    class Meta:
+        model = Review
+        fields = ("text", "rating")
+        widgets = {
+            'text': forms.Textarea(attrs={'rows': 4}),
+        }
+
+    RATING_CHOICES = [
+        (1, '1'),
+        (2, '2'),
+        (3, '3'),
+        (4, '4'),
+        (5, '5'),
+    ]
+
+    rating = forms.ChoiceField(choices=RATING_CHOICES, widget=forms.RadioSelect())
