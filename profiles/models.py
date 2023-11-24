@@ -32,7 +32,6 @@ class UserProfile(models.Model):
         max_length=30, default="Citizen of the Cyber world", blank=True
     )
 
-
     @receiver(post_save, sender=User)
     def create_or_update_user_profile(sender, instance, created, **kwargs):
         """
@@ -43,14 +42,11 @@ class UserProfile(models.Model):
         # Existing users: just save the profile
         instance.userprofile.save()
 
-
     def get_date_joined(self):
         return self.user.date_joined
 
-
     def get_last_login(self):
         return self.user.last_login
-
 
     def __str__(self):
         return self.user.username
