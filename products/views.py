@@ -5,6 +5,9 @@ from django.db.models import Q # This is for searching queries
 from .models import Product, Category, Review
 from .forms import ProductForm, ReviewForm
 from django.contrib.auth.decorators import login_required, user_passes_test
+from checkout.models import Order, OrderLineItem
+from profiles.models import UserProfile
+from django.core.exceptions import ObjectDoesNotExist
 
 
 def all_products(request):
@@ -87,28 +90,33 @@ def all_products(request):
 
 def product_detail(request, product_id):
     """
-    Display the details of a specific product, handle review submission,
-    and show existing reviews
+    Display the details of a specific product,
+    including its reviews and rating form
     """
     product = get_object_or_404(Product, pk=product_id)
 
-    if request.method == "POST":
+    if request.method == "POST" and request.user.is_authenticated:
         review_form = ReviewForm(request.POST)
+        has_bought_product = has_bought(request.user, product)
+        
         if review_form.is_valid():
-            review = review_form.save(commit=False)
-            review.user = request.user
-            review.product = product
-            review.save()
-            messages.success(request, 'Review have been submitted')
-            return redirect("product_detail", product_id=product_id)
+            if has_bought_product:
+                review = review_form.save(commit=False)
+                review.user = request.user
+                review.product = product
+                review.save()
+                messages.success(request, 'Review has been submitted')
+                return redirect("product_detail", product_id=product_id)
+            else:
+                messages.error(request, "You can only write a review for products you have bought.")
+        else:
+            messages.error(request, "Invalid form submission. Please check your inputs.")
+    else:
+        has_bought_product = has_bought(request.user, product) if request.user.is_authenticated else False
+        review_form = ReviewForm(initial={'has_bought': request.user.is_authenticated and has_bought_product})
 
     reviews = product.review_set.all().order_by("-created_at")
-    review_form = ReviewForm()
-
-    # Calculate the average rating
     average_rating = product.average_rating()
-
-    # Calculate the percentage of each star rating based on the average
     star_percentages = {rating: (average_rating / 5) * 100 for rating in range(1, 6)}
 
     context = {
@@ -118,9 +126,21 @@ def product_detail(request, product_id):
         "average_rating": average_rating,
         "star_percentages": star_percentages,
         "review_count": reviews.count(),
-        'on_product_page': True # For making the success message only display the message
+        "has_bought": has_bought_product,  # Update this line
+        'on_product_page': True
     }
     return render(request, "products/product_detail.html", context)
+
+
+def has_bought(user, product):
+    """
+    Check if the specified user 
+    has bought the given product
+    """
+    # Use filter instead of get to handle MultipleObjectsReturned
+    order_line_items = OrderLineItem.objects.filter(order__user_profile__user=user, product=product)
+    
+    return order_line_items.exists()  # Check if at least one order line item exists
 
 
 @user_passes_test(lambda u: u.is_superuser, login_url='home')
@@ -204,4 +224,3 @@ def delete_product(request, product_id):
     product = get_object_or_404(Product, pk=product_id)
     product.delete()
     messages.success(request, 'Product deleted!')
-    return redirect(reverse('products'))

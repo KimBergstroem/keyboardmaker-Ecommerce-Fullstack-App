@@ -34,23 +34,32 @@ class ReviewForm(forms.ModelForm):
     class Meta:
         model = Review
         fields = ("text", "rating")
-        widgets = {
-            'text': forms.Textarea(attrs={'rows': 3, 'placeholder': 'Your review...'}),
-        }
-
-    RATING_CHOICES = [
-        (1, '1'),
-        (2, '2'),
-        (3, '3'),
-        (4, '4'),
-        (5, '5'),
-    ]
-
-    rating = forms.ChoiceField(choices=RATING_CHOICES, widget=forms.RadioSelect(attrs={'class': 'star-rating'}))
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
+        
+        has_bought = self.initial.get('has_bought', False)
+        
+        if has_bought:
+            self.fields['text'].widget.attrs['placeholder'] = 'Your review...'
+            self.fields['text'].widget.attrs['rows'] = 3
+        else:
+            self.fields['text'].widget.attrs['placeholder'] = ''
+            self.fields['text'].widget.attrs['rows'] = 3
+
         for field_name, field in self.fields.items():
             field.widget.attrs['class'] = 'border-black rounded-0 profile-form-input'
             field.label = False  # This removes the label from the form field
 
+    def clean(self):
+        cleaned_data = super().clean()
+        has_bought = cleaned_data.get('has_bought', False)  # Default to False if not present
+        text = cleaned_data.get('text', '')
+        rating = cleaned_data.get('rating', '')
+
+        if has_bought and not text:
+            self.add_error('text', 'This field is required.')
+        if has_bought and not rating:
+            self.add_error('rating', 'This field is required.')
+
+        return cleaned_data
