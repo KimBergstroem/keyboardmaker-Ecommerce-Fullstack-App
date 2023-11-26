@@ -1,10 +1,11 @@
+
 .stripe-style-input {
   box-sizing: border-box;
   height: 40px;
   padding: 10px 12px;
   border: 1px solid transparent;
   border-radius: 0px;
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   box-shadow: 0 1px 3px 0 #e6ebf1;
   -webkit-transition: box-shadow 150ms ease;
   transition: box-shadow 150ms ease;
@@ -29,14 +30,20 @@
     right: .5rem;
 }
 
-#payment-form .form-control {
+#payment-form .form-control,
+#card-element {
     color: #000;
     border: 1px solid #000;
 }
 
 select,
 select option {
-  color: #000;
+    color: #000000;
+}
+
+select:invalid,
+select option[value=""] {
+    color: #aab7c4 !important;
 }
 
 #loading-overlay {
@@ -58,7 +65,11 @@ select option {
     height: 100%;
 }
 
-.payment-element-container {
-  z-index: 999999; /* Adjust as needed */
-  min-height: 350px; /* Adjust the value based on your layout */
+@media (max-width: 991px){
+/* Makes the class with all this exactly classes be effected */
+    .btn.btn-outline-black.rounded-0,
+    .btn.btn-black.rounded-0 {
+        padding: .375rem .375rem;
+        font-size: .75rem;
+    }
 }
