@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load social_share %}
 
 {% block extra_css %}
     <link rel="stylesheet" href="{% static 'products/css/product.css' %}">
@@ -98,11 +99,15 @@
                     </div>
                 </form>
                 <div class="mt-4">
-                    <p>Share on social media</p>
-                    <a href="https://www.facebook.com/profile.php?id=100086486033251" target="_blank"><i class="fab fa-facebook text-black fa-lg"></i></a>
-                    <a href="https://twitter.com/keyboard_maker" target="_blank"><i class="fab fa-twitter text-black fa-lg"></i></a>
-                    <a href="https://discord.gg/2ZembYRaJB" target="_blank"><i class="fab fa-discord text-black fa-lg"></i></a>
-                    <a href="https://www.instagram.com/easykeyboardmaker/" target="_blank"><i class="fa-brands fa-square-instagram text-black fa-lg"></i></a>
+                    <p>Share on social media</p> 
+                    <div class="d-flex">
+                        {% post_to_facebook object_or_url '<i class="fab fa-facebook text-black fa-lg m-1" aria-hidden="true"></i>' %}               
+                        {% post_to_twitter "{{object.title}}" object_or_url '<i class="fab fa-twitter text-black fa-lg m-1" aria-hidden="true"></i>' %}
+                        {% post_to_reddit "{{object.title}}" object_or_url '<i class="fa-brands fa-reddit text-black fa-lg m-1"></i>' %}
+                        {% post_to_gplus object_or_url '<i class="fa-brands fa-google-plus text-black fa-lg m-1"></i>' %}
+                        {% send_email object.title "{{object.title}}" object_or_url '<i class="fa-solid fa-envelope text-black fa-lg m-1"></i>' %}
+                        <div class="linkedin-this"> <a href="http://www.linkedin.com/shareArticle?url={{request.get_host}}{{ request.get_full_path }}" target="_blank"> <i class="fab fa-linkedin text-black fa-lg m-1"></i> </a> </div>
+                    </div>
                 </div>
             </div>
         </div>
