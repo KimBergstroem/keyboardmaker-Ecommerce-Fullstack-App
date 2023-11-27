@@ -87,20 +87,20 @@
                             </div>
                         </div>
                         <div class="col-12">
-                            <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 mt-5">
+                            <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0">
                                 <span class="icon">
                                     <i class="fas fa-chevron-left"></i>
                                 </span>
                                 <span class="text-uppercase">Keep Shopping</span>
                             </a>
-                            <input type="submit" class="btn btn-black rounded-0 text-uppercase mt-5" value="Add to Cart">
+                            <input type="submit" class="btn btn-black rounded-0 text-uppercase" value="Add to Cart">
                         </div>
                         <input type="hidden" name="redirect_url" value="{{ request.path }}">
                     </div>
                 </form>
-                <div class="mt-4">
+                <div class="mt-4" id="shareSocial-section">
                     <p>Share on social media</p> 
-                    <div class="d-flex">
+                    <div class="d-flex socialmedia">
                         {% post_to_facebook object_or_url '<i class="fab fa-facebook text-black fa-lg m-1" aria-hidden="true"></i>' %}               
                         {% post_to_twitter "{{object.title}}" object_or_url '<i class="fab fa-twitter text-black fa-lg m-1" aria-hidden="true"></i>' %}
                         {% post_to_reddit "{{object.title}}" object_or_url '<i class="fa-brands fa-reddit text-black fa-lg m-1"></i>' %}
@@ -113,11 +113,11 @@
         </div>
     </div>
     
-    <section id="Information">
+    <section id="information">
         <div class="container m-extra mb-5 p-4">
             <div class="row">
                 <!-- Column 1 -->
-                <div class="col-md-3">
+                <div class="col-md-3 mb-5-sm">
                     <div class="text-center">
                         <i class="fa-regular fa-heart text-black fa-2xl"></i>
                         <p class="h5 font-weight-bold text-black mt-3">WITH LOVE FROM EKM</p>
@@ -127,7 +127,7 @@
                     </div>
                 </div>
                 
-                <div class="col-md-3">
+                <div class="col-md-3 mb-5-sm">
                     <div class="text-center">
                         <i class="fa fa-truck text-black fa-2xl"></i>
                         <p class="h5 font-weight-bold mt-3 text-black">FAST PROCESSING TIME</p>
@@ -137,7 +137,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-3">
+                <div class="col-md-3 mb-5-sm">
                     <div class="text-center">
                         <i class="fa fa-headset text-black fa-2xl"></i>
                         <p class="h5 font-weight-bold mt-3 text-black">TOP-NOTCH SUPPORT</p>
@@ -186,7 +186,7 @@
             </div>
             <div class="row">
                 <div class="col-md-6">
-                    <table class="stars-counters">
+                    <table class="stars-counters mb-5-sm">
                         <tbody>
                             <tr class="">
                                 <td>
