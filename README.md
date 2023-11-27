@@ -786,25 +786,22 @@ All testing, including both manual and automated testing, was carried out and do
 </p>
 
 # Bugs
-The bug section descriptions have been linked with the bug issues in my documentation for better visibility, added color coding, and divided the content into sections, all aimed at enhancing readability. The links are clickable for more reading and solution.
+The bug section descriptions have been linked with the bug issues in my documentation for better visibility, added color coding, and divided the content into sections, all aimed at enhancing readability. Click on each bug's link for additional information or documentation, and these links will redirect you to the respective bug card on the kanban board.
 
 ### Known bugs
 
 | **Bug** | **Description** |
 | ------- | --------------- |
-| [Text](https://github.com/KimBergstroem/) | Text |
-| [Text](https://github.com/KimBergstroem/) | Text |
-| [Text](https://github.com/KimBergstroem/) | Text |
-
+| [Minus button in the shopping bag to be disabled when the quantity is 1. It works on mobile but not on desktop. The issue is that the page shows two minus buttons with the same ID. One is hidden depending on the screen size. This makes the minus button not disabled and users can click minus -1 -2 -3 -4 without any changes to the shopping bag.](https://github.com/KimBergstroem/PP5/issues/53) | This issue persists. |
+| [Clicking the "remove" button in the shopping bag for an item, it's triggers an unnecessary toast success pop-up window, even when already on the shopping bag page. This behavior can be confusing for users, as this pop-up is showing the updated bag items and everything, when user already are in the shopping bag page.](https://github.com/KimBergstroem/PP5/issues/55) | This issue is still unresolved. |
 
 
 ### Fixed bugs
 
 | **Bug** | **Fix** |
 | ------- | ------- |
-| [Text](https://github.com/KimBergstroem/) | Text |
-| [Text](https://github.com/KimBergstroem/) | Text |
-| [Text](https://github.com/KimBergstroem/) | Text |
+| [When attempting to add a product without an image to the shopping bag, an error occurs. The specific error message displayed is "ValueError at /products/175/". The 'image' attribute has no file associated with it.](https://github.com/KimBergstroem/PP5/issues/54) | Added an If statement to check the condition, `{% if item.product.image %}<img src="{{ item.product.image.url }}" alt="{{ item.product.name}}" class="w-100">{% else %}<img class="w-100" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.product.name}}">{% endif %}` |
+| [In the mobile-friendly view (lowest 320px X 640px), the icons in the navbar collapse, resulting in a user-unfriendly experience. The navbar icons split into two rows, obscuring the content below as it gets hidden under the second row.](https://github.com/KimBergstroem/PP5/issues/56) | Used media queries to ensure that, on smaller mobile screens such as 340px wide, the navbar doesn't collapse and is presented correctly. Targeted classes `as .nav-link , .nav-link i.fa-lg and .navbar-toggler` |
 
 
 <p align="right">(<a href="#table-of-content">back to top</a>)</p>
@@ -947,6 +944,8 @@ The official Django documentation has been an invaluable resource throughout the
 - [Using mixins with class-based views](https://docs.djangoproject.com/en/4.2/topics/class-based-views/mixins/#detailview-working-with-a-single-django-object)
 - [Using widgets in the form](https://docs.djangoproject.com/en/4.2/ref/forms/widgets/)
 - [Date string form](https://docs.djangoproject.com/en/3.2/ref/templates/builtins/#date)
+- [Custom Clearables](https://github.com/django/django/blob/main/django/forms/templates/django/forms/widgets/clearable_file_input.html)
+- [Error handling](https://docs.djangoproject.com/en/3.2/topics/http/views/#customizing-error-views)
 
 
 ### W3 Schools:
