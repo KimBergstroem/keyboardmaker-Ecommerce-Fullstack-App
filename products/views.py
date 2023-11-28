@@ -96,21 +96,30 @@ def product_detail(request, product_id):
     product = get_object_or_404(Product, pk=product_id)
 
     if request.method == "POST" and request.user.is_authenticated:
-        review_form = ReviewForm(request.POST)
         has_bought_product = has_bought(request.user, product)
         
-        if review_form.is_valid():
-            if has_bought_product:
-                review = review_form.save(commit=False)
-                review.user = request.user
-                review.product = product
-                review.save()
-                messages.success(request, 'Review has been submitted')
-                return redirect("product_detail", product_id=product_id)
+        try:
+            reviewed = Review.objects.get(user__id=request.user.id, product__id=product_id)
+            review_form = ReviewForm(request.POST, instance=reviewed)
+            review_form.save()
+            messages.success(request, 'Only one review per customer! Your review has been updated!')
+            return redirect("product_detail", product_id=product_id)
+
+        except Review.DoesNotExist:
+            review_form = ReviewForm(request.POST)
+
+            if review_form.is_valid():
+                if has_bought_product:
+                    review = review_form.save(commit=False)
+                    review.user = request.user
+                    review.product = product
+                    review.save()
+                    messages.success(request, 'Review has been submitted')
+                    return redirect("product_detail", product_id=product_id)
+                else:
+                    messages.error(request, "You can only write a review for products you have bought.")
             else:
-                messages.error(request, "You can only write a review for products you have bought.")
-        else:
-            messages.error(request, "Invalid form submission. Please check your inputs.")
+                messages.error(request, "Invalid form submission. Please check your inputs.")
     else:
         has_bought_product = has_bought(request.user, product) if request.user.is_authenticated else False
         review_form = ReviewForm(initial={'has_bought': request.user.is_authenticated and has_bought_product})
@@ -118,6 +127,28 @@ def product_detail(request, product_id):
     reviews = product.review_set.all().order_by("-created_at")
     average_rating = product.average_rating()
     star_percentages = {rating: (average_rating / 5) * 100 for rating in range(1, 6)}
+    
+    one_star_count = Review.objects.filter(product_id=product_id, rating=1).count()
+    two_star_count = Review.objects.filter(product_id=product_id, rating=2).count()
+    three_star_count = Review.objects.filter(product_id=product_id, rating=3).count()
+    four_star_count = Review.objects.filter(product_id=product_id, rating=4).count()
+    five_star_count = Review.objects.filter(product_id=product_id, rating=5).count()
+
+    total_reviews = five_star_count + four_star_count + three_star_count + two_star_count + one_star_count
+
+    if total_reviews > 0:
+        five_star_percentage = (five_star_count / total_reviews) * 100
+        four_star_percentage = (four_star_count / total_reviews) * 100
+        three_star_percentage = (three_star_count / total_reviews) * 100
+        two_star_percentage = (two_star_count / total_reviews) * 100
+        one_star_percentage = (one_star_count / total_reviews) * 100
+    else:
+        # Handle the case when there are no reviews to avoid division by zero
+        five_star_percentage = 0
+        four_star_percentage = 0
+        three_star_percentage = 0
+        two_star_percentage = 0
+        one_star_percentage = 0
 
     context = {
         "product": product,
@@ -127,7 +158,17 @@ def product_detail(request, product_id):
         "star_percentages": star_percentages,
         "review_count": reviews.count(),
         "has_bought": has_bought_product,  # Update this line
-        'on_product_page': True
+        'on_product_page': True,
+        'one_star_count': one_star_count,
+        'two_star_count': two_star_count,
+        'three_star_count': three_star_count,
+        'four_star_count': four_star_count,
+        'five_star_count': five_star_count,
+        'five_star_percentage': five_star_percentage,
+        'four_star_percentage': four_star_percentage,
+        'three_star_percentage': three_star_percentage,
+        'two_star_percentage': two_star_percentage,
+        'one_star_percentage': one_star_percentage,
     }
     return render(request, "products/product_detail.html", context)
 
@@ -223,4 +264,5 @@ def delete_product(request, product_id):
 
     product = get_object_or_404(Product, pk=product_id)
     product.delete()
-    messages.success(request, 'Product deleted!')
+    messages.success(request, f"{product.name} has been deleted")
+    return redirect(reverse('products'))
