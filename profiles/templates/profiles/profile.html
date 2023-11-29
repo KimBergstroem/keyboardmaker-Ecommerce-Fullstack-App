@@ -37,7 +37,7 @@
                 <div class="order-history table-responsive">
                     <p><strong>First Name:</strong> {{ request.user.userprofile.first_name }}</p>
                     <p><strong>Last Name:</strong> {{ request.user.userprofile.last_name }}</p>
-                    <p><strong>Email:</strong> {{ request.user.email }}</p>
+                    <p><strong>Email:</strong> {{ request.user.userprofile.email }}</p>
                     <p><strong>Bio:</strong> {{ request.user.userprofile.bio }}</p>
                     <p><strong>Country:</strong> {{ request.user.userprofile.country }}</p>
                     <a href="{% url 'profile_update' %}" class="btn btn-black rounded-0 text-uppercase"><i class="fas fa-user-edit"></i> Update</a>
