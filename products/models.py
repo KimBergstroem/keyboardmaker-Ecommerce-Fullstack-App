@@ -48,7 +48,7 @@ class Product(models.Model):
             except Exception as e:
                 print(f"Error processing image for product {self.name}: {e}")
 
-    def average_rating(self):
+    def calculate_average_rating(self):
         reviews = self.review_set.all()
         if reviews:
             return sum(review.rating for review in reviews) / len(reviews)
