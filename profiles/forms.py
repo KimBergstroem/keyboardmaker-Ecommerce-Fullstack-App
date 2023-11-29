@@ -5,7 +5,7 @@ from .models import UserProfile
 class UserProfileForm(forms.ModelForm):
     class Meta:
         model = UserProfile
-        exclude = ('user','email','bio','first_name',
+        exclude = ('user','bio','first_name',
                    'last_name','profile_picture', 
                    'country')
 
@@ -38,14 +38,13 @@ class UserProfileForm(forms.ModelForm):
 class UpdatePersonalInfoForm(forms.ModelForm):
     class Meta:
         model = UserProfile
-        fields = ('first_name', 'last_name', 'email', 'bio', 'profile_picture', 'country')
+        fields = ('first_name', 'last_name', 'bio', 'profile_picture', 'country')
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         placeholders = {
             'first_name': 'First Name',
             'last_name': 'Last Name',
-            'email': 'Email',
             'bio': 'Something about Yourself',
             'profile_picture': 'Profile Picture',
             'country': 'In which Country do you live?',
