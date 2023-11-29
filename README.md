@@ -792,6 +792,7 @@ The bug section descriptions have been linked with the bug issues in my document
 
 | **Bug** | **Description** |
 | ------- | --------------- |
+| [When the ACCOUNT_EMAIL_VERIFICATION setting is set to 'mandatory' in my Django application, the login system breaks. Attempting to sign up or log in new users results in a server error 500.](https://github.com/KimBergstroem/PP5/issues/57) | This issue persists. |
 | [Minus button in the shopping bag to be disabled when the quantity is 1. It works on mobile but not on desktop. The issue is that the page shows two minus buttons with the same ID. One is hidden depending on the screen size. This makes the minus button not disabled and users can click minus -1 -2 -3 -4 without any changes to the shopping bag.](https://github.com/KimBergstroem/PP5/issues/53) | This issue persists. |
 | [Clicking the "remove" button in the shopping bag for an item, it's triggers an unnecessary toast success pop-up window, even when already on the shopping bag page. This behavior can be confusing for users, as this pop-up is showing the updated bag items and everything, when user already are in the shopping bag page.](https://github.com/KimBergstroem/PP5/issues/55) | This issue is still unresolved. |
 
