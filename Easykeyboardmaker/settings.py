@@ -17,7 +17,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'DEVELOPMENT' in os.environ
 
-ALLOWED_HOSTS = [(os.environ.get('LOCALHOST')),'easykeyboardmaker-ffb468c2d2d7.herokuapp.com',]
+ALLOWED_HOSTS = [(os.environ.get('LOCALHOST')), (os.environ.get('HEROKU_HOSTNAME'))]
 
 
 # Application definition
