@@ -1,5 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .models import Post
+from django.views import View
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 def post_list(request):
@@ -61,3 +62,15 @@ def post_list(request):
         'paginate_by': paginate_by,
     }
     return render(request, 'blog/blog.html', context)
+
+
+class PostDetail(View):
+    """
+    Class & Method to call the post details pages.
+    """
+    template_name = 'blog/post_detail.html'
+
+    def get(self, request, slug):
+        post = get_object_or_404(Post, slug=slug)
+        context = {'post': post}
+        return render(request, self.template_name, context)
