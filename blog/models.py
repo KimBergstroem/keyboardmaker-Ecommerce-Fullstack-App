@@ -11,6 +11,7 @@ class Post(models.Model):
     """
     title = models.CharField(max_length=50, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
+    excerpt = models.TextField(max_length=75, blank=True)
     content = models.TextField(max_length=3000, blank=True)
     featured_image = models.ImageField(blank=True, upload_to='userprofile/', default="No img")
     author = models.ForeignKey(
