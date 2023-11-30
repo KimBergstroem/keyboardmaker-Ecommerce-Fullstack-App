@@ -39,7 +39,6 @@ INSTALLED_APPS = [
     'allauth.socialaccount.providers.google',
 
     # Project apps
-    'store',
     'checkout',
     'products',
     'blog',
