@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block extra_title %} - User Agreement {% endblock %}
+
 {% block extra_css %}
     <link rel="stylesheet" href="{% static 'profiles/css/profiles.css' %}">
 {% endblock %}
@@ -79,6 +81,5 @@
         </div>
     </div>
 {% endblock %}
-
 {% block postloadjs %}
 {% endblock %}
