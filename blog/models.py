@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.urls import reverse
 from django.db.models.signals import post_save, post_delete
 from django.dispatch import receiver
 
@@ -45,6 +46,6 @@ class Post(models.Model):
 
     def get_absolute_url(self):
         """
-        For be able to update the blogpost and redirect user back to home page
+        For be able to edit the article and redirect user back the same article
         """
-        return reverse("index")
+        return reverse('post_detail', args=[str(self.slug)])
