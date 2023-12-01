@@ -1,8 +1,8 @@
-<div class="cols-md-6 mt-3">
+<div class="col-md-6 mt-3">
     <nav aria-label="Site pagination">
         <ul class="pagination justify-content-center">
 
-            {% if posts.has_previous %}
+            {% if page_obj.has_previous %}
                 <li class="page-item">
                     <a class="page-link text-dark rounded-0" href="?page=1">First</a>
                 </li>
@@ -11,8 +11,8 @@
                 </li>
             {% endif %}
 
-            {% for num in posts.paginator.page_range %}
-                {% if posts.number == num %}
+            {% for num in paginator.page_range %}
+                {% if page_obj.number == num %}
                     <li class="page-item active" aria-current="page">
                         <a class="page-link bg-black rounded-0 text-white border-0" href="?page={{ num }}">{{ num }}<span class="visually-hidden"></span></a>
                     </li>
@@ -23,7 +23,7 @@
                 {% endif %}
             {% endfor %}
 
-            {% if posts.has_next %}
+            {% if page_obj.has_next %}
                 <li class="page-item">
                     <a class="page-link text-dark rounded-0" href="?page={{ posts.next_page_number }}">Next</a>
                 </li>

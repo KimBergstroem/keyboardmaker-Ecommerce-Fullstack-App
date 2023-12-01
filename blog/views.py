@@ -1,5 +1,4 @@
 from django.shortcuts import render, get_object_or_404
-from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.contrib.auth.mixins import UserPassesTestMixin
 from django.contrib.messages.views import SuccessMessageMixin
 from .models import Post
@@ -19,65 +18,36 @@ from django.views.generic import (
 )
 
 
-def post_list(request):
-    """
-    View for displaying a list of blog articles,
-    including sorting and pagination
-    """
-    posts = Post.objects.filter(status=1)
-    query = None  
-    sort = None
-    direction = None
+class PostList(ListView):
+    model = Post
+    template_name = 'blog/blog.html'
+    context_object_name = 'posts'
     paginate_by = 4
 
-    if request.GET:
-        # Check and apply sorting parameters
-        if 'sort' in request.GET:
-            sortkey = request.GET['sort']
-            sort = sortkey
+    def get_queryset(self):
+        queryset = super().get_queryset().filter(status=1)
+        query = self.request.GET.get('q')
+        sort = self.request.GET.get('sort')
+        direction = self.request.GET.get('direction')
 
-            if sortkey == 'created_on':
-                if 'direction' in request.GET:
-                    direction = request.GET['direction']
-                    if direction == 'desc':
-                        sortkey = f'-{sortkey}'
+        if sort:
+            if sort == 'created_on':
+                sortkey = sort if not direction or direction == 'asc' else f'-{sort}'
             else:
-                if 'direction' in request.GET:
-                    direction = request.GET['direction']
-                    if direction == 'desc':
-                        sortkey = f'-{sortkey}'
-                posts = posts.order_by(sortkey)
+                sortkey = f'-{sort}' if direction == 'desc' else sort
+            queryset = queryset.order_by(sortkey)
 
-        if 'q' in request.GET:
-            query = request.GET['q']
-            if not query:
-                messages.error(request, "You didn't enter any search criteria!")
-                return redirect(reverse('blog'))
-
+        if query:
             queries = Q(title__icontains=query) | Q(excerpt__icontains=query)
-            posts = posts.filter(queries)
+            queryset = queryset.filter(queries)
 
-    # Create a string representation of the current sorting for display
-    current_sorting = f'{sort}_{direction}'
+        return queryset
 
-    # Pagination 
-    paginator = Paginator(posts, paginate_by)
-    page = request.GET.get('page', 1)
-    
-    try:
-        posts = paginator.page(page)
-    except PageNotAnInteger:
-        posts = paginator.page(1)
-    except EmptyPage:
-        posts = paginator.page(paginator.num_pages)
-
-    context = {
-        'posts': posts,
-        'query': query,
-        'current_sorting': current_sorting,
-        'paginate_by': paginate_by,
-    }
-    return render(request, 'blog/blog.html', context)
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['query'] = self.request.GET.get('q')
+        context['current_sorting'] = f"{self.request.GET.get('sort')}_{self.request.GET.get('direction')}"
+        return context
 
 
 class PostDetail(View):
@@ -92,7 +62,7 @@ class PostDetail(View):
         return render(request, self.template_name, context)
 
 
-class PostDeleteView(UserPassesTestMixin, SuccessMessageMixin, DeleteView):
+class PostDelete(UserPassesTestMixin, SuccessMessageMixin, DeleteView):
     """
     View for deleting an existing blog Article
     """
@@ -112,7 +82,7 @@ class PostDeleteView(UserPassesTestMixin, SuccessMessageMixin, DeleteView):
         return self.success_message
 
 
-class PostCreateView(UserPassesTestMixin, SuccessMessageMixin, CreateView):
+class PostCreate(UserPassesTestMixin, SuccessMessageMixin, CreateView):
     """
     View for creating a new blog Article
     """
@@ -137,7 +107,7 @@ class PostCreateView(UserPassesTestMixin, SuccessMessageMixin, CreateView):
         return super().form_valid(form)
 
 
-class PostEditView(UserPassesTestMixin, SuccessMessageMixin, UpdateView):
+class PostEdit(UserPassesTestMixin, SuccessMessageMixin, UpdateView):
     """
     View for editing an existing Article
     """

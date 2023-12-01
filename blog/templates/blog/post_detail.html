@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="{% static 'blog/css/blog.css' %}">
 {% endblock %}
 
-{% block extra_title %} - Articles {% endblock %}
+{% block extra_title %} - {{ post.title }} {% endblock %}
 
 {% block page_header %}
 <div class="container header-container">
@@ -36,21 +36,20 @@
                             <div class="media-body">
                                 <label class="text-secondary">{{ post.author }} | {{ post.created_on|date:"F j Y"}}</label>
                                 <small>
-                                    <!-- Check if user is superuser to be able to edit and delete blog post -->
+                                    <!-- Check if user is superuser to be able to edit and delete Article -->
                                     {% if request.user.is_superuser %}
                                         | <a class="text-secondary fw-bolder custom-word-spacing"
-                                            href="#">
+                                            href="{% url 'post_edit' post.slug %}">
                                             &#160;<i class="fas fa-edit"></i> Edit </a>&#160; | &#160;
                                         <a class="text-secondary fw-bolder custom-word-spacing"
-                                            href="#">
+                                            href="{% url 'post_delete' post.slug %}">
                                             <i class="fas fa-trash-alt"></i> Delete </a>&#160; |             
                                     {% endif %}
                                 </small>
-                                <span class="">Published {{ post.created_on }}</span>
                             </div>
                         </div>
                     </div>
-                    <div class="article-content">
+                    <div class="article-content text-black">
                         <!-- Safe is used to show HTML throught the post content -->
                         {{ post.content | safe }}
                     </div>
