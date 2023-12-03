@@ -8,6 +8,10 @@ def index(request):
     return render(request, 'home/index.html')
 
 
+def contact(request):
+    return render(request, 'home/support/contact.html')
+
+
 def company(request):
     return render(request, 'home/information/company.html')
 
@@ -24,8 +28,8 @@ def privacy_policy(request):
     return render(request, 'home/information/privacy_policy.html')
 
 
-def refund_policy(request):
-    return render(request, 'home/information/refund_policy.html')
+def return_policy(request):
+    return render(request, 'home/information/return_policy.html')
 
 
 def shipping_policy(request):
