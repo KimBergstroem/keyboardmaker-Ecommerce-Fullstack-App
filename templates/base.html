@@ -194,9 +194,9 @@
                   <div class="col col-md-2 m-3 item">
                     <h3>About</h3>
                         <ul>
-                            <li><a href="#">Company</a></li>
-                            <li><a href="#">Partner</a></li>
-                            <li><a href="#">Affiliate program</a></li>
+                            <li><a href="{% url 'company' %}">Company</a></li>
+                            <li><a href="{% url 'partners' %}">Partner</a></li>
+                            <li><a href="{% url 'partners' %}">Affiliate program</a></li>
                             <li><a href="https://discord.gg/2ZembYRaJB" target="_blank">Join our group</a></li>
                             <li><a href="#">Contact us</a></li>
                         </ul>
@@ -204,11 +204,11 @@
                   <div class="col col-md-2 m-3 item">
                     <h3>Policy</h3>
                         <ul>
-                            <li><a href="#">Refund</a></li>
-                            <li><a href="#">Shipping</a></li>
-                            <li><a href="#">Payment</a></li>
-                            <li><a href="#">Privacy</a></li>
-                            <li><a href="#">Terms of service</a></li>
+                            <li><a href="{% url 'refund_policy' %}">Refund</a></li>
+                            <li><a href="{% url 'shipping_policy' %}">Shipping</a></li>
+                            <li><a href="{% url 'payments' %}">Payment</a></li>
+                            <li><a href="{% url 'privacy_policy' %}">Privacy</a></li>
+                            <li><a href="{% url 'terms_of_service' %}">Terms of service</a></li>
                         </ul>
                   </div>
                 </div>
