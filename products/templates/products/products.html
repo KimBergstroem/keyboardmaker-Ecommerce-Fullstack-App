@@ -71,7 +71,8 @@
                         </a>
                         {% endif %}
                         <div class="card-body pb-0"> <!-- Product name rendering -->
-                            <p class="mb-1">{{ product.name }}</p>
+                            <a href="{% url 'product_detail' product.id %}" class="text-decoration-none">
+                            <p class="mb-1 text-decoration-none text-black">{{ product.name }}</p></a>
                         </div>
                         <div class="card-footer bg-transparent pt-0 border-0"> <!-- Product information rendering -->
                             <div class="row">
@@ -103,7 +104,13 @@
                                             <a href="{% url 'edit_product' product.id %}">Edit</a> |
                                             <a href="{% url 'delete_product' product.id %}" class="text-danger">Delete </a>
                                         </small>
-                                    {% endif %}
+                                    {% endif %}     
+                                        <form class="form mt-2" action="{% url 'add_to_bag' product.id %}" method="POST">
+                                            {% csrf_token %}
+                                            <input type="hidden" name="quantity" value="1">
+                                            <input type="submit" class="text-uppercase" value="Add to Cart">
+                                            <input type="hidden" name="redirect_url" value="{% url 'products' %}">
+                                        </form>            
                                 </div>
                             </div>
                         </div>
