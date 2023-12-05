@@ -34,7 +34,7 @@
                   <h5 class="card-title">General enquiries</h5>
                   <p class="card-text">Would you like to discuss your busniess needs? Our team will be delighted to assist you.</p>
                   </div>
-                  <a href="#" class="btn btn-black rounded-0 text-uppercase">Contact us</a>
+                  <a href="{% url 'contact_form' %}" class="btn btn-black rounded-0 text-uppercase">Contact us</a>
               </div>
 
               <div class="card m-2 text-center" style="max-width: 18rem;">
@@ -53,7 +53,7 @@
             <div class="card-header"><i class="fa-solid fa-folder-open fa-2xl"></i></div>
             <div class="card-body text-dark">
               <h5 class="card-title">Feature request</h5>
-              <p class="card-text text-muted">Share your ideas on new functionalities to make us even better as company. Suggest, discus with us.</p>
+              <p class="card-text text-muted">Share your ideas on new functionalities to make us even better as company. Suggest, discuss with us.</p>
             </div>
             <a href="#" class="btn btn-black rounded-0 text-uppercase">Feature request</a>
           </div>
@@ -107,7 +107,7 @@
                                 <div class="card-body">
                                     <p>You can reach us through various channels:</p>
                                     <ul>
-                                        <li>Fill out our <a href="#contactForm">Contact Us</a> form on the website.</li>
+                                        <li>Fill out our <a href="{% url 'contact_form' %}">Contact Us</a> form on the website.</li>
                                         <li>Join our Discord server for real-time assistance and community interactions.</li>
                                         <li>Email us at  "support@easykeyboardmaker.com" for any specific requests or inquiries.</li>
                                         <li>Connect with us on social media for updates and news: follow us on <a href="https://www.facebook.com/profile.php?id=100086486033251">Facebook</a>, <a href="https://twitter.com/keyboard_maker">Twitter</a>, and <a href="https://www.instagram.com/easykeyboardmaker/">Instagram</a>.</li>
@@ -143,7 +143,7 @@
                     <div class="support-button text-center d-flex align-items-center justify-content-center mt-4 wow fadeInUp" data-wow-delay="0.5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInUp;">
                         <i class="lni-emoji-sad"></i>
                         <p class="mb-0 px-2">Can't find your answers?</p>
-                        <a href="#"> Contact us</a>
+                        <a href="{% url 'contact_form' %}"> Contact us</a>
                     </div>
                 </div>
             </div>
