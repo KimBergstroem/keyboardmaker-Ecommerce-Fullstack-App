@@ -1,5 +1,7 @@
-from django.shortcuts import render
-
+from django.shortcuts import render, reverse, redirect, get_object_or_404
+from .forms import ContactForm
+from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 
 def index(request):
     """
@@ -14,6 +16,33 @@ def contact(request):
 
 def company(request):
     return render(request, 'home/information/company.html')
+
+
+def contact_form(request):
+    """
+    Contact form view
+    """
+    template = 'home/support/contact_form.html'
+    form = ContactForm()
+
+    if request.method == 'POST':
+        if request.user.is_authenticated:
+            form = ContactForm(request.POST, request.FILES)
+            if form.is_valid():
+                contact = form.save(commit=False)
+                contact.user = request.user
+                contact.save()
+                messages.success(request, 'Successfully form submission!')
+                return redirect(reverse('contact_form'))
+            else:
+                messages.error(request, 'Failed to submit the form. Please ensure the form is valid.')
+        else:
+            messages.warning(request, 'You need to be logged in.')
+
+    context = {
+        'form': form,
+    }
+    return render(request, template, context)
 
 
 def partners(request):
