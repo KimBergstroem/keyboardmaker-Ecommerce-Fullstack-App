@@ -55,9 +55,8 @@
     <header class="container-fluid fixed-top">
         <div id="topnav" class="row bg-white pt-lg-2 d-none d-lg-flex">
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
-                <a href="{% url 'home' %}" class="nav-link main-logo-link">
-                    <image width="185px" class="ml-3 img-fluid" src="{% static 'images/header-logo.png' %}" alt="Header Logo" /><span
-                            class="text-white header-text">
+                <a href="{% url 'home' %}" class="nav-link main-logo-link"> <!-- Logo -->
+                    <img class="ml-5 img-fluid" src="{% static 'images/header-logo.png' %}" alt="Logo for Your E-Commerce Site" width="185" height="auto">
                 </a>
             </div>
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0"> <!-- Search bar section -->
@@ -184,11 +183,11 @@
                   <div class="col col-md-2 m-3 item">
                     <h3>Support</h3>
                         <ul>
-                            <li><a href="#">FAQs</a></li>
+                            <li><a href="{% url 'contact' %}">FAQs</a></li>
                             <li><a href="#">Search</a></li>
                             <li><a href="#">Download</a></li>
                             <li><a href="#">Warranty</a></li>
-                            <li><a href="#">Order issue</a></li>
+                            <li><a href="{% url 'contact_form' %}">Order issue</a></li>
                         </ul>
                   </div>
                   <div class="col col-md-2 m-3 item">
@@ -198,13 +197,13 @@
                             <li><a href="{% url 'partners' %}">Partner</a></li>
                             <li><a href="{% url 'partners' %}">Affiliate program</a></li>
                             <li><a href="https://discord.gg/2ZembYRaJB" target="_blank">Join our group</a></li>
-                            <li><a href="#">Contact us</a></li>
+                            <li><a href="{% url 'contact' %}">Contact us</a></li>
                         </ul>
                   </div>
                   <div class="col col-md-2 m-3 item">
                     <h3>Policy</h3>
                         <ul>
-                            <li><a href="{% url 'refund_policy' %}">Refund</a></li>
+                            <li><a href="{% url 'return_policy' %}">Return</a></li>
                             <li><a href="{% url 'shipping_policy' %}">Shipping</a></li>
                             <li><a href="{% url 'payments' %}">Payment</a></li>
                             <li><a href="{% url 'privacy_policy' %}">Privacy</a></li>
