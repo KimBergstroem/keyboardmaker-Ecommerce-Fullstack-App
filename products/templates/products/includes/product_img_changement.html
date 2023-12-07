@@ -1,0 +1,33 @@
+<script type="text/javascript">
+    // Change the smallimages to the big sized
+    document.addEventListener('DOMContentLoaded', function() {
+
+        // ClickEvent for current smallImages
+        var smallImages = document.getElementById('smallImages');
+        smallImages.addEventListener('click', function(event) {
+            if (event.target.tagName === 'IMG') {
+                changeMainImage(event.target.src);
+                event.preventDefault();
+            }
+        });
+        // Change the new image to the mainImage place when clicked
+        function changeMainImage(newImageUrl) {
+            if (mainImage) {
+                mainImage.src = newImageUrl;
+            }
+        }
+
+        // ClickEvent for current mainImage
+        var mainImage = document.getElementById('mainImage');
+        if (mainImage) {
+            mainImage.addEventListener('click', function(event) {
+                openInNewTab(mainImage.src);
+            });
+        }
+        // Opens the current mainImage in a new tab and focus
+        function openInNewTab(imageUrl) {
+            var newTab = window.open(imageUrl, '_blank');
+            newTab.focus();
+        }
+    });
+</script>
