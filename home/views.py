@@ -2,12 +2,21 @@ from django.shortcuts import render, reverse, redirect, get_object_or_404
 from .forms import ContactForm
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from blog.models import Post
+
 
 def index(request):
     """
     View to return the index page
     """
-    return render(request, 'home/index.html')
+    posts = Post.objects.all()
+    # Fetch the three newest posts for display
+    latest_posts = Post.objects.order_by('-created_on')[:3]
+
+    context = {
+        'posts': latest_posts,
+    }
+    return render(request, 'home/index.html', context)
 
 
 def contact(request):

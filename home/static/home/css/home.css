@@ -1,10 +1,5 @@
 /* Only Stylesheet for home, support, information templates */
 
-.bg-green {
-    background-color: green !important;
-}
-
-
 /* -------------------------------- FAQ Section */
 body{margin-top:20px;}
 .section_padding_130 {
@@ -54,10 +49,6 @@ body{margin-top:20px;}
     justify-content: space-between;
 }
 
-.faq-accordian .card .card-header h6 span {
-    font-size: 1.5rem;
-}
-
 .faq-accordian .card .card-header h6.collapsed {
     color: #070a57;
 }
@@ -80,21 +71,47 @@ body{margin-top:20px;}
     font-size: 1.25rem;
 }
 
-/* -------------------------------- Media v Queries */
+/* -------------------------------- Header img section  */
+.main-content{
+    height: 37.5rem;
+    width: 100%;
+    margin-top: 4rem;
+    overflow: hidden;
+    position: relative;
+}
+
+.main-image{
+    width: 100%;
+    height: 37.5rem;
+    background: 
+    url('/static/images/header-img-img.png')
+    center / cover
+    no-repeat;
+}
+.overlay-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(221, 221, 221, 0.5);
+}
+
+/* -------------------------------- Media Queries */
 @media only screen and (max-width: 575px) {
     .support-button p {
         font-size: 14px;
     }
-}
-
-@media only screen and (max-width: 575px) {
+    .support-button a {
+        font-size: 13px;
+    }
     .support-button i {
         font-size: 1rem;
     }
 }
 
-@media only screen and (max-width: 575px) {
-    .support-button a {
-        font-size: 13px;
+@media (max-width: 375px) {
+    .card-title {
+        font-size: 16px; /* Adjust the font size as needed */
     }
 }

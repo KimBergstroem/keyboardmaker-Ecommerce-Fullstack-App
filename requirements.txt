@@ -6,6 +6,7 @@ Django==3.2.23
 django-allauth==0.41.0
 django-countries==7.2.1
 django-crispy-forms==1.14.0
+django-environ==0.7.0
 django-social-share==2.3.0
 django-storages==1.14.2
 django-summernote==0.8.20.0
