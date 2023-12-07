@@ -14,6 +14,7 @@
         <meta property="og:title" content="EasyKeyboardMaker | Keyboards">
         <meta property="og:description" content="Explore our e-commerce store for quality and affordable mechanical keyboards and keycaps. Shop now for the best mechanical keyboards available!">
         <meta property="og:url" content="{{ request.build_absolute_uri }}">
+        <link rel="icon" href="{% static 'images/favicon-16x16.png' %}">
     {% endblock %}
 
     {% block extra_meta %}
@@ -42,6 +43,8 @@
             crossorigin="anonymous"></script>
         <!-- Stripe Javascript -->
         <script src="https://js.stripe.com/v3/"></script>
+        <!-- Include CookieConsent JavaScript -->
+        <script src="https://cdn.jsdelivr.net/gh/manucaralmo/GlowCookies@3.1.8/src/glowCookies.min.js"></script>
     {% endblock %}
 
     {% block extra_js %}
@@ -164,6 +167,19 @@
         <script type="text/javascript">
             $('.toast').toast('show');
         </script>
+        <script>
+            glowCookies.start('en', {
+                style: 3,
+                analytics: 'G-FH87DE17XF',
+                facebookPixel: '990955817632355',
+                policyLink: 'https://link-to-your-policy.com',
+                hideAfterClick: false,
+                position: "right",
+                bannerColor: "black",
+                manageColor: "black",
+                acceptBtnBackground: "black",
+            });
+        </script>
     {% endblock %}
 
         <!-- Footer section -->
@@ -230,8 +246,9 @@
                             </div>
                         </div>
                     </div>
-                <div class="row mt-5">
+                <div class="row mt-3">
                     <div class="col mb-3 copyright">
+                        <img class="img-fluid" src="{% static 'images/ekm-icon.png' %}" alt="Logo for Your E-Commerce Site" width="100" height="auto">
                         <p>EasyKeyboardMaker.eu. All Right reserved.</p>
                     </div>
                 </div>
