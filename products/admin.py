@@ -1,5 +1,8 @@
 from django.contrib import admin
-from .models import Product, Category, Review
+from .models import Product, Category, Review, ProductImage
+
+class ProductImageAdmin(admin.StackedInline):
+    model = ProductImage
 
 class ProductAdmin(admin.ModelAdmin):
     list_display = (
@@ -12,6 +15,7 @@ class ProductAdmin(admin.ModelAdmin):
     )
 
     ordering = ('sku',)
+    inlines = [ProductImageAdmin]  
 
 class CategoryAdmin(admin.ModelAdmin):
     list_display = (

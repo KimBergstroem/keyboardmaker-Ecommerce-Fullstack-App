@@ -31,7 +31,7 @@ class Product(models.Model):
     description = models.TextField()
     price = models.DecimalField(max_digits=6, decimal_places=2)
     image_url = models.URLField(max_length=1024, null=True, blank=True)
-    image = models.ImageField(null=True, blank=True)
+    image = models.FileField(blank=True)
 
     def image_size_save(self, *args, **kwargs):
         super().save(*args, **kwargs)
@@ -56,6 +56,14 @@ class Product(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class ProductImage(models.Model):
+    product = models.ForeignKey(Product, default=None, on_delete=models.CASCADE)
+    images = models.FileField()
+
+    def __str__(self):
+        return f"Image for {self.product.name}"
 
 
 class Review(models.Model):

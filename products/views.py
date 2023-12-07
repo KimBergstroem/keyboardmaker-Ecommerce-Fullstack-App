@@ -2,7 +2,7 @@ from django.shortcuts import render, reverse, redirect, get_object_or_404
 from django.db.models.functions import Lower
 from django.contrib import messages
 from django.db.models import Q # This is for searching queries
-from .models import Product, Category, Review
+from .models import Product, Category, Review, ProductImage
 from .forms import ProductForm, ReviewForm
 from django.contrib.auth.decorators import login_required, user_passes_test
 from checkout.models import Order, OrderLineItem
@@ -92,6 +92,10 @@ def product_detail(request, product_id):
     including its reviews and rating form
     """
     product = get_object_or_404(Product, pk=product_id)
+    images = ProductImage.objects.filter(product__id=product_id)
+    
+    for image in images:
+        print(f"Image URL for {product.name}: {image.images.url}")
 
     if request.method == "POST" and request.user.is_authenticated:
         has_bought_product = has_bought(request.user, product)
@@ -135,6 +139,7 @@ def product_detail(request, product_id):
         "star_percentages": rating_and_count['star_percentages'],
         "review_count": rating_and_count['review_count'],
         "has_bought": has_bought_product,
+        "images": images,
         'on_product_page': True,
         'one_star_count': rating_and_count['one_star_count'],
         'two_star_count': rating_and_count['two_star_count'],
