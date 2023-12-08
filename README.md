@@ -948,8 +948,13 @@ The official Django documentation has been an invaluable resource throughout the
 - [Using widgets in the form](https://docs.djangoproject.com/en/4.2/ref/forms/widgets/)
 - [Date string form](https://docs.djangoproject.com/en/3.2/ref/templates/builtins/#date)
 - [Custom Clearables](https://github.com/django/django/blob/main/django/forms/templates/django/forms/widgets/clearable_file_input.html)
-- [Error handling](https://docs.djangoproject.com/en/3.2/topics/http/views/#customizing-error-views)
+- [Annotate() used to add aggregate values to each objects in a queryset](https://docs.djangoproject.com/en/3.2/ref/models/querysets/#annotate)
+- [Avg calculates the average value of my review star rating](https://docs.djangoproject.com/en/3.2/topics/db/aggregation/#avg)
+- ['help_text' used to perform sub text under input field in forms](https://docs.djangoproject.com/en/3.2/ref/forms/fields/#help-text)
+- [DoesnotExist, used to check is product is existing](https://docs.djangoproject.com/en/3.2/ref/models/class/#django.db.models.Model.DoesNotExist)
 
+### Pypi:
+- [Social share](https://pypi.org/project/django-social-share/)
 
 ### W3 Schools:
 - [Overrite Bootstraps css variables](https://www.w3schools.com/css/css_important.asp)
