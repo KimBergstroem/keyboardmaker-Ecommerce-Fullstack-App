@@ -27,12 +27,12 @@
                 <form method="POST" action="{% url 'add_product' %}" class="form mb-2" enctype="multipart/form-data">
                     {% csrf_token %}
                     {% for field in form %}
-                        {% if field.name != 'image' %}
-                            {{ field | as_crispy_field }}
-                        {% else %}
-                            {{ field }}
+                        {% if field.name != 'images' %}
+                            <div class="form-group">
+                                {{ field | as_crispy_field }}
+                            </div>
                         {% endif %}
-                    {% endfor %}
+                    {% endfor %}            
                     <div class="text-right">
                         <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0">Cancel</a>
                         <button class="btn btn-black rounded-0" type="submit">Add Product</button>

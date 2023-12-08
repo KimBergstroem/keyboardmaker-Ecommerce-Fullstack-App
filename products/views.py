@@ -3,7 +3,7 @@ from django.db.models.functions import Lower
 from django.contrib import messages
 from django.db.models import Q # This is for searching queries
 from .models import Product, Category, Review, ProductImage
-from .forms import ProductForm, ReviewForm
+from .forms import ProductForm, ReviewForm,  ImageFormSet
 from django.contrib.auth.decorators import login_required, user_passes_test
 from checkout.models import Order, OrderLineItem
 from profiles.models import UserProfile

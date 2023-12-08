@@ -257,6 +257,15 @@ textarea {
     cursor: pointer;
 }
 
+.small-images-container {
+    max-width: 380px;
+    overflow: auto;
+}
+
+.small-images img.selected {
+    border: 2px solid black;
+}
+
 @media (max-width: 425px) {
     .btn.btn-outline-black.rounded-0,
     .btn.btn-black.rounded-0.text-uppercase {

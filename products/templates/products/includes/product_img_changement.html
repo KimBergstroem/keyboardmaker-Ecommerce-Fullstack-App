@@ -3,9 +3,16 @@
     document.addEventListener('DOMContentLoaded', function() {
 
         // ClickEvent for current smallImages
-        var smallImages = document.getElementById('smallImages');
         smallImages.addEventListener('click', function(event) {
             if (event.target.tagName === 'IMG') {
+                var allImages = document.querySelectorAll('.small-images img');
+                allImages.forEach(function(img) {
+                    img.classList.remove('selected');
+                });
+
+                event.target.classList.add('selected');
+                
+                // Change the main image
                 changeMainImage(event.target.src);
                 event.preventDefault();
             }
