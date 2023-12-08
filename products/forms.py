@@ -1,20 +1,31 @@
 from django import forms
 from .models import Product, Category, Review, ProductImage
 from .widgets import CustomClearableFileInput
+from django.forms import inlineformset_factory
+
+
+class ProductImageForm(forms.ModelForm):
+    """
+    Form for product images
+    """
+    class Meta:
+        model = ProductImage
+        fields = ('images',)
 
 
 class ProductForm(forms.ModelForm):
+    """
+    Form for product details
+    """
     class Meta:
         model = Product
         fields = '__all__'
 
-    images = forms.ModelMultipleChoiceField(
-        queryset=ProductImage.objects.all(),
-        widget=forms.CheckboxSelectMultiple,
-        required=False,
-    )
-
     def __init__(self, *args, **kwargs):
+        """
+        Initialize the form with additional 
+        choices for the 'category' field
+        """
         super().__init__(*args, **kwargs)
         categories = Category.objects.all()
         friendly_names = [(c.id, c.get_friendly_name()) for c in categories]
@@ -22,27 +33,28 @@ class ProductForm(forms.ModelForm):
         for field_name, field in self.fields.items():
             field.widget.attrs['class'] = 'border-black rounded-0'
 
-    def save(self, commit=True):
-        # Call the save method of the parent class
-        instance = super().save(commit=False)
 
-        # Call the custom image_size_save method to handle image resizing
-        instance.image_size_save()
+# Create a formset for handling additional 
+#images associated with a product,
+# using the ProductImageForm as the form class
+ImageFormSet = inlineformset_factory(Product, ProductImage, form=ProductImageForm, 
+                                     fields=('images',), extra=1, can_delete=True)
 
-        # Save the instance to the database
-        if commit:
-            instance.save()
-            self.save_m2m()
-
-        return instance
 
 
 class ReviewForm(forms.ModelForm):
+    """
+    Form for product reviews
+    """
     class Meta:
         model = Review
         fields = ("text", "rating")
 
     def __init__(self, *args, **kwargs):
+        """
+        Initialize the form with custom attributes 
+        based on whether the user has bought the product
+        """
         super().__init__(*args, **kwargs)
         
         has_bought = self.initial.get('has_bought', False)
@@ -59,6 +71,10 @@ class ReviewForm(forms.ModelForm):
             field.label = False  # This removes the label from the form field
 
     def clean(self):
+        """
+        Validate the form data, checking if 
+        required fields are present
+        """
         cleaned_data = super().clean()
         has_bought = cleaned_data.get('has_bought', False)  # Default to False if not present
         text = cleaned_data.get('text', '')
