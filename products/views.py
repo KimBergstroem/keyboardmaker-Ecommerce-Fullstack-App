@@ -236,13 +236,20 @@ def edit_product(request, product_id):
 @login_required
 def delete_product(request, product_id):
     """ 
-    Delete a product to the store 
+    Delete a product from the store with confirmation step
     """
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owner can do that.')
         return redirect(reverse('home'))
 
     product = get_object_or_404(Product, pk=product_id)
-    product.delete()
-    messages.success(request, f"{product.name} has been deleted")
-    return redirect(reverse('products'))
+
+    if request.method == 'POST':
+        product.delete()
+        messages.success(request, f"{product.name} has been deleted")
+        return redirect(reverse('products'))
+
+    template = 'products/delete_product.html'
+
+    context = {'product': product}
+    return render(request, template, context)
