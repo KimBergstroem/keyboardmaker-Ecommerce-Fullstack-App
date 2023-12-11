@@ -33,6 +33,8 @@ class ProductForm(forms.ModelForm):
         for field_name, field in self.fields.items():
             field.widget.attrs['class'] = 'border-black rounded-0'
 
+        # Add help_text to the 'image' field
+        self.fields['image'].help_text = "Best image resolution is 380x380 and .png format"
 
 # Create a formset for handling additional 
 #images associated with a product,
