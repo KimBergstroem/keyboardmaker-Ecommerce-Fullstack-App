@@ -1,3 +1,4 @@
+{% load static %}
 <div id="reviews" class="review-section">
     <div class="d-flex align-items-center justify-content-between mb-4">
         <h4 class="m-0">{{ review_count }} Product reviews</h4>
@@ -147,7 +148,11 @@
                 <div class="response-item mt-4 d-flex">
                     <div class="left">
                         <span>
-                            <img src="#" class="profile-pict-img img-fluid" alt="" />
+                            {% if request.user.userprofile.profile_picture %}
+                                <img src="{{ request.user.userprofile.profile_picture.url }}" class="rounded-circle img-fluid responsive-profile-img" alt="Profile Picture">
+                            {% else %}
+                                <img src="{% static 'images/default_profile.png' %}" class="rounded-circle img-fluid responsive-profile-img" alt="Default Profile Picture">
+                            {% endif %}
                         </span>
                     </div>
                     <div class="right">
@@ -169,7 +174,7 @@
                                             </a>
                                         {% endif %}
                                     {% endif %}
-           
+
                             </span>
                         </h4>
                         <div class="country d-flex align-items-center">

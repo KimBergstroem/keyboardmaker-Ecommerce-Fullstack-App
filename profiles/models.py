@@ -27,7 +27,7 @@ class UserProfile(models.Model):
     bio = models.TextField(
         max_length=150, default="Currently no bio", blank=True
         )
-    profile_picture = models.ImageField(blank=True, upload_to='userprofile/', default="No img")
+    profile_picture = models.ImageField(blank=True, upload_to='userprofile/', default="default_profile.png")
     country = models.CharField(
         max_length=30, default="Citizen of the Cyber world", blank=True
     )
