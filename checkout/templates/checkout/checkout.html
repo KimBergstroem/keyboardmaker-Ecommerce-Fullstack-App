@@ -6,6 +6,7 @@
 
 {% block extra_css %}
     <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
+    <link rel="stylesheet" href="https://js.stripe.com/v3/m-outer-4aa15fba27b58198e2e1c8d98cc6ad98.html">
 {% endblock %}
 
 {% block page_header %}
@@ -104,14 +105,23 @@
 							{% endif %}
 						</div>
                     </fieldset>
-                    <fieldset class="px-3">
-                        <legend class="fieldset-label small text-black px-2 w-auto">Payment</legend>
-                        <!-- A Stripe card element will go here -->
-                        <div class="mb-3" id="payment-element"></div>
-                        <!-- Used to display form errors -->
+                    <fieldset class="rounded px-3 mb-5">
+                        <legend class="fieldset-label small text-black px-2 w-auto mb-3">Payment</legend>
+                        <!-- Used for card entry details with stripe -->
+                        <p class="small text-muted">Card Number</p>
+                        <div class="mb-3" id="card-number-element"></div>
+                        <div class="card-inputs-container">
+                            <div class="w-50"><p class="small text-muted">Expiry Date</p></div>
+                            <div class="w-50"><p class="small text-muted ml-1">CVC Code</p></div>
+                        </div>
+                        <div class="card-inputs-container">
+                            <div class="mb-3" id="card-expiry-element"></div>
+                            <div class="mb-3 ml-2" id="card-cvc-element"></div>
+                        </div>
+                        <!-- Esed for card errors with stripe -->
                         <div class="mb-3 text-danger" id="card-errors" role="alert"></div>
-                        <!-- Pass the client secret to the view so we can get the payment intent id -->
-                        <input type="hidden" value="{{ client_secret }}" name="client_secret">
+                        <!-- Pass client secret to view to access pid -->
+                        <input type="hidden" value="{{ cient_secret }}" name="client_secret">
                     </fieldset>
 
                     <div class="submit-button text-right mt-5 mb-2">                    
