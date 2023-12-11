@@ -1,6 +1,8 @@
 from pathlib import Path
 import os
 import dj_database_url
+import logging
+from logging.handlers import RotatingFileHandler
 
 if os.path.isfile("env.py"):
     import env
@@ -221,3 +223,36 @@ else:
     EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
     EMAIL_HOST_PASS = os.environ.get('EMAIL_HOST_PASS')
     DEFAULT_FROM_EMAIL = os.environ.get('EMAIL_HOST_USER')
+
+#SENDGRID_API_KEY = os.environ.get('SENDGRID_API_KEY')
+
+# Error Logging 
+LOGGING = {
+    'version': 1,
+    'handlers': {
+        'file': {
+            'level': 'ERROR',
+            'class': 'logging.handlers.RotatingFileHandler',
+            'filename': 'logs/error.log',
+            'maxBytes': 10 * 1024 * 1024,  # Set the maximum file size
+            'backupCount': 2,  # Number of backup files to keep
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['file'],
+            'level': 'ERROR',
+            'propagate': True,
+        },
+    },
+}
+
+# Setup for log rotation
+logger = logging.getLogger('django')
+handler = RotatingFileHandler(
+    'logs/error.log',
+    maxBytes=10 * 1024 * 1024,
+    backupCount=5
+)
+logger.addHandler(handler)
+logger.setLevel(logging.ERROR)
