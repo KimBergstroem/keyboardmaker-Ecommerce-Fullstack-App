@@ -60,19 +60,37 @@
                 {% for product in products %}
                 <div class="product-contain1 col-sm-6 col-md-6 col-lg-4 col-xl-3 grid-view"><!-- Responsive grid display -->
                     <div class="card h-100 border-0 bg-transparent">
-                        {% if product.image %} <!-- Image rendering -->
-                        <a href="{% url 'product_detail' product.id %}">
-                            <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
-                        </a>
-                        {% else %}
-                        <a href="{% url 'product_detail' product.id %}">
-                            <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png"
-                                alt="{{ product.name }}">
-                        </a>
-                        {% endif %}
+                        <div class="image-container position-relative">
+                            {% if product.out_of_stock %}
+                                <div class="overlay-oos">
+                                    <div>
+                                        Out of Stock
+                                    </div>
+                                </div>
+                            {% elif product.deal %}
+                                <div class="deal-mark">
+                                    On Sale
+                                </div>
+                            {% endif %}
+
+                            {% if product.image %} <!-- Image rendering -->
+                                <a href="{% url 'product_detail' product.id %}">
+                                    <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
+                                </a>
+                            {% else %}
+                                <a href="{% url 'product_detail' product.id %}">
+                                    <img class="card-img-top img-fluid" src="{% static 'images/no-product-img.png' %}"
+                                        alt="{{ product.name }}">
+                                </a>
+                            {% endif %}
+                        </div>
                         <div class="card-body pb-0"> <!-- Product name rendering -->
-                            <a href="{% url 'product_detail' product.id %}" class="text-decoration-none">
-                            <p class="mb-1 text-decoration-none text-black">{{ product.name }}</p></a>
+                            {% if product.out_of_stock %}
+                                <p class="mb-1 text-decoration-none text-muted">{{ product.name }}</p>
+                            {% else %}
+                                <a href="{% url 'product_detail' product.id %}" class="text-decoration-none">
+                                <p class="mb-1 text-decoration-none text-black">{{ product.name }}</p></a>
+                            {% endif %}
                         </div>
                         <div class="card-footer bg-transparent pt-0 border-0"> <!-- Product information rendering -->
                             <div class="row">
@@ -104,13 +122,19 @@
                                             <a href="{% url 'edit_product' product.id %}">Edit</a> |
                                             <a href="{% url 'delete_product' product.id %}" class="text-danger">Delete </a>
                                         </small>
-                                    {% endif %}     
+                                    {% endif %}   
+                                    {% if product.out_of_stock %}
+                                        <div>
+                                            <input type="submit" class="text-uppercase" value="Add to Cart" disabled>
+                                        </div>
+                                    {% else %}
                                         <form class="form mt-2" action="{% url 'add_to_bag' product.id %}" method="POST">
                                             {% csrf_token %}
                                             <input type="hidden" name="quantity" value="1">
                                             <input type="submit" class="text-uppercase" value="Add to Cart">
                                             <input type="hidden" name="redirect_url" value="{% url 'products' %}">
-                                        </form>            
+                                        </form>
+                                    {% endif %}           
                                 </div>
                             </div>
                         </div>
@@ -204,7 +228,6 @@
                     updateProductLayout();
                 }
             });
-
         </script>
         
 {% endblock %}

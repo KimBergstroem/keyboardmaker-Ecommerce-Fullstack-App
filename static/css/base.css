@@ -304,6 +304,56 @@ overflow-x: hidden;
 overflow-y: auto;
 }
 
+/* ----------------------------------- Product */
+.overlay-oos {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 20px;
+  font-weight: bolder;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(65, 65, 65, 0.445); 
+  z-index: 98; 
+}
+
+.product-contain1.list-view .image-container {
+  position: relative;
+}
+
+.product-contain1.list-view .deal-mark {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(0,123,255);
+  width: 75px;
+  height: 50px;
+  color: white;
+  z-index: 99;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 5px;
+}
+
+.deal-mark{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(0,123,255);
+  width: 75px;
+  height: 50px;
+  color: white;
+  z-index: 99;
+  position: absolute;
+  margin: 5px;
+}
+
 /* ----------------------------------- Product Form */
 .btn-file{
   position: relative;
