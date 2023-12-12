@@ -32,6 +32,8 @@ class Product(models.Model):
     price = models.DecimalField(max_digits=6, decimal_places=2)
     image_url = models.URLField(max_length=1024, null=True, blank=True)
     image = models.FileField(blank=True)
+    deal = models.BooleanField(default=False)
+    out_of_stock = models.BooleanField(default=False)
 
     def image_size_save(self, *args, **kwargs):
         super().save(*args, **kwargs)
@@ -59,6 +61,9 @@ class Product(models.Model):
 
 
 class ProductImage(models.Model):
+    """
+    Model representing multiple images to product
+    """
     product = models.ForeignKey(Product, default=None, on_delete=models.CASCADE)
     images = models.FileField()
 
