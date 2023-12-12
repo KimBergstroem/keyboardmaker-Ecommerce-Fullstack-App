@@ -61,25 +61,29 @@
         <div class="row justify-content-center ">
 
             <div class="m-3 card-category mx-auto  text-center bg-black shadow-lg">
-                <img src="{% static 'images/categorykeyboards2.png' %}" class="img-fluid" alt="">
-                <p class="font-weight-bold mt-2">KEYBOARDS</p>
+                <a href="{% url 'products' %}?category=100,75,65,60,40,mechanical" class="text-decoration-none text-black">
+                <img src="{% static 'images/categorykeyboards2.png' %}" class="img-fluid" alt="Category Keyboards">
+                <p class="font-weight-bold mt-2">KEYBOARDS</p></a>
             </div>
 
             <div class="m-3 card-category mx-auto  text-center bg-black shadow-lg">
                 <div class="text-center">
-                    <img src="{% static 'images/categorykeycaps3.png' %}" class="img-fluid" alt="">
-                    <p class="font-weight-bold mt-2">KEYCAPS</p>
+                    <a href="{% url 'products' %}?category=abs,pbt,rubber,custom_made" class="text-decoration-none text-black">
+                    <img src="{% static 'images/categorykeycaps3.png' %}" class="img-fluid" alt="Category Keycaps">
+                    <p class="font-weight-bold mt-2">KEYCAPS</p></a>
                 </div>
             </div>
 
             <div class="m-3 card-category mx-auto  text-center bg-black shadow-lg">
-                <img src="{% static 'images/categoryswitches3.png' %}" class="img-fluid" alt="">
-                <p class="font-weight-bold mt-2">SWITCHES</p>
+                <a href="{% url 'products' %}?category=tools" class="text-decoration-none text-black">
+                <img src="{% static 'images/categoryswitches3.png' %}" class="img-fluid" alt="Category Switches">
+                <p class="font-weight-bold mt-2">SWITCHES</p></a>
             </div>
 
             <div class="m-3 card-category mx-auto  text-center bg-black shadow-lg">
-                <img src="{% static 'images/categorytools2.png' %}" class="img-fluid" alt="">
-                <p class="font-weight-bold mt-2">TOOLS</p>
+                <a href="{% url 'products' %}?category=100,75,65,60,40,mechanical" class="text-decoration-none text-black">
+                <img src="{% static 'images/categorytools2.png' %}" class="img-fluid" alt="Category Tools">
+                <p class="font-weight-bold mt-2">TOOLS</p></a>
             </div>
 
         </div>
@@ -99,14 +103,17 @@
                     </div>
                 </div>
                 <div class="col-md-5 col-sm-12 text-center"> <!-- Center the content within the column -->
-                    <form class="subscription-form validate">
-                        <div class="input-group flex-wrap">
-                            <input class="form-control rounded-0" type="email" name="EMAIL" placeholder="Your email"
-                                required="" autocomplete="email">
-                            <button class="btn btn-medium btn-primary rounded-0 text-uppercase" type="submit"
-                                name="subscribe">Subscribe</button>
-                        </div>
-                    </form>
+                
+                        <form class="subscription-form validate" action="{% url 'subscribe' %}" method="post">
+                            {% csrf_token %}
+                            <div class="input-group flex-wrap">
+                                <input class="form-control rounded-0" type="email" name="email" placeholder="Your email"
+                                    required="" autocomplete="email">
+                                <button class="btn btn-medium btn-primary rounded-0 text-uppercase" type="submit"
+                                    name="subscribe">Subscribe</button>
+                            </div>
+                        </form>
+                   
                 </div>
             </div>
         </div>

@@ -1,6 +1,7 @@
 from django import forms
 from .models import contact_form
 
+
 class ContactForm(forms.ModelForm):
     class Meta:
         model = contact_form
@@ -20,3 +21,9 @@ class ContactForm(forms.ModelForm):
         }
 
         self.fields['email'].widget.attrs['autofocus'] = True
+
+
+class NewsletterForm(forms.Form):
+    subject = forms.CharField()
+    receivers = forms.CharField()
+    message = forms.CharField(label="Email content")

@@ -1,4 +1,6 @@
 from django.db import models
+from django.utils import timezone
+
 
 class contact_form(models.Model):
     """
@@ -22,3 +24,14 @@ class contact_form(models.Model):
 
     class Meta:
         verbose_name = "Contact Form"
+
+
+class SubscribedUsers(models.Model):
+    """
+    Model for storing subscribed users information
+    """
+    email = models.EmailField(unique=True, max_length=100)
+    created_date = models.DateTimeField('Date created', default=timezone.now)
+
+    def __str__(self):
+        return self.email
