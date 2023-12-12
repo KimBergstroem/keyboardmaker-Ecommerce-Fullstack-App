@@ -853,6 +853,39 @@ For deploying Your app, Heroku is used. Follow these steps:
  **Migrate Models:**
    - In workspace terminal, migrate the models to the new database connection.
 
+### Custom Domain configuration
+
+1. **Register Domain:**
+   - Register a domain with a domain registrar (e.g., GoDaddy).
+
+2. **Add Custom Domain in Heroku:**
+   - Go to the "Settings" tab of your Heroku app.
+   - Scroll down to "Domains" and click "Add Domain."
+   - Enter your custom domain (e.g., `www.easykeyboardsmaker.com`).
+   - Copy the provided DNS target. It will look something like `shallow-atoll-32t56jvds3s5fhf8767d9a9c.herokudns.com`.
+
+3. **Configure DNS Records:**
+   - Log in to your domain registrar (e.g., GoDaddy).
+   - Navigate to DNS settings.
+   - Add a CNAME record:
+      - Type: CNAME
+      - Name: www
+      - Value: Paste Heroku's DNS target
+      - TTL: Set to default
+
+4. **Verify Domain Configuration:**
+   - Check the "Domains" section in your Heroku dashboard.
+   - Wait for DNS changes to propagate (up to 48 hours).
+
+5. **HTTP and HTTPS Forwarding (Optional):**
+   - Optionally, configure forwarding in your domain registrar's settings.
+
+6. **Verify Custom Domain:**
+   - After DNS propagation, access your app using the custom domain.
+
+6. **Add ACCESS_HOSTNAME to your project settings:**
+   - Add "www.yourdomain.com" to `ALLOWED_HOSTS` in your Django app's settings.py file.
+
 ### Version Control
 To manage version control and push code to the main repository on GitHub using GitPod, follow these steps:
 
@@ -973,6 +1006,7 @@ I would like to extend my appreciation to the authors of the tutorials and YouTu
 - [Style The Post details view](https://www.bootdey.com/snippets/tagged/blog)
 - [Automated Testing: Behaviour Driven Development with Naoise Gaffney](https://www.youtube.com/watch?v=tHSJ4-ZqbLs)
 - [Django Testing Tutorial - How To Test Your Django Applications](https://www.youtube.com/playlist?list=PLbpAWbHbi5rMF2j5n6imm0enrSD9eQUaM)
+- [Understand 'Newsletter' function and sending email with django](https://pylessons.com/django-subscribe)
 
 ### Content
 
