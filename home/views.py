@@ -76,3 +76,7 @@ def shipping_policy(request):
 
 def terms_of_service(request):
     return render(request, 'home/information/terms_of_service.html')
+
+
+def warranty_policy(request):
+    return render(request, 'home/information/warranty_policy.html')

@@ -13,4 +13,5 @@ urlpatterns = [
     path('return-policy/', views.return_policy, name='return_policy'),
     path('shipping-policy/', views.shipping_policy, name='shipping_policy'),
     path('terms-of-service/', views.terms_of_service, name='terms_of_service'),
+    path('warranty-policy/', views.warranty_policy, name='warranty_policy'),
 ]
