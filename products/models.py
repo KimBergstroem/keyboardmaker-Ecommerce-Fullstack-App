@@ -1,6 +1,7 @@
 from django.db import models
 from PIL import Image
 from django.contrib.auth.models import User
+from django.utils import timezone
 from django.core.validators import MinValueValidator, MaxValueValidator
 
 
@@ -34,6 +35,7 @@ class Product(models.Model):
     image = models.FileField(blank=True)
     deal = models.BooleanField(default=False)
     out_of_stock = models.BooleanField(default=False)
+    created_at = models.DateTimeField(default=timezone.now)
 
     def image_size_save(self, *args, **kwargs):
         super().save(*args, **kwargs)

@@ -1,6 +1,5 @@
 from django.shortcuts import render
 
-
 def handler403(request, exception):
     """
     403 error Server Error

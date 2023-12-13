@@ -9,6 +9,7 @@ from django.core.validators import validate_email
 from django.core.exceptions import ValidationError
 from django.contrib import messages
 from django.core.mail import EmailMessage
+from products.models import Product
 
 
 def index(request):
@@ -18,9 +19,11 @@ def index(request):
     posts = Post.objects.all()
     # Fetch the three newest posts for display
     latest_posts = Post.objects.order_by('-created_on')[:3]
+    new_arrivals = Product.objects.order_by('-created_at')
 
     context = {
         'posts': latest_posts,
+        'products': new_arrivals,
     }
     return render(request, 'home/index.html', context)
 

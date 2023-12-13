@@ -95,14 +95,14 @@
     <div class="container d-flex justify-content-center align-items-center">
         <div class="row">
             <div class="subscribe-content bg-black d-flex flex-wrap justify-content-center align-items-center p-4 shadow">
-                <div class="col-md-6 col-sm-12 "> <!-- Center the content within the column -->
+                <div class="col-md-6 col-sm-12 "> 
                     <div class="display-header pe-3">
                         <h2 class="text-uppercase text-white">Subscribe Now</h2>
                         <p class="text-muted text-small">Get the latest news, updates, and deals directly mailed to your
                             inbox.</p>
                     </div>
                 </div>
-                <div class="col-md-5 col-sm-12 text-center"> <!-- Center the content within the column -->
+                <div class="col-md-5 col-sm-12 text-center"> 
                 
                         <form class="subscription-form validate" action="{% url 'subscribe' %}" method="post">
                             {% csrf_token %}
@@ -113,14 +113,13 @@
                                     name="subscribe">Subscribe</button>
                             </div>
                         </form>
-                   
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Deals section -->
+<!-- New Arrival section -->
 <section class="section-margin-bottom">
     <div class="container mt-5 text-center">
         <div class="col-12 mb-4">
@@ -134,22 +133,22 @@
     <div class="container mb-5">
         <div class="row justify-content-center">
 
-            <div class="m-3 card-category mx-auto  text-center bg-black shadow-lg">
-                <div class="text-center">Keyboards</div>
-            </div>
-
-            <div class="m-3 card-category mx-auto  text-center bg-black shadow-lg">
-                <div class="text-center">Keycaps</div>
-            </div>
-
-            <div class="m-3 card-category mx-auto  text-center bg-black shadow-lg">
-                <div class="text-center">Switches</div>
-            </div>
-
-            <div class="m-3 card-category mx-auto  text-center bg-black shadow-lg">
-                <div class="text-center">Tools</div>
-            </div>
-
+            {% for product in products|slice:":4" %}
+                <div class="m-3 card-category mx-auto  text-center bg-black shadow-lg">
+                    <a href="{% url 'product_detail' product.id %}" class="text-decoration-none text-black">
+                        {% if product.image %} <!-- Image rendering -->
+                            <a href="{% url 'product_detail' product.id %}">
+                                <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
+                            </a>
+                        {% else %}
+                            <a href="{% url 'product_detail' product.id %}">
+                                <img class="card-img-top img-fluid" src="{% static 'images/no-product-img.png' %}"
+                                    alt="{{ product.name }}">
+                            </a>
+                        {% endif %}
+                        <p class="font-weight-bold mt-2">{{ product.name }}</p></a>
+                </div>
+            {% endfor %}
         </div>
     </div>
 </section>
