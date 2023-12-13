@@ -23,11 +23,10 @@ class UserProfile(models.Model):
     # User's personal information
     first_name = models.CharField(max_length=20, blank=True)
     last_name = models.CharField(max_length=20, blank=True)
-    email = models.EmailField(max_length=40, default="example@example.com")
     bio = models.TextField(
         max_length=150, default="Currently no bio", blank=True
         )
-    profile_picture = models.ImageField(blank=True, upload_to='userprofile/', default="default_profile.png")
+    profile_picture = models.ImageField(blank=True, upload_to='userprofile/', default="images/default_profile.png")
     country = models.CharField(
         max_length=30, default="Citizen of the Cyber world", blank=True
     )
