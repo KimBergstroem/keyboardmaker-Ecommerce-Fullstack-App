@@ -45,6 +45,10 @@ background-color: #ffffff;
   width: 1.5rem;
 }
 
+.nav-link {
+  white-space: nowrap;
+}
+
 .logo-font {
   text-transform: uppercase;
 }
@@ -100,6 +104,11 @@ z-index: -1;
   width: 100%;
   aspect-ratio: 1 / 1;
   object-fit: cover;
+}
+
+.card-category:hover {
+  transform: scale(1.1); /* You can adjust the scale as needed */
+  transition: transform 0.3s ease-in-out;
 }
 
 .card-category {

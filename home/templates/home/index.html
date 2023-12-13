@@ -60,13 +60,13 @@
     <div class="container mb-5">
         <div class="row justify-content-center ">
 
-            <div class="m-3 card-category mx-auto  text-center bg-black shadow-lg">
+            <div class="m-3 card-category mx-auto  text-center shadow-lg">
                 <a href="{% url 'products' %}?category=100,75,65,60,40,mechanical" class="text-decoration-none text-black">
                 <img src="{% static 'images/categorykeyboards2.png' %}" class="img-fluid" alt="Category Keyboards">
                 <p class="font-weight-bold mt-2">KEYBOARDS</p></a>
             </div>
 
-            <div class="m-3 card-category mx-auto  text-center bg-black shadow-lg">
+            <div class="m-3 card-category mx-auto  text-center shadow-lg">
                 <div class="text-center">
                     <a href="{% url 'products' %}?category=abs,pbt,rubber,custom_made" class="text-decoration-none text-black">
                     <img src="{% static 'images/categorykeycaps3.png' %}" class="img-fluid" alt="Category Keycaps">
@@ -74,13 +74,13 @@
                 </div>
             </div>
 
-            <div class="m-3 card-category mx-auto  text-center bg-black shadow-lg">
+            <div class="m-3 card-category mx-auto  text-center shadow-lg">
                 <a href="{% url 'products' %}?category=tools" class="text-decoration-none text-black">
                 <img src="{% static 'images/categoryswitches3.png' %}" class="img-fluid" alt="Category Switches">
                 <p class="font-weight-bold mt-2">SWITCHES</p></a>
             </div>
 
-            <div class="m-3 card-category mx-auto  text-center bg-black shadow-lg">
+            <div class="m-3 card-category mx-auto  text-center shadow-lg">
                 <a href="{% url 'products' %}?category=100,75,65,60,40,mechanical" class="text-decoration-none text-black">
                 <img src="{% static 'images/categorytools2.png' %}" class="img-fluid" alt="Category Tools">
                 <p class="font-weight-bold mt-2">TOOLS</p></a>
@@ -94,7 +94,7 @@
 <section class="container-grid p-5 position-relative overflow-hidden section-margin-bottom">
     <div class="container d-flex justify-content-center align-items-center">
         <div class="row">
-            <div class="subscribe-content bg-black d-flex flex-wrap justify-content-center align-items-center p-4 shadow">
+            <div class="subscribe-content  d-flex flex-wrap justify-content-center align-items-center p-4 shadow">
                 <div class="col-md-6 col-sm-12 "> 
                     <div class="display-header pe-3">
                         <h2 class="text-uppercase text-white">Subscribe Now</h2>
@@ -134,7 +134,12 @@
         <div class="row justify-content-center">
 
             {% for product in products|slice:":4" %}
-                <div class="m-3 card-category mx-auto  text-center bg-black shadow-lg">
+                <div class="m-3 card-category mx-auto text-center bg-black shadow-lg">
+                    <div class="new-mark">
+                        <div>
+                            New!
+                        </div>
+                    </div>
                     <a href="{% url 'product_detail' product.id %}" class="text-decoration-none text-black">
                         {% if product.image %} <!-- Image rendering -->
                             <a href="{% url 'product_detail' product.id %}">
@@ -149,6 +154,15 @@
                         <p class="font-weight-bold mt-2">{{ product.name }}</p></a>
                 </div>
             {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- Text divider section -->
+<section class="section-margin-bottom">
+    <div class="container">
+        <div class="ml-2 mr-2 section-margin-bottom">
+            <h2 class="text-black text-center text-devider">Affordable pricing for designs crafted by the community!</h2>
         </div>
     </div>
 </section>

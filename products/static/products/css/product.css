@@ -316,6 +316,6 @@ textarea {
 
 @media (min-width: 992px) and (max-width: 1024px) {
     .custom-col {
-        width: 500px !important; /* Adjust this value as needed */
+        width: 500px !important;
     }
 }

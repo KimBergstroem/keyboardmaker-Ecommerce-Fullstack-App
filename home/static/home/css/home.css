@@ -1,5 +1,30 @@
 /* Only Stylesheet for home, support, information templates */
 
+/* -------------------------------- Index.html  */
+.new-mark{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(0,123,255);
+    width: 58px;
+    height: 38px;
+    color: white;
+    z-index: 99;
+    position: absolute;
+    margin: 5px;
+}
+
+.subscribe-content {
+    background-image: url('/static/images/newsletter-img.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.text-devider{
+    font-size: 67px;
+}
+
 /* -------------------------------- FAQ Section */
 body{margin-top:20px;}
 .section_padding_130 {
@@ -112,6 +137,12 @@ body{margin-top:20px;}
 
 @media (max-width: 375px) {
     .card-title {
-        font-size: 16px; /* Adjust the font size as needed */
+        font-size: 16px; 
+    }
+}
+
+@media (max-width: 767px) {
+    .text-devider {
+        font-size: 45px; /* Adjust the font size for mobile screens */
     }
 }
