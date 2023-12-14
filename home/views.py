@@ -10,6 +10,7 @@ from django.core.exceptions import ValidationError
 from django.contrib import messages
 from django.core.mail import EmailMessage
 from products.models import Product
+from django.http import HttpResponse
 
 
 def index(request):
@@ -91,12 +92,54 @@ def warranty_policy(request):
     return render(request, 'home/information/warranty_policy.html')
 
 
+@user_passes_test(lambda user: user.is_superuser)
+def newsletter(request):
+    """
+    Send newsletter to subscribers with 
+    individual unsubscribe links
+    """
+    if request.method == 'POST':
+        form = NewsletterForm(request.POST)
+        if form.is_valid():
+            subject = form.cleaned_data.get('subject')
+            receivers = form.cleaned_data.get('receivers').split(',')
+            email_message = form.cleaned_data.get('message')
+
+            # Iterate through subscribers and include unsubscribe links with personally email
+            for subscriber in SubscribedUsers.objects.all():
+                unsubscribe_link = f'http://127.0.0.1:8000/unsubscribe/{subscriber.email}/'
+                email_message_with_unsubscribe = f"{email_message}\n\nUnsubscribe link: {unsubscribe_link}"
+
+                # Create the EmailMessage object
+                mail = EmailMessage(subject, email_message_with_unsubscribe, f"EasyKeyboardMaker <{request.user.email}>", to=[subscriber.email])
+                mail.content_subtype = 'html'
+
+                # Send the email to the current subscriber
+                if mail.send():
+                    messages.success(request, f"Email sent successfully to {subscriber.email}")
+                else:
+                    messages.error(request, f"There was an error sending email to {subscriber.email}")
+
+            return redirect('/')
+        else:
+            for error in list(form.errors.values()):
+                messages.error(request, error)
+            return redirect('/')
+
+    form = NewsletterForm()
+    form.fields['receivers'].initial = ','.join([active.email for active in SubscribedUsers.objects.all()])
+    return render(request=request, template_name='home/newsletter.html', context={'form': form})
+
+
 def subscribe(request):
+    """
+    Handle newsletter subscription
+    """
     if request.method == 'POST':
         email = request.POST.get('email', None)
 
         if not email:
-            messages.error(request, "You must type legit email address to subscribe to a Newsletter")
+            messages.error(request, "You must type a legitimate email address to subscribe to the newsletter")
             return redirect("/")
 
         if User.objects.filter(email=email).exists():
@@ -105,8 +148,8 @@ def subscribe(request):
 
         subscribe_user = SubscribedUsers.objects.filter(email=email).first()
         if subscribe_user:
-            messages.error(request, f"{email} email address is already subscriber.")
-            return redirect(request.META.get("HTTP_REFERER", "/"))  
+            messages.error(request, f"{email} email address is already a subscriber.")
+            return redirect(request.META.get("HTTP_REFERER", "/"))
 
         try:
             validate_email(email)
@@ -114,36 +157,30 @@ def subscribe(request):
             messages.error(request, e.messages[0])
             return redirect("/")
 
-        subscribe_model_instance = SubscribedUsers()
-        subscribe_model_instance.email = email
+        subscribe_model_instance = SubscribedUsers(email=email)
         subscribe_model_instance.save()
+
+        # Send thank-you email
+        subscribe_model_instance.send_thank_you_email()
+
         messages.success(request, f'{email} email was successfully subscribed to our newsletter!')
         return redirect(request.META.get("HTTP_REFERER", "/"))
 
+    return HttpResponse("Invalid request")
 
-@user_passes_test(lambda user: user.is_superuser)
-def newsletter(request):
-    if request.method == 'POST':
-        form = NewsletterForm(request.POST)
-        if form.is_valid():
-            subject = form.cleaned_data.get('subject')
-            receivers = form.cleaned_data.get('receivers').split(',')
-            email_message = form.cleaned_data.get('message')
 
-            mail = EmailMessage(subject, email_message, f"EasyKeyboardMaker <{request.user.email}>", bcc=receivers)
-            mail.content_subtype = 'html'
-
-            if mail.send():
-                messages.success(request, "Email sent succesfully")
-            else:
-                messages.error(request, "There was an error sending email")
-
+def unsubscribe(request, email):
+    """
+    Unsubscribe the user associated with
+    the provided email address
+    """
+    try:
+        subscriber = SubscribedUsers.objects.get(email=email)
+        unsubscribed = subscriber.unsubscribe()
+        if unsubscribed:
+            messages.success(request, "You have been unsubscribed successfully.")
+            return HttpResponse("You have been unsubscribed successfully. If you wish to subscribe again, please do so on the home page.")
         else:
-            for error in list(form.errors.values()):
-                messages.error(request, error)
-
-        return redirect('/')
-
-    form = NewsletterForm()
-    form.fields['receivers'].initial = ','.join([active.email for active in SubscribedUsers.objects.all()])
-    return render(request=request, template_name='home/newsletter.html', context={'form': form})
+            return HttpResponse("Invalid unsubscribe link or you are already unsubscribed.")
+    except SubscribedUsers.DoesNotExist:
+        return HttpResponse("Invalid unsubscribe link or you are already unsubscribed.")

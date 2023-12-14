@@ -9,6 +9,7 @@ urlpatterns = [
     path('partners/', views.partners, name='partners'),
     path('payments/', views.payments, name='payments'),
     path('subscribe', views.subscribe, name='subscribe'),
+    path('unsubscribe/<str:email>/', views.unsubscribe, name='unsubscribe'),
     path("newsletter", views.newsletter, name="newsletter"),
     path('contact-form/', views.contact_form, name='contact_form'),
     path('privacy-policy/', views.privacy_policy, name='privacy_policy'),
