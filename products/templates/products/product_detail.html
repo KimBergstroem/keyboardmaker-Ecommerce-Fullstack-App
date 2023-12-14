@@ -23,14 +23,15 @@
         <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
             <!-- image rendering -->
             <div class="image-container my-5">
-                {% if product.image %}
-                <a href="{{ product.image.url }}" target="_blank">
-                    <img id="mainImage" class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
-                </a>
+                {% if product.image %} <!-- Image rendering -->
+                    <a href="{% url 'product_detail' product.id %}">
+                        <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
+                    </a>
                 {% else %}
-                <a href="#">
-                    <img id="mainImage" class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
-                </a>
+                    <a href="{% url 'product_detail' product.id %}">
+                        <img class="card-img-top img-fluid" src="{% static 'images/no-product-img.png' %}"
+                            alt="{{ product.name }}">
+                    </a>
                 {% endif %}
                 <!-- Additional images row -->
                 <div class="row small-images small-images-container" id="smallImages">
