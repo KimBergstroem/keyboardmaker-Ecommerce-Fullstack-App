@@ -2,7 +2,7 @@
 <div id="reviews" class="review-section">
     <div class="d-flex align-items-center justify-content-between mb-4">
         <h4 class="m-0">{{ review_count }} Product reviews</h4>
-        <select class="custom-select custom-select-sm border-0 shadow-sm ml-2 select2-hidden-accessible" data-select2-id="1" tabindex="-1" aria-hidden="true">
+        <select class="custom-select custom-select-sm border-0 shadow-sm ml-2 select2-hidden-accessible" id="most_recent_dropdown" data-select2-id="1" tabindex="-1" aria-hidden="true">
             <option data-select2-id="3">Most Relevant</option>
             <option>Most Recent</option>
         </select>
@@ -201,7 +201,6 @@
                     {{ review_form.text | as_crispy_field }}
                     <p>How would you rate the product overall?</p>
                     <div class="star-rating d-block mb-4" role="group" aria-labelledby="rating-label">
-                        <label id="rating-label" class="sr-only">Rating:</label>
                         <input type="radio" name="rating" value="1" id="rating-1" aria-label="1 Star"><i></i>
                         <input type="radio" name="rating" value="2" id="rating-2" aria-label="2 Stars"><i></i>
                         <input type="radio" name="rating" value="3" id="rating-3" aria-label="3 Stars"><i></i>
