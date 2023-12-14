@@ -107,7 +107,7 @@ def product_detail(request, product_id):
             reviewed = Review.objects.get(user__id=request.user.id, product__id=product_id)
             review_form = ReviewForm(request.POST, instance=reviewed)
             review_form.save()
-            messages.success(request, 'Only one review per customer! Your review has been updated!')
+            messages.warning(request, 'Only one review per customer! Your review has been updated!')
             return redirect("product_detail", product_id=product_id)
 
         except Review.DoesNotExist:
@@ -143,7 +143,7 @@ def product_detail(request, product_id):
         "review_count": rating_and_count['review_count'],
         "has_bought": has_bought_product,
         "images": images,
-        'on_product_page': True,
+        
         'one_star_count': rating_and_count['one_star_count'],
         'two_star_count': rating_and_count['two_star_count'],
         'three_star_count': rating_and_count['three_star_count'],
