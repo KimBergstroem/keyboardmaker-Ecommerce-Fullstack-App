@@ -1,12 +1,10 @@
 from django.shortcuts import render, get_object_or_404
+from django.contrib import messages
 from django.contrib.auth.mixins import UserPassesTestMixin
 from django.contrib.messages.views import SuccessMessageMixin
-from .models import Post
-from .forms import PostForm
-from django.views import View
-from django.contrib import messages
 from django.urls import reverse_lazy
 from django.utils.text import slugify
+from django.views import View
 from django.views.generic import (
     TemplateView,
     ListView,
@@ -16,49 +14,57 @@ from django.views.generic import (
     UpdateView,
     DeleteView,
 )
+from .models import Post
+from .forms import PostForm
 
 
 class PostList(ListView):
+    """
+    ListView for displaying a paginated list of blog posts
+    """
     model = Post
-    template_name = 'blog/blog.html'
-    context_object_name = 'posts'
+    template_name = "blog/blog.html"
+    context_object_name = "posts"
     paginate_by = 4
 
     def get_queryset(self):
         queryset = super().get_queryset().filter(status=1)
-        query = self.request.GET.get('q')
-        sort = self.request.GET.get('sort')
-        direction = self.request.GET.get('direction')
+        query = self.request.GET.get("q")
+        sort = self.request.GET.get("sort")
+        direction = self.request.GET.get("direction")
 
         if sort:
-            if sort == 'created_on':
-                sortkey = sort if not direction or direction == 'asc' else f'-{sort}'
+            if sort == "created_on":
+                sortkey = (
+                    sort if not direction or direction == "asc" else f"-{sort}"
+                )
             else:
-                sortkey = f'-{sort}' if direction == 'desc' else sort
+                sortkey = f"-{sort}" if direction == "desc" else sort
             queryset = queryset.order_by(sortkey)
-
         if query:
             queries = Q(title__icontains=query) | Q(excerpt__icontains=query)
             queryset = queryset.filter(queries)
-
         return queryset
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['query'] = self.request.GET.get('q')
-        context['current_sorting'] = f"{self.request.GET.get('sort')}_{self.request.GET.get('direction')}"
+        context["query"] = self.request.GET.get("q")
+        context["current_sorting"] = (
+            f"{self.request.GET.get('sort')}_"
+            f"{self.request.GET.get('direction')}"
+        )
         return context
 
 
 class PostDetail(View):
     """
-    Class & Method to call the articles details pages.
+    Class & Method to call the articles details pages
     """
-    template_name = 'blog/post_detail.html'
+    template_name = "blog/post_detail.html"
 
     def get(self, request, slug):
         post = get_object_or_404(Post, slug=slug)
-        context = {'post': post}
+        context = {"post": post}
         return render(request, self.template_name, context)
 
 
@@ -68,7 +74,7 @@ class PostDelete(UserPassesTestMixin, SuccessMessageMixin, DeleteView):
     """
     model = Post
     template_name = "blog/post_delete.html"
-    success_message = 'Article is deleted!'
+    success_message = "Article is deleted!"
     success_url = reverse_lazy("blog")
 
     def test_func(self):
@@ -77,7 +83,7 @@ class PostDelete(UserPassesTestMixin, SuccessMessageMixin, DeleteView):
         being able to delete post
         """
         return self.request.user.is_superuser
-    
+
     def get_success_message(self, cleaned_data=None):
         return self.success_message
 

@@ -3,6 +3,9 @@ from .models import contact_form, SubscribedUsers
 
 
 class ContactFormAdmin(admin.ModelAdmin):
+    """
+    Admin class for managing ContactForm instances
+    """
     list_display = (
         'email',
         'subject',
@@ -12,6 +15,9 @@ class ContactFormAdmin(admin.ModelAdmin):
 
 
 class SubscribedAdmin(admin.ModelAdmin):
+    """
+    Admin class for managing SubscribedUsers instances
+    """
     list_display = (
         'email',
         'created_date',

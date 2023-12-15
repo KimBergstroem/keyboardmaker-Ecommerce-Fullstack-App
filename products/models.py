@@ -1,7 +1,7 @@
-from django.db import models
 from PIL import Image
-from django.contrib.auth.models import User
+from django.db import models
 from django.utils import timezone
+from django.contrib.auth.models import User
 from django.core.validators import MinValueValidator, MaxValueValidator
 
 
@@ -10,7 +10,9 @@ class Category(models.Model):
     Model representing product categories
     """
     class Meta:
-        verbose_name_plural = 'Categories' # Add correct name in the admin dashboard
+        verbose_name_plural = (
+            "Categories"  # Adds correct name in the admin dashboard
+        )
 
     name = models.CharField(max_length=254)
     friendly_name = models.CharField(max_length=254, null=True, blank=True)
@@ -24,9 +26,12 @@ class Category(models.Model):
 
 class Product(models.Model):
     """
-    Model representing products in the e-commerce system
+    Model representing products in
+    the e-commerce system
     """
-    category = models.ForeignKey('Category', null=True, blank=True, on_delete=models.SET_NULL)
+    category = models.ForeignKey(
+        "Category", null=True, blank=True, on_delete=models.SET_NULL
+    )
     sku = models.CharField(max_length=254, null=True, blank=True)
     name = models.CharField(max_length=254)
     description = models.TextField()
@@ -66,7 +71,9 @@ class ProductImage(models.Model):
     """
     Model representing multiple images to product
     """
-    product = models.ForeignKey(Product, default=None, on_delete=models.CASCADE)
+    product = models.ForeignKey(
+        Product, default=None, on_delete=models.CASCADE
+    )
     images = models.FileField()
 
     def __str__(self):
@@ -97,6 +104,7 @@ class Review(models.Model):
         """
         Sets the order of comments by date ascending
         """
+
         ordering = ["created_at"]
 
     def __str__(self):

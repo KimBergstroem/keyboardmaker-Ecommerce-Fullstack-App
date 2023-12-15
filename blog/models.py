@@ -1,10 +1,11 @@
-from django.db import models
 from django.contrib.auth.models import User
 from django.urls import reverse
+from django.db import models
 from django.db.models.signals import post_save, post_delete
 from django.dispatch import receiver
 
 STATUS = ((0, "Draft"), (1, "Published"))
+
 
 class Post(models.Model):
     """
@@ -14,7 +15,9 @@ class Post(models.Model):
     slug = models.SlugField(max_length=200, unique=True)
     excerpt = models.TextField(max_length=75, blank=True)
     content = models.TextField(max_length=3000, blank=True)
-    featured_image = models.ImageField(blank=True, upload_to='userprofile/', default="No img")
+    featured_image = models.ImageField(
+        blank=True, upload_to="userprofile/", default="No img"
+    )
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="blog_posts"
     )
@@ -32,10 +35,9 @@ class Post(models.Model):
         if not self.slug:
             # Generate a unique slug based on the title and timestamp
             base_slug = slugify(self.title)
-            timestamp = timezone.now().strftime('%Y%m%d%H%M%S')
+            timestamp = timezone.now().strftime("%Y%m%d%H%M%S")
             unique_slug = f"{base_slug}-{timestamp}"
             self.slug = unique_slug
-
         super().save(*args, **kwargs)
 
     def __str__(self):
@@ -48,4 +50,4 @@ class Post(models.Model):
         """
         For be able to edit the article and redirect user back the same article
         """
-        return reverse('post_detail', args=[str(self.slug)])
+        return reverse("post_detail", args=[str(self.slug)])
