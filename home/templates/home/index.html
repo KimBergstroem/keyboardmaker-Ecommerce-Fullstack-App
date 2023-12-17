@@ -181,7 +181,7 @@
                     <div class="col-md-4 mb-4">
                         <div class="card border-0">
                             <div class="card-body">
-                                {% if post.featured_imgage %}
+                                {% if post.featured_image %}
                                     <a href="{% url 'post_detail' post.slug %}">
                                         <img src="{{ post.featured_image.url }}" class="card-img-top"
                                             alt="{{ post.title }}"></a>

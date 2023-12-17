@@ -38,7 +38,7 @@
                     <div class="post-container">
                         <div class="row">
                             <div class="col-md-6">
-                                {% if post.featured_imgage %} <!-- Image rendering -->
+                                {% if post.featured_image %} <!-- Image rendering -->
                                 <a href="{% url 'post_detail' post.slug %}">
                                     <img class="img-fluid blog-img-responsive" src="{{ post.featured_image.url }}" alt="article image"></a>
                                 {% else %}
