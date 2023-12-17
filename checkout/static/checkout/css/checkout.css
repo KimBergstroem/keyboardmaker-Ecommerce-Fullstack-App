@@ -1,24 +1,25 @@
+/* Only Stylesheet for checkout, payment templates */
+
 .StripeElement,
 .stripe-style-input {
-  box-sizing: border-box;
-  height: 40px;
-  padding: 10px 12px;
-  border: 1px solid transparent;
-  border-radius: 0px;
-  background-color: white;
-  box-shadow: 0 1px 3px 0 #e6ebf1;
-  -webkit-transition: box-shadow 150ms ease;
-  transition: box-shadow 150ms ease;
+    box-sizing: border-box;
+    height: 40px;
+    padding: 10px 12px;
+    border: 1px solid transparent;
+    border-radius: 0px;
+    background-color: white;
+    box-shadow: 0 1px 3px 0 #e6ebf1;
+    transition: box-shadow 150ms ease;
 }
 
 .StripeElement--focus,
 .stripe-style-input:focus,
 .stripe-style-input:active {
-  box-shadow: 0 1px 3px 0 #cfd7df;
+    box-shadow: 0 1px 3px 0 #cfd7df;
 }
 
 .StripeElement--webkit-autofill {
-  background-color: #fefde5 !important;
+    background-color: #fefde5 !important;
 }
 
 .stripe-style-input::placeholder {
@@ -33,13 +34,13 @@
 #payment-form .form-control,
 #card-number-element,
 #card-expiry-element,
-#card-cvc-element{
+#card-cvc-element {
     color: #000;
     border: 1px solid #000;
 }
 
 #card-expiry-element,
-#card-cvc-element{
+#card-cvc-element {
     width: 50%;
 }
 
@@ -64,9 +65,10 @@
     justify-content: center;
     margin: 0;
     height: 100%;
+    font-size: 3em;
 }
 
-@media (max-width: 991px){
+@media (max-width: 991px) {
 /* Makes the class with all this exactly classes be effected */
     .btn.btn-outline-black.rounded-0,
     .btn.btn-black.rounded-0 {

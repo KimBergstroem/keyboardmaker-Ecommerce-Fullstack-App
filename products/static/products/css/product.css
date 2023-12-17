@@ -48,6 +48,7 @@
     font-size: 13px;
     font-weight: 600;
 }
+
 .review-list ul li {
     border-bottom: 1px solid #dadbdd;
     padding: 0 0 30px;
@@ -89,8 +90,6 @@
     position: relative;
     height: 8px;
     background: #efeff0;
-    -webkit-box-flex: 1;
-    -ms-flex-positive: 1;
     flex-grow: 1;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
     background-color: #ffffff;
@@ -141,6 +140,7 @@
 .review-section .stars-counters td.star-num {
     color: #111111;
 }
+
 .ranking li>span {
     color: #62646a;
     white-space: nowrap;
@@ -160,14 +160,14 @@
 }
 
 ul, ul li {
-   list-style: none;
-   margin: 0px;
+    list-style: none;
+    margin: 0px;
 }
 
 .helpful-thumbs, .helpful-thumb {
-   display: flex;
-   align-items: center;
-   font-weight: 700;
+    display: flex;
+    align-items: center;
+    font-weight: 700;
 }
 
 textarea {
@@ -191,7 +191,7 @@ textarea {
     background-size: contain;
 }
 
-.rating-star i{
+.rating-star i {
     color: #ffb503 !important;
 }
 
@@ -249,11 +249,11 @@ textarea {
     vertical-align: middle;
 }
 
-.m-extra{
+.m-extra {
     margin-top: 90px;
 }
 
-.cursor-pointer{
+.cursor-pointer {
     cursor: pointer;
 }
 
@@ -266,6 +266,7 @@ textarea {
     border: 2px solid black;
 }
 
+/* -------------------------------- Media Queries */
 @media (max-width: 425px) {
     .btn.btn-outline-black.rounded-0,
     .btn.btn-black.rounded-0.text-uppercase {
@@ -273,7 +274,8 @@ textarea {
         margin-top: 35px;
         font-size: 14px;
     }
-    .btn.btn-black.rounded-0.text-uppercase{
+
+    .btn.btn-black.rounded-0.text-uppercase {
         font-size: 16px;
     }
 
@@ -282,34 +284,41 @@ textarea {
         text-align: center;
         justify-content: center;
     }
+
     .mb-5-sm {
         margin-bottom: 45px !important;
     }
+
     .d-flex.align-items-center.justify-content-between.mb-4 {
         display: block !important;
         text-align: center !important;
     }
-    .d-flex.align-items-center.justify-content-between.mb-4 h4{
+
+    .d-flex.align-items-center.justify-content-between.mb-4 h4 {
         margin-bottom: 35px !important;
     }
-    #select2-qd66-container{
+
+    #select2-qd66-container {
         display:block;
         margin: 35px;
     }
-    .m-extra{
+
+    .m-extra {
         margin-top: 60px;
     }
-    .rating-star{
+
+    .rating-star {
         margin-bottom: 6px;
         margin-top: 6px;
     }
+
     .fas.fa-tag.mr-1 {
         margin-top: 6px;
     }
 }
 
 @media (min-width:768px) and (max-width:1200px) {
-    #information{
+    #information {
         font-size: 14px !important;
     }
 }

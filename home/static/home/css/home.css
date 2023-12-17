@@ -1,27 +1,25 @@
 /* Only Stylesheet for home, support, information templates */
 
 /* -------------------------------- Index.html  */
-.new-mark{
+.new-mark {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgb(0,123,255);
     width: 58px;
     height: 38px;
-    color: white;
     z-index: 99;
     position: absolute;
     margin: 5px;
 }
 
 .subscribe-content {
-    background-image: url('/static/images/newsletter-img.png');
+    background-image: url('/static/images/index-subscription-bg.webp');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
 
-.text-devider{
+.text-devider {
     font-size: 67px;
 }
 
@@ -62,16 +60,9 @@ body{margin-top:20px;}
     cursor: pointer;
     padding: 1.75rem 2rem;
     color: #3f43fd;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    -ms-grid-row-align: center;
-    align-items: center;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
 }
 
 .faq-accordian .card .card-header h6.collapsed {
@@ -79,7 +70,6 @@ body{margin-top:20px;}
 }
 
 .faq-accordian .card .card-header h6.collapsed span {
-    -webkit-transform: rotate(-180deg);
     transform: rotate(-180deg);
 }
 
@@ -97,7 +87,7 @@ body{margin-top:20px;}
 }
 
 /* -------------------------------- Header img section  */
-.main-content{
+.main-content {
     height: 37.5rem;
     width: 100%;
     margin-top: 4rem;
@@ -105,11 +95,11 @@ body{margin-top:20px;}
     position: relative;
 }
 
-.main-image{
+.main-image {
     width: 100%;
     height: 37.5rem;
     background: 
-    url('/static/images/header-img-img.png')
+    url('/static/images/index-header-img.webp')
     center / cover
     no-repeat;
 }
@@ -127,9 +117,11 @@ body{margin-top:20px;}
     .support-button p {
         font-size: 14px;
     }
+
     .support-button a {
         font-size: 13px;
     }
+
     .support-button i {
         font-size: 1rem;
     }
@@ -143,6 +135,6 @@ body{margin-top:20px;}
 
 @media (max-width: 767px) {
     .text-devider {
-        font-size: 45px; /* Adjust the font size for mobile screens */
+        font-size: 45px;
     }
 }

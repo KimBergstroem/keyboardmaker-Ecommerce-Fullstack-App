@@ -10,7 +10,7 @@
     max-width: 100%;
 }
 
-.blog-img-responsive{
+.blog-img-responsive {
     width:  400px;
     height: 200px;
     object-fit: cover;
@@ -36,46 +36,18 @@ h2 {
     object-fit: cover;
 }
 
-.custom-div-height{
+.custom-div-height {
     min-height: 350px;
 }
 
-.article-font-logo{
+.article-font-logo {
     font-size: 8vw !important;
     text-transform: uppercase;
     letter-spacing: 4px;
     line-height: 3em;
 }
 
-@media (min-width: 768px) {
-    .article-font-logo{
-    font-size: 40px; /* Adjust font size for screens wider than 768px */
-    }
-}
-
-@media (min-width: 992px) {
-    .article-font-logo{
-    font-size: 60px; /* Adjust font size for screens wider than 992px */
-    }
-}
-
-@media (max-width: 576px) {
-    .custom-div-height {
-        min-height: 200px; /* Adjust this value for smaller screens */
-    }
-    .body-header h1 {
-        font-size: 8vw !important;  /* Adjust this value for the desired size */
-    }
-    .post-font-title h3{
-        font-size: 20px !important;
-    }
-    .post-font-text {
-        font-size: 14px !important;
-    }
-}
-
-
-
+/* -------------------------------- H1 element to flicker */
 .body-header {
     text-align: center;
 }
@@ -101,6 +73,12 @@ h2 {
     animation: flicker 3s linear infinite;
 }
 
+.body-header h1 .hidden-letter {
+    visibility: hidden;
+    position: relative;
+    left: -0.25em;  /* Adjust this value to fine-tune */
+}
+
 @keyframes flicker {
     0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
         opacity: .99;
@@ -110,12 +88,6 @@ h2 {
         opacity: 0.4;
         text-shadow: none;
     }
-}
-
-.body-header h1 .hidden-letter {
-    visibility: hidden;
-    position: relative;
-    left: -0.25em;  /* Adjust this value to fine-tune */
 }
 
 @font-face {
@@ -128,4 +100,35 @@ h2 {
     font-family: 'CoreCircus';
     src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/209981/333BF4_8_0.eot');
     src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/209981/333BF4_8_0.eot?#iefix') format('embedded-opentype'), url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/209981/333BF4_8_0.woff2') format('woff2'), url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/209981/333BF4_8_0.woff') format('woff'), url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/209981/333BF4_8_0.ttf') format('truetype');
+}
+
+/* -------------------------------- Media Queries */
+@media (min-width: 768px) {
+    .article-font-logo {
+    font-size: 40px; 
+    }
+}
+
+@media (min-width: 992px) {
+    .article-font-logo {
+    font-size: 60px; 
+    }
+}
+
+@media (max-width: 576px) {
+    .custom-div-height {
+        min-height: 200px; 
+    }
+
+    .body-header h1 {
+        font-size: 8vw !important;  
+    }
+
+    .post-font-title h3 {
+        font-size: 20px !important;
+    }
+
+    .post-font-text {
+        font-size: 14px !important;
+    }
 }
