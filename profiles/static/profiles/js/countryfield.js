@@ -9,4 +9,4 @@ let countrySelected = $('#id_default_country').val();
                 } else {
                     $(this).css('color', '#000');
                 }
-            })
+            });
