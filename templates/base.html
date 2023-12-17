@@ -14,7 +14,7 @@
         <meta property="og:title" content="EasyKeyboardMaker | Keyboards">
         <meta property="og:description" content="Explore our e-commerce store for quality and affordable mechanical keyboards and keycaps. Shop now for the best mechanical keyboards available!">
         <meta property="og:url" content="{{ request.build_absolute_uri }}">
-        <link rel="icon" href="{% static 'images/favicon-16x16.png' %}">
+        <link rel="icon" href="{% static 'images/favicon-16x16.webp' %}">
     {% endblock %}
 
     {% block extra_meta %}
@@ -57,20 +57,22 @@
     <!-- Main navbar section -->
     <header class="container-fluid fixed-top">
         <div id="topnav" class="row bg-white pt-lg-2 d-none d-lg-flex">
-            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
+            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left ">
                 <a href="{% url 'home' %}" class="nav-link main-logo-link"> <!-- Logo -->
-                    <img class="ml-5 img-fluid" src="{% static 'images/header-logo.png' %}" alt="Logo for Your E-Commerce Site" width="185" height="auto">
+                    <img class="ml-5 img-fluid" src="{% static 'images/navbar-logo.webp' %}" alt="Logo for Your E-Commerce Site" width="185">
                 </a>
             </div>
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0"> <!-- Search bar section -->
                 <form method="GET" action="{% url 'products' %}">
                     <div class="input-group w-100">
-                        <input class="form-control border border-black rounded-0" type="text" name="q" placeholder="Search Product">
+                        <label for="searchInput" class="visually-hidden">Search Product</label>
+                        <input id="searchInput" class="form-control border border-black rounded-0" type="text" name="q" placeholder="Search Product">
                         <div class="input-group-append">
-                            <button class="form-control btn btn-black border border-black rounded-0" type="submit">
+                            <button class="form-control btn btn-black border border-black rounded-0" type="submit" aria-label="Search">
                                 <span class="icon">
                                     <i class="fas fa-search"></i>
                                 </span>
+                                <span class="visually-hidden">Search</span>
                             </button>
                         </div>
                     </div>
@@ -166,7 +168,7 @@
     {% endblock %}
 
     {% block postloadjs %}
-        <script type="text/javascript">
+        <script>
             $('.toast').toast('show');
         </script>
         <script>
@@ -232,10 +234,10 @@
                     <div class="row mt-5 mb-2">
                         <div class="col-6">
                             <div class=" item social text-center">
-                                <a href="https://www.facebook.com/profile.php?id=100086486033251" target="_blank"><i class="fab fa-facebook"></i></a>
-                                <a href="https://twitter.com/keyboard_maker" target="_blank"><i class="fab fa-twitter"></i></a>
-                                <a href="https://discord.gg/TvfXuBg7ZU" target="_blank"><i class="fab fa-discord"></i></a>
-                                <a href="https://www.instagram.com/easykeyboardmaker/" target="_blank"><i class="fab fa-instagram"></i></a>
+                                <a href="https://www.facebook.com/profile.php?id=100086486033251" target="_blank"><span class="visually-hidden">Visit Facebook account</span><i class="fab fa-facebook" aria-hidden="true"></i></a>
+                                <a href="https://twitter.com/keyboard_maker" target="_blank"><span class="visually-hidden">Visit Twitter account</span><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                                <a href="https://discord.gg/TvfXuBg7ZU" target="_blank"><span class="visually-hidden">Visit Discord Server</span><i class="fab fa-discord" aria-hidden="true"></i></a>
+                                <a href="https://www.instagram.com/easykeyboardmaker/" target="_blank"><span class="visually-hidden">Visit Instagram account</span><i class="fab fa-instagram" aria-hidden="true"></i></a>
                             </div>
                         </div> 
                         <div class="col-6">
@@ -250,12 +252,11 @@
                     </div>
                 <div class="row mt-3">
                     <div class="col mb-3 copyright">
-                        <img class="img-fluid" src="{% static 'images/ekm-icon.png' %}" alt="Logo for Your E-Commerce Site" width="100" height="auto">
+                        <img class="img-fluid" src="{% static 'images/ekm-icon.webp' %}" alt="Logo for Your E-Commerce Site" width="100">
                         <p>EasyKeyboardMaker.eu. All Right reserved.</p>
                     </div>
                 </div>
               </div>
         </footer>
-
 </body>
 </html>

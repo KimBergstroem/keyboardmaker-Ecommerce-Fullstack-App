@@ -14,35 +14,41 @@
 {% block content %}
     <div class="overlay"></div>
     <div class="container main-content-container h-100">
-        <div class="row">
-            <div class="col-12 col-md-6">
-                <hr>
-                <h2 class="logo-font mb-4">Payment</h2>
-                <h5 class="text-muted">Terms of Payment</h5>
-                <hr>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-12 col-md-6">
-                <p>Make a secure payment using Stripe, a trusted payment gateway. Your payment details are encrypted and processed securely.</p>
-
-                <!-- Stripe's Terms and Conditions -->
-                <div class="mt-4">
-                    <h5>Stripe's Terms and Conditions</h5>
-                    <p>Before making a payment, please review <a href="https://stripe.com/terms">Stripe's terms and conditions</a>.</p>
-                </div>
-
-                <!-- Terms of Payment (Your Business-specific terms) -->
-                <div class="mt-4">
-                    <h5>Terms of Payment</h5>
-                    <p>Please read the following terms before making a payment:</p>
-                    <ul>
-                        <li>Payment is non-refundable.</li>
-                        <li>By making a payment, you agree to our terms and conditions.</li>
-                        <!-- Add any other terms here -->
-                    </ul>
+        <article>
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <hr>
+                    <h2 class="logo-font mb-4">Payment</h2>
+                    <h3 class="text-muted">Terms of Payment</h3>
+                    <hr>
                 </div>
             </div>
-        </div>
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <section>
+                        <p>Make a secure payment using Stripe, a trusted payment gateway. Your payment details are encrypted
+                            and
+                            processed securely.</p>
+
+                        <!-- Stripe's Terms and Conditions -->
+                        <div class="mt-4">
+                            <h4>Stripe's Terms and Conditions</h4>
+                            <p>Before making a payment, please review <a href="https://stripe.com/terms">Stripe's terms and
+                                    conditions</a>.</p>
+                        </div>
+
+                        <!-- Terms of Payment -->
+                        <div class="mt-4">
+                            <h4>Terms of Payment</h4>
+                            <p>Please read the following terms before making a payment:</p>
+                            <ul>
+                                <li>Payment is non-refundable.</li>
+                                <li>By making a payment, you agree to our terms and conditions.</li>
+                            </ul>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </article>
     </div>
 {% endblock %}

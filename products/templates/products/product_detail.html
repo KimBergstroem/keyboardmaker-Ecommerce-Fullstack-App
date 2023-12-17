@@ -9,74 +9,74 @@
 {% block extra_title %} - Products detail {% endblock %}
 
 {% block page_header %}
-<div class="container header-container">
-    <div class="row">
-        <div class="col"></div>
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
     </div>
-</div>
 {% endblock %}
 
 {% block content %}
-<div class="overlay"></div>
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
-            <!-- image rendering -->
-            <div class="image-container my-5">
-                {% if product.image %} <!-- Image rendering -->
-                    <a href="{% url 'product_detail' product.id %}">
-                        <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
-                    </a>
-                {% else %}
-                    <a href="{% url 'product_detail' product.id %}">
-                        <img class="card-img-top img-fluid" src="{% static 'images/no-product-img.png' %}"
-                            alt="{{ product.name }}">
-                    </a>
-                {% endif %}
-                <!-- Additional images row -->
-                <div class="row small-images small-images-container" id="smallImages">
-                    {% if product.image %}
-                        <div class="col-4 col-sm-3 col-md-3 col-lg-3 mt-2">
-                            <img class="img-fluid cursor-pointer selected" src="{{ product.image.url }}" alt="{{ product.name }}">
-                        </div>
+    <div class="overlay"></div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
+                <!-- image rendering -->
+                <div class="image-container my-5">
+                    {% if product.image %} <!-- Image rendering -->
+                        <a href="{% url 'product_detail' product.id %}">
+                            <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
+                        </a>
+                    {% else %}
+                        <a href="{% url 'product_detail' product.id %}">
+                            <img class="card-img-top img-fluid" src="{% static 'images/product-default_img.webp' %}"
+                                alt="{{ product.name }}">
+                        </a>
                     {% endif %}
-                    {% for image in images %}
-                        <div class="col-4 col-sm-3 col-md-3 col-lg-3 mt-2">
-                            <img class="img-fluid cursor-pointer" src="{{ image.images.url }}" alt="{{ product.name }}">
-                        </div>
-                    {% endfor %}
+                    <!-- Additional images row -->
+                    <div class="row small-images small-images-container" id="smallImages">
+                        {% if product.image %}
+                            <div class="col-4 col-sm-3 col-md-3 col-lg-3 mt-2">
+                                <img class="img-fluid cursor-pointer selected" src="{{ product.image.url }}" alt="{{ product.name }}">
+                            </div>
+                        {% endif %}
+                        {% for image in images %}
+                            <div class="col-4 col-sm-3 col-md-3 col-lg-3 mt-2">
+                                <img class="img-fluid cursor-pointer" src="{{ image.images.url }}" alt="{{ product.name }}">
+                            </div>
+                        {% endfor %}
+                    </div>
                 </div>
             </div>
-        </div>
 
-
-        <!-- Product information section -->
-        <div class="col-12 col-md-6 col-lg-4">
-            <div class="product-details-container mb-5 mt-md-5">
-                {% include "products/includes/product-info.html" %}
+            <!-- Product information section -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="product-details-container mb-5 mt-md-5">
+                    {% include "products/includes/product-info.html" %}
+                </div>
             </div>
+
         </div>
+        
+        <!-- Information Section -->
+        <section id="information">
+            <h2 style="display: none;">Information Section</h2>
+            <div class="container m-extra mb-5 p-4">
+                <div class="row">
+                    {% include "products/includes/information-section.html" %}
+                </div>
+            </div>
+        </section>
+
+        <!-- Review Section -->
+        <section id="review">
+            <h2 style="display: none;">Review Section</h2>
+            <div class="container">
+                {% include "products/includes/review-section.html" %}
+            </div>
+        </section>
 
     </div>
-    
-    <!-- Information Section -->
-    <section id="information">
-        <div class="container m-extra mb-5 p-4">
-            <div class="row">
-                {% include "products/includes/information-section.html" %}
-            </div>
-        </div>
-    </section>
-
-    <!-- Review Section -->
-    <section id="review">
-        <div class="container">
-            {% include "products/includes/review-section.html" %}
-        </div>
-    </section>
-
-</div>
-
 {% endblock %}
 
 {% block postloadjs %}

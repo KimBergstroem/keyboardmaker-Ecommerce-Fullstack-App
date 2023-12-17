@@ -151,7 +151,7 @@
                             {% if request.user.userprofile.profile_picture %}
                                 <img src="{{ request.user.userprofile.profile_picture.url }}" class="rounded-circle img-fluid responsive-profile-img" alt="Profile Picture">
                             {% else %}
-                                <img src="{% static 'images/default_profile.png' %}" class="rounded-circle img-fluid responsive-profile-img" alt="Default Profile Picture">
+                                <img src="{% static 'images/userprofile-default-img.webp' %}" class="rounded-circle img-fluid responsive-profile-img" alt="Default Profile Picture">
                             {% endif %}
                         </span>
                     </div>

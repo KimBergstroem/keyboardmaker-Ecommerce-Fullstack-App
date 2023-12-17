@@ -32,7 +32,7 @@
                     {% if request.user.userprofile.profile_picture %}
                         <img src="{{ request.user.userprofile.profile_picture.url }}" class="rounded-circle img-fluid responsive-profile-img" alt="Profile Picture">
                     {% else %}
-                        <img src="{% static 'images/default_profile.png' %}" class="rounded-circle img-fluid responsive-profile-img" alt="Default Profile Picture">
+                        <img src="{% static 'images/userprofile-default-img.webp' %}" class="rounded-circle img-fluid responsive-profile-img" alt="Default Profile Picture">
                     {% endif %}
                     </div>
             </div>
@@ -60,7 +60,7 @@
                         <div class="col-12">
                             <a href="#cancelModal" data-toggle="modal" class="btn btn-black rounded-0 text-uppercase mb-2 w-100 menu-item"><i class="fa-solid fa-trash-can"></i>  Delete Account</a></div>
                     
-                         <!-- User information -->
+                        <!-- User information -->
                         <div class="col-12 mt-4">
                             <p><strong>Username:</strong> {{ user.username }}</p>
                             <p><strong>Last Login:</strong> {{ user.last_login|date:"F j Y" }}</p>
@@ -83,14 +83,14 @@
                 <p class="text-muted">Order History</p>
                 <div class="order-history table-responsive">
                     <table class="table table-sm table-borderless">
-                        <thread>
+                        <thead>
                             <tr>
                                 <th>Order Number</th>
                                 <th>Date</th>
                                 <th>Items</th>
                                 <th>Order Total</th>
                             </tr>
-                        </thread>
+                        </thead>
                         <tbody>
                             {% for order in orders %}
                                 <tr>
@@ -144,18 +144,17 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-black rounded-0 text-uppercase" data-dismiss="modal">Cancel</button>
-                        <a href="{% url 'profile_delete' user.id %}" class="btn btn-black rounded-0 text-uppercase disabled" id="closeAccountBtn" disabled>Delete Account</a>
+                        <a href="{% url 'profile_delete' user.id %}" class="btn btn-black rounded-0 text-uppercase disabled" id="closeAccountBtn">Delete Account</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 {% endblock %}
+
 {% block postloadjs %}
     {{ block.super }}
-
-        <script type="text/javascript" src="{% static 'profiles/js/countryfield.js' %}"></script>
-
+        <script src="{% static 'profiles/js/countryfield.js' %}"></script>
         <script>
             // Checkbox marked before closing button will be available
             document.getElementById('confirmationCheckbox').addEventListener('change', function () {
