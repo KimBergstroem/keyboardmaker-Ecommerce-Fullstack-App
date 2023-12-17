@@ -59,13 +59,13 @@
         <div class="container mb-5">
             <div class="row justify-content-center ">
 
-                <div class="m-3 card-category mx-auto  text-center shadow-lg">
+                <div class="m-3 card-category mx-auto  text-center shadow-lg mb-5">
                     <a href="{% url 'products' %}?category=100,75,65,60,40,mechanical" class="text-decoration-none text-black">
                     <img src="{% static 'images/category-keyboards.webp' %}" class="img-fluid" alt="Category Keyboards">
                     <p class="font-weight-bold mt-2 text-uppercase">Keyboards</p></a>
                 </div>
 
-                <div class="m-3 card-category mx-auto  text-center shadow-lg">
+                <div class="m-3 card-category mx-auto  text-center shadow-lg mb-5">
                     <div class="text-center">
                         <a href="{% url 'products' %}?category=abs,pbt,rubber,custom_made" class="text-decoration-none text-black">
                         <img src="{% static 'images/category-keycaps.webp' %}" class="img-fluid" alt="Category Keycaps">
@@ -73,13 +73,13 @@
                     </div>
                 </div>
 
-                <div class="m-3 card-category mx-auto  text-center shadow-lg">
+                <div class="m-3 card-category mx-auto  text-center shadow-lg mb-5">
                     <a href="{% url 'products' %}?category=tools" class="text-decoration-none text-black">
                     <img src="{% static 'images/category-switches.webp' %}" class="img-fluid" alt="Category Switches">
                     <p class="font-weight-bold mt-2 text-uppercase">Switches</p></a>
                 </div>
 
-                <div class="m-3 card-category mx-auto  text-center shadow-lg">
+                <div class="m-3 card-category mx-auto  text-center shadow-lg mb-5">
                     <a href="{% url 'products' %}?category=100,75,65,60,40,mechanical" class="text-decoration-none text-black">
                     <img src="{% static 'images/category-tools.webp' %}" class="img-fluid" alt="Category Tools">
                     <p class="font-weight-bold mt-2 text-uppercase">Tools</p></a>
@@ -102,7 +102,6 @@
                         </div>
                     </div>
                     <div class="col-md-5 col-sm-12 text-center"> 
-                    
                             <form class="subscription-form validate" action="{% url 'subscribe' %}" method="post">
                                 {% csrf_token %}
                                 <div class="input-group flex-wrap">
@@ -134,7 +133,7 @@
             <div class="row justify-content-center">
 
                 {% for product in products|slice:":4" %}
-                    <div class="m-3 card-category mx-auto text-center border-2-black shadow-lg">
+                    <div class="m-3 card-category mx-auto text-center border-2-black shadow-lg mb-4">
                         <div class="new-mark bg-black text-white">
                             <div>
                                 New!
