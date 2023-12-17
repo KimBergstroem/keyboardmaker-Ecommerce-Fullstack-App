@@ -4,7 +4,7 @@ from .models import Product, Category, Review, ProductImage
 
 class ProductImageAdmin(admin.StackedInline):
     """
-    Admin inline class for managing 
+    Admin inline class for managing
     ProductImage within the ProductAdmin
     """
     model = ProductImage

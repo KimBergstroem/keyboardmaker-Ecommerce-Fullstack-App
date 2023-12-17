@@ -84,8 +84,9 @@ class PostDelete(UserPassesTestMixin, SuccessMessageMixin, DeleteView):
         """
         return self.request.user.is_superuser
 
-    def get_success_message(self, cleaned_data=None):
-        return self.success_message
+    def delete(self, request, *args, **kwargs):
+        messages.success(self.request, self.success_message)
+        return super().delete(request, *args, **kwargs)
 
 
 class PostCreate(UserPassesTestMixin, SuccessMessageMixin, CreateView):
@@ -95,7 +96,7 @@ class PostCreate(UserPassesTestMixin, SuccessMessageMixin, CreateView):
     model = Post
     template_name = "blog/post_create.html"
     form_class = PostForm
-    success_message = "Post has been created"
+    success_message = "Article has been created"
     success_url = reverse_lazy("blog")
 
     def test_func(self):

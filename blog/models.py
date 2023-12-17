@@ -16,7 +16,7 @@ class Post(models.Model):
     excerpt = models.TextField(max_length=75, blank=True)
     content = models.TextField(max_length=3000, blank=True)
     featured_image = models.ImageField(
-        blank=True, upload_to="userprofile/", default="No img"
+        blank=True, upload_to="userprofile/", default="images/no-product-img.png"
     )
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="blog_posts"

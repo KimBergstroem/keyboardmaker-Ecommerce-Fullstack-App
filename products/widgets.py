@@ -4,7 +4,7 @@ from django.utils.translation import gettext_lazy as _
 
 class CustomClearableFileInput(ClearableFileInput):
     """
-    Custom clearable file input widget 
+    Custom clearable file input widget
     with extended features
 
     A customized file input with remove option

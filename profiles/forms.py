@@ -67,9 +67,10 @@ class UpdatePersonalInfoForm(forms.ModelForm):
             "first_name": "First Name",
             "last_name": "Last Name",
             "bio": "Something about Yourself",
-            "profile_picture": "Profile Picture",
             "country": "In which Country do you live?",
         }
 
         for field_name, placeholder in placeholders.items():
             self.fields[field_name].widget.attrs["placeholder"] = placeholder
+        
+        self.fields["profile_picture"].help_text = "Best image resolution is 512x512 and .png format"
