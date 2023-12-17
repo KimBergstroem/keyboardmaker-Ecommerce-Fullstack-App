@@ -136,7 +136,7 @@
                                         {% endif %}   
                                         {% if product.out_of_stock %}
                                             <div>
-                                                <input type="submit" class="text-uppercase" value="Add to Cart" disabled>
+                                                <input type="submit" class="text-uppercase mt-1" value="Add to Cart" disabled>
                                             </div>
                                         {% else %}
                                             <form class="form mt-2" action="{% url 'add_to_bag' product.id %}" method="POST">
