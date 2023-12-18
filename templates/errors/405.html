@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block extra_title %} - Error 405 {% endblock %}
+{% block extra_title %} 405 {% endblock %}
 
 {% block page_header %}
     <div class="container header-container">
@@ -28,9 +28,6 @@
                 <div class="col-12 col-md-6">
                     <h1>"Method Not Allowed"</h1>
                     <h3>Whoopsie-doodle! This page is practicing social distancing and can't be bothered right now. Let's reroute you to a page that's more sociable.</h3>
-                    <div>
-                        <a class="btn btn-primary px-3 py-1 rounded-3 mt-4" href="{% url 'index' %}">Go home</a>
-                    </div>
                 </div>
             </div>
         </div>

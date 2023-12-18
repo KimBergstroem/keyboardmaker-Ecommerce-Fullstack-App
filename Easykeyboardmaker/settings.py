@@ -20,7 +20,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '')
 DEVELOPMENT = os.environ.get('DEVELOPMENT', 'False').lower() == 'true'
 DEBUG = DEVELOPMENT
 
-ALLOWED_HOSTS = [(os.environ.get('LOCALHOST')), (os.environ.get('HEROKU_HOSTNAME')), (os.environ.get('CUSTOM_DNS_ADDRESS'))]
+ALLOWED_HOSTS = [(os.environ.get('LOCALHOST')), (os.environ.get('HEROKU_HOSTNAME'))]
 
 
 # Application definition
