@@ -18,7 +18,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEVELOPMENT = os.environ.get('DEVELOPMENT', 'False').lower() == 'true'
-DEBUG = DEVELOPMENT
+DEBUG = False
 
 ALLOWED_HOSTS = [(os.environ.get('LOCALHOST')), (os.environ.get('HEROKU_HOSTNAME')), (os.environ.get('CUSTOM_DNS_ADDRESS'))]
 
@@ -212,7 +212,7 @@ STRIPE_SECRET_KEY = os.environ.get("STRIPE_SECRET_KEY")
 STRIPE_WH_SECRET = os.environ.get("STRIPE_WH_SECRET")
 
 # Email
-if DEVELOPMENT:
+if DEBUG:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
     DEFAULT_FROM_EMAIL = 'easykeyboardmaker@example.com'
 else:
