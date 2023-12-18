@@ -1,6 +1,7 @@
+/* global Stripe */
 var stripePublicKey = $('#id_stripe_public_key').text().slice(1, -1);
 var clientSecret = $('#id_client_secret').text().slice(1, -1);
-var stripe = stripe(stripePublicKey);
+var stripe = Stripe(stripePublicKey);
 
 // Use the default initialization for elements
 var elements = stripe.elements();
