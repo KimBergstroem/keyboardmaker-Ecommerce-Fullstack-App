@@ -133,7 +133,7 @@
             <div class="row justify-content-center">
 
                 {% for product in products|slice:":4" %}
-                    <div class="m-3 card-category mx-auto text-center border-2-black shadow-lg mb-4">
+                    <div class="m-3 card-category mx-auto text-center border-2-black shadow-lg mb-5">
                         <div class="new-mark bg-black text-white">
                             <div>
                                 New!
@@ -146,7 +146,7 @@
                             {% else %}
                                 <img class="card-img-top img-fluid" src="{% static 'images/product-default_img.webp' %}" alt="{{ product.name }}">
                             {% endif %}
-                            <p class="font-weight-bold mt-2 text-uppercase">{{ product.name }}</p>
+                            <p class="font-weight-bold mt-2 text-uppercase mb-2">{{ product.name }}</p>
                         </a>
                     </div>
                 {% endfor %}
