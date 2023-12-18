@@ -1,11 +1,12 @@
+from pathlib import Path
 import os
 import dj_database_url
-from pathlib import Path
 import logging
 from logging.handlers import RotatingFileHandler
 
 if os.path.isfile("env.py"):
     import env
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -16,9 +17,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY', '')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = 'DEVELOPMENT' in os.environ
+DEVELOPMENT = os.environ.get('DEVELOPMENT', 'False').lower() == 'true'
+DEBUG = DEVELOPMENT
 
-ALLOWED_HOSTS = ['8000-kimbergstroem-pp5-7080wnht9mo.ws-eu107.gitpod.io', 'localhost']
+ALLOWED_HOSTS = [(os.environ.get('LOCALHOST')), (os.environ.get('HEROKU_HOSTNAME')), (os.environ.get('CUSTOM_DNS_ADDRESS'))]
 
 
 # Application definition
@@ -97,7 +99,7 @@ MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
 
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
-    'allauth.account.auth_backends.AuthenticationBackend',
+    'allauth.account.auth_backends.AuthenticationBackend'
 ]
 
 SITE_ID = 1
@@ -114,6 +116,8 @@ LOGIN_REDIRECT_URL = '/'
 WSGI_APPLICATION = 'Easykeyboardmaker.wsgi.application'
 
 # Database
+# https://docs.djangoproject.com/en/3.0/ref/settings/#databases
+
 if 'DATABASE_URL' in os.environ:
     DATABASES = {
         'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
@@ -128,6 +132,8 @@ else:
 
 
 # Password validation
+# https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
+
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
@@ -144,6 +150,8 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 # Internationalization
+# https://docs.djangoproject.com/en/3.2/topics/i18n/
+
 LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'
@@ -170,7 +178,7 @@ if 'USE_AWS' in os.environ:
         'CacheControl': 'max-age=94608000',
     }
 
-    # AWS Bucket Config
+    # Bucket Config
     AWS_STORAGE_BUCKET_NAME = 'easykeyboardmaker'
     AWS_S3_REGION_NAME = 'eu-north-1'
     AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
@@ -203,8 +211,8 @@ STRIPE_PUBLIC_KEY = os.environ.get("STRIPE_PUBLIC_KEY")
 STRIPE_SECRET_KEY = os.environ.get("STRIPE_SECRET_KEY")
 STRIPE_WH_SECRET = os.environ.get("STRIPE_WH_SECRET")
 
-
-if 'DEVELOPMENT' in os.environ:
+# Email
+if DEVELOPMENT:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
     DEFAULT_FROM_EMAIL = 'easykeyboardmaker@example.com'
 else:
@@ -216,7 +224,7 @@ else:
     EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASS')
     DEFAULT_FROM_EMAIL = os.environ.get('EMAIL_HOST_USER')
 
-# SENDGRID_API_KEY = os.environ.get('SENDGRID_API_KEY')
+#SENDGRID_API_KEY = os.environ.get('SENDGRID_API_KEY')
 
 # Error Logging 
 LOGGING = {
