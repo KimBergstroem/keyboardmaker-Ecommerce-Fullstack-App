@@ -342,7 +342,7 @@ The website was tested on the following:
 
 ## Automated Testing
 
-Information about the automated testing, if time is available.
+Autmated Testing was not implemented at this time in this project. But this will be come available in near future!
 
 
 
@@ -355,84 +355,194 @@ Information about the automated testing, if time is available.
 
 ### Testing user stories
 
-&nbsp;
 
-**First Time Visitors**
-
-| First Time User Goals | How this was achieved | Screenshot |
-| --- | --- | --- |
-| [User story](LINK) | Description | <details><summary>Screenshot of result</summary>![Result](IMG)</details> |
-
-
-**Returning Visitors**
-
-| Returning User Goals | How this was achieved | Screenshot |
-| --- | --- | --- |
-| [User story](LINK) | Description | <details><summary>Screenshot of result</summary>![Result](IMG)</details> |
-
-
-**Site Owner**
-
-| Site Owner Goals | How this was achieved | Screenshot |
-| --- | --- | --- |
-| [User story](LINK) | Description | <details><summary>Screenshot of result</summary>![Result](IMG)</details> |
-
-
-
-&nbsp;
 
 ### User Experience and Improvements
-I engaged in user testing involving individuals from the Slack group called "#peer-code-review" from Code Institute to collect feedback regarding their website experience. I requested them to complete the following tasks and share their feedback on their overall experience:
+I engaged in user testing involving family members and friends to collect feedback regarding their website experience. I requested them to complete the following tasks and share their feedback on their overall experience:
 
-I also asked family members and friends. 
-
-Total users attended the testing: 0
+Total users attended the testing: 4
 
 | Test                   | Result  |
 |------------------------|---------|
 | Create an account      | **100%**|
 | Update the profile     | **100%**|
-| Add a Product          | **100%**|
-| Remove a Product       | **100%**|
+| Update Shipping setting| **100%**|
+| Add Product to cart    | **100%**|
 | Increase a Product qty | **100%**|
+| Test buy a product     | **100%**|
 | Put a review           | **100%**|
 | Update a review        | **100%**|
+| Delete a review        | **100%**|
 | Search for a Product   | **100%**|
-| Subscribe to Newsletter| **100%**|
+| Subscribe to Newsletter| **80%**|
 | Use Contact form       | **100%**|
-| Test links             | **100%**|
+| Test all links         | **100%**|
 | Delete account         | **100%**|
 
 &nbsp;
 
-**Feedback from testers**
-
-Provided feedback and reported any issues or improvements they encountered during the testing process. Below is the feedback/issues reported.
-
-| **Feature**          | **Feedback**                                                                                                                                                                                                                                      | **Solution**                                                                                                                                                                              | **Result**                            | **Fixed** |
-|----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------|:--------:|
-| App/Page               | Error text TAB                                                                                                                                                                                                           | Solution                                                                                                                                                  | Solution | ✅  |
-
-
-
 ### Full Testing
 
 
-**`APP/FUNCTION unauthorized user`**
+**`Navbar unauthorized user`**
 
 | Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
 | --- | --- | --- | --- | --- |
-| Logo | Redirects to landing_page.html page | Clicked on logo | Landing page loads | ✅ |
+| Logo | Redirects to index.html page | Clicked on logo | Index page loads | ✅ |
+| Home | Redirects to the index page | Clicked on the link "Home" | Index page loads | ✅ |
+| Products category links | Redirect to product view of the link | Clicked on the links of different product category  | Page reloads and displaying the correct products | ✅ |
+| Articles | Redirect to the article post page | Clicked on the link "Articles" | Page loads with a view of blog posts | ✅ |
+| Search | Get search query render | Typed "keyboard" | Different keyboard was showing | ✅ |
+| Login | Redirects to the login page | Clicked on the link "Login" | Login page loads and form displays | ✅ |
+| Sign up | Redirects to the signup page and form | Clicked on the link "Sign up" | Sign-up page loads and the form displays | ✅ |
+| Support | Redirects to the support page | Clicked on the link "support" | Support page loads | ✅ |
 
 
-
-**`APP/FUNCTION authorized user`**
+**`Navbar authorized user`**
 
 | Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
 | --- | --- | --- | --- | --- |
-| Logo | Redirects to index.html(articles) page | Clicked on logo | Index page loads | ✅ |
+| Logo | Redirects to index.html page | Clicked on logo | Index page loads | ✅ |
+| Products category links | Redirect to product view of the link | Clicked on the links of different product category  | Page reloads and displaying the correct products | ✅ |
+| Articles | Redirect to the Article post page | Clicked on the link "Articles" | Page loads with a view of blog posts | ✅ |
+| Support | Redirects to the support page | Clicked on the link "support" | Support page loads | ✅ |
+| Profile image/icon | Triggers the dropdown menu | Clicked on the image | The dropdown menu is displayed | ✅ |
+
+**`Account drop-down menu`**
+
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| Profile | Redirects to the profile page with the user's information and editable form and user / shipping information | Clicked on the "Profile" link | Profile page loads, displaying the user's information and an editable forms | ✅ |
+| Product Management | Redirects to the page where the user can create a product with an editable form | Clicked on the "Porduct Management" link | "Porduct Management" page loads, showing product form inputs and submit button | ✅ |
+| Article Management | Redirects to the page where the user can create a article post with an editable form | Clicked on the "Article Management" link | "Article Management" page loads, displaying the Article Post form | ✅ |
+| Admin | Redirects to djangos admin panel backend | Clicked on the "Admin" link | "Admin" page panel loads, displaying the admin dashboard panel with all models | ✅ |
+| Send email | Redirects to the page where the user can send out emails to all subscribed users | Clicked on the "Send email" link | "Send email" page loads, displaying the form for sending out emails | ✅ |
+| Logout | Redirects the user to a logout confirmation page | Clicked on "Logout" | User is redirected to a page confirming the logout | ✅ |
+
+**`Index page`**
+
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| Shop now button | Redirects to the page displaying all products | Clicked on the "Shop now" button | Successfully redirected to the page displaying all products | ✅ |
+| Shop by Category img buttons | Redirects to the page displaying all products with that category | Clicked on all the different category buttons | Successfully redirected to the page displaying products in that category | ✅ |
+| Subscribe button | Redirects user to index and display success message of successful subscribed | Clicked on the "Subscribe" button | Successfully message displayed in local environment but not in deployed version. Internal 500 error displayed | ❌ |
+| New Arrival img buttons | Redirects to the page displaying product detail page | Clicked on the "New Arrival" button | Successfully redirected to the page displaying product detail page of that product | ✅ |
+| Article posts | Redirects to the article post detail page | Clicked on the image link of an article card | Successfully redirected to the article detail page | ✅ |
+| Footer navigation links | Redirects to different information pages | Clicked on all links in the footer | Successfully user redirection to correct pages/templates | ✅ |
 
 
+**`Support page authorized user`**
+
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| Reason* | Field is required and should be a valid choose of user | Tested with an empty reason | Error message is displayed prompting the user to provide a valid Reason* | ✅ |
+| Email | Field is required and should be a valid email format | Tested with an empty field, or invalid format | Error message displayed prompting the user to provide a valid email address | ✅ |
+| Subject | Field is required and can't be left empty | Tested with an empty field, invalid criteria | Error message displayed prompting the user to provide a subject | ✅ |
+| Message | Field is required and can't be left empty | Tested with an empty field, invalid criteria | Error message displayed prompting the user to provide a subject | ✅ |
+| Submit | If the form is valid, the user is redirected to support page with displayed successful message | Clicked the submit button with valid and non-valid formats | The submit button functions as expected, redirecting to the support page and displaying the corresponding message | ✅ |
+
+
+**`Sign up page`**
+
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| Username | Field is required and should be a valid username format | Tested with an empty field, invalid format | Error message is displayed prompting the user to provide a valid username | ✅ |
+| Email | Field is required and should be a valid email format | Tested with an empty field, or invalid format | Error message displayed prompting the user to provide a valid email address | ✅ |
+| Password | Field is required and should meet password criteria | Tested with an empty field, invalid criteria | Error message displayed prompting the user to provide a valid password | ✅ |
+| Password confirmation | Field is required and should match the entered password | Tested with empty field, mismatched passwords | Error message displayed prompting the user to confirm the password correctly | ✅ |
+| Sign up button | If the form is valid, the user is redirected to the profile page with a flash message confirming successful registration. If the form is not valid, an error message is displayed. | Clicked the button with valid and non-valid formats | The button functions as expected, redirecting to the appropriate page and displaying the corresponding messages | ✅ |
+| Login text link | Redirects to the login page | Clicked on the "Login" link | The login page and form were successfully loaded | ✅ |
+
+**`Log in page`**
+
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| Username | The user enters a username | Tested with valid and invalid username input | The username field accepts and saves the valid input. If invalid, it displays an error message | ✅ |
+| Password | The user enters a password | Tested with valid and invalid password input | The password field functions correctly, allowing the user to input a valid password and displays an error message when not valid | ✅ |
+| Forgot password? text link | Clicking the text link redirects to the password change page for requesting the user's email | Clicked on the "Forgot Password?" text link | Successfully redirected to the password change page with the requested email input but the email never received. Internal Server Error | ❌ |
+| Sign up text link | Clicking the text link redirects to the sign-up page | Clicked on the "Sign up" text link | Successfully redirected to the sign-up page with the registration form | ✅ |
+| Login | If the login form is valid, the user is logged in and redirected to the appropriate page. If the form is not valid, an error message is displayed. | Tested with valid and invalid login form input | The login button functions correctly, logging in the user with valid credentials and displaying error messages for invalid credentials | ✅ |
+
+**`Profile page`**
+
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| Update user information | Redirect the user to the update user information page with an editable form | Clicked on the "Update" button | Redirected to the correct page with an editable "User information" form | ✅ |
+| Update shipping information | Able to update the shipping inputs directly on the page |  Clicked on the "Update" button | Page reloads and displays successful toast message of update was successful | ✅ |
+| User agreement link | Redirects to the page displaying user agreement | Clicked on the "User agreement" button | Redirected to the correct page with user agreement| ✅ |
+| Change password | Redirect to the change password page with an editable form for a new password | Clicked on the "Change password" button | Redirected to the change password page and able to change the password | ✅ |
+| Delete | Display a popup modal with delete confirmation | Clicked on the "Delete" button on the popup modal | Redirected to the index page with a confirmation message | ✅ |
+
+**`Article page`**
+
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| Click on article post card | Redirected to article detail page | Clicked on the article card | Redirected to the article detail page | ✅ |
+
+**`Article Detail page`**
+
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| "Back" button | Redirect user back to the article page | Clicked on the back button | Successfully redirected to article page | ✅ |
+
+
+**`Edit Article page if superuser`**
+
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| Edit | When changes are made and the "Edit" button is clicked, the changes should be saved, the user should be redirected to the article detail page, and a flash message should confirm the update | Made changes and click on the "Edit" button | Changes were successfully saved, redirected to the article detail page, and a flash message confirmed the update | ✅ |
+| Back | Redirects to the article detail page | Clicked on the "Back" button | The article detail page loads, displaying the article | ✅ |
+
+**`Delete Article page if superuser`**
+
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| Delete button | Deletes the article and redirects to the article page where all the articles are displayed | Clicked on the delete button | The article was successfully deleted, and I was redirected to the product page | ✅ |
+| Cancel button | Redirects to the article detail page | Clicked on the "Cancel" button | The article detail page loads, displaying the articles | ✅ |
+
+**`Product page`**
+
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| Product add to cart button | Product is added to the cart with a successful message | Clicked on the "add to cart" button | Successfully clicked on the button link and the product was added to the cart with successful message indicating success | ✅ |
+| Product name link | Redirect to product detail page | Clicked on product name link | Successfully redirected to product detail page | ✅ |
+| Grid layout icon | Changement of product view to grid layout | Clicked on the icon | All products was changed in to the correct layout | ✅ |
+| List layout icon | Changement of product view to list layout | Clicked on the icon | All products was changed in to the correct layout | ✅ |
+| Sort by list | Sort product by the desirable value | Clicked in the sort by dropdown for testing all values | Product was decending and acending depending on the value from the sort by | ✅ |
+
+**`Product Review if product was bought`**
+
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| Make a review | Write review and chooice a star with a successfully submission | Write review and clicked submit | Review is submitted and dispalyed with review average of star | ✅ |
+
+**`Product Detail page`**
+
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| Small product images | Images will change place to the bigger imag field for better product view | Clicked on the small images | Successfully clicked and the img that is selected was changed and dispalyed correctly | ✅ |
+| Quantity buttons | Minus or Plus button for adding additional product quantity in the cart | Clicked on the minus or plus button | Product is added or removed from cart depending on the quantity buttons successfully | ✅ |
+| Keep shopping button | Redirect user back to all product page | Clicked on the keeyp shopping button | Successfully redirected to product page were product are displayed | ✅ |
+| Add to cart button | Product is added to the cart with a successful message | Clicked on the "add to cart" button | Successfully clicked on the button link and the product was added to the cart with successful message indicating success | ✅ |
+| Social media links | Takes user to the social media platform with target_blank attribute | Clicked on the social icon | Successfully redirected to a new tab and social media platform | ✅ |
+
+**`Product Delete page if superuser`**
+
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| Delete button | Display delete confirmation page and be able to delete the product | Clicked on delete button | Delete confirmation page was displayed, and the delete button worked and the product was deleted from the sortiment | ✅ |
+
+**`Product Edit page if superuser`**
+
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| Edit button | The product form will be displayed with prefilled product information fileld in for be able of changement | Clicked on Edit button | Product form was dispalyed with product information and changement was successfully  displayed with a toast mesasge and get redirected to product detail page | ✅ |
+
+**`403, 404, 405, 500 Page`**
+
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| Go home button | Correct "error message" displays and redirects the user to index.html page | Edited a non-URL path in the web browser and then clicked on the Go home button | Correct error handling message was displayed for the user, and when the Go home button was clicked, the user was redirected to the index page | ✅ |
 
 
 <p align="right">(<a href="#table-of-content">back to top</a>)</p>
@@ -440,41 +550,43 @@ Provided feedback and reported any issues or improvements they encountered durin
   <img src="docs/readme.md/readme-divider3.png" />
 </p>
 
-## Summary
-
-Testing The Easy Keybaord Maker web application, conducted a comprehensive evaluation of various aspects, including HTML validation, CSS validation, accessibility, performance, and user experience. The following summarizes our key findings and the status of our testing:
-
-### HTML Validation
-
-- Description
-
-### CSS Validation
-
-- Description
-
-### Accessibility
-
-- Description
+# Summary 
 
 ### Performance
 
-- Description
+- **Desktop Performance:**
+  - Average performance score: 98.08 / 100
+  - Majority of pages received scores above 95 / 100, indicating excellent performance.
 
-### User Experience
+- **Mobile Performance:**
+  - Average performance score: 72.4 / 100
+  - Pages showed slightly lower performance compared to desktop but maintained a satisfactory score.
 
-- Description
+### Device Testing
+
+The website was tested on a variety of devices, including mobile phones (*Samsung s22 ultra*, *iPhone X*, *Samsung galaxy s22*, *iPhone 14 Pro max*), desktops (*Samsung Galaxy Book 360*, *HP Elite book 830 g9*, *HP Victus gaming desktop*), and monitors (*49-inch Samsung CHG9 ultra-wide*, *27-inch Benq zowie XL2746S*, *27-inch Dell ultrasharp U2723QE*). Additionally, testing was performed using Google Chrome Developer Tools Device Toggling for various device options.
+
+### Browser Compatibility
+
+The website was tested on popular browsers, ensuring compatibility with:
+1. Microsoft Edge
+2. Google Chrome
+3. Mozilla Firefox
+4. Safari
 
 ### Automated Testing
 
-- Description
+Automated testing has not been implemented in the current project but is planned for future development.
 
-### User Stories
+### Manual Testing
 
-- Description
+User stories and various scenarios were tested manually, involving family members and friends. The success rate for tasks such as account creation, profile updates, product interactions, and more was 100%.
 
-### Overall Status
+### Overall User Experience
 
-- Description
+Feedback from user testing and manual testing indicates a seamless user experience. The website performed well in terms of functionality, responsiveness, and user interface across different devices and browsers.
+
+The testing process was comprehensive, covering various aspects of the website, and the identified issues have been documented for further improvement.
 
 
 <p align="right">(<a href="#table-of-content">back to top</a>)</p>
