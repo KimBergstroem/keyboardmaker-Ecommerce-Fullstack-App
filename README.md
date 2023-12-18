@@ -36,70 +36,69 @@ Developer: [Kim Bergström](https://github.com/KimBergstroem) <br>
 ## Table of Content
 
 - 📄[**Bussniess model & Marketing**](#project-goals)
-  + [Business Overview](#user-goals)
-  + [Site User](#user-goals)
-  + [Goals for the website](#user-goals)
-  + [Marketing Strategy](#user-goals)
-    - [Social Media](#epic-2--user-engagement-and-interaction--registered-user-)
-  + [SEO Search Engine Optimization](#user-goals)
-    - [SEO Project planning](#epic-1--user-experience--visitor-)
-  + [User Goals](#user-goals)
-  + [Site Owner Goals](#site-owner-goals)
-- 📄[**User Experience UX**](#user-experience)
-  + [Target Audience](#target-audience)
-  + [User Requirements and Expectations](#user-requirements-and-expectations)
+    + [Business Overview](#business-overview)
+    + [Site User](#site-user)
+    + [Goals for the Website](#goals-for-the-website)
+    + [Marketing Strategy](#marketing-strategy)
+    + [SEO Search Engine Optimization](#seo-search-engine-optimization)
+    + [User Goals](#user-goals)
+    + [Site Owner Goals](#site-owner-goals)
+- 📄[**User Experience UX**](#user-experience-ux)
+    + [Target Audience](#target-audience)
+    + [User Requirements and Expectations](#user-requirements-and-expectations)
 - 📄[**Methodology**](#methodology)
-  + [Agile Project Management with GitHub Projects](#agile-project-management-with-github-projects)
-  + [User Stories as GitHub Issues](#user-stories-as-github-issues)
-  + [Iterative Development Approach](#iterative-development-approach)
-  + [User Stories](#user-stories)
-    - [Epic 1: User Experience (Visitor)](#epic-1--user-experience--visitor-)
-    - [Epic 2: User Engagement and Interaction (Registered User)](#epic-2--user-engagement-and-interaction--registered-user-)
-    - [Epic 3: Administration and Content Management (Admin/Content Moderator)](#epic-3--administration-and-content-management--admin-content-moderator-)
-  + [Bug Tracking for Seamless Development](#bug-tracking-for-seamless-development)
-  + [Future Backlog and Progress](#future-backlog-and-progress)
+    + [Agile Project Management with GitHub Projects](#agile-project-management-with-github-projects)
+    + [User Stories as GitHub Issues](#user-stories-as-github-issues)
+    + [Iterative Development Approach](#iterative-development-approach)
+    + [User Stories](#user-stories)
+    + [Bug Tracking for Seamless Development](#bug-tracking-for-seamless-development)
+    + [Future Backlog and Progress](#future-backlog-and-progress)
 - 📄[**Database**](#database)
-  + [E-commerce Application Database Schema](#blog-application-database-schema)
-- 📄[**Design UI**](#design)
-  + [Design Choices](#design-choices)
-  + [Color](#color)
-  + [Fonts](#fonts)
-  + [Structure](#structure)
-    - [Before Logging In:](#before-logging-in-)
-    - [After Logging In:](#after-logging-in-)
-  + [Wireframes](#wireframes)
-- 📄[**Technologies Used**](#technologies-used)
-  + [Languages](#languages)
-  + [Frameworks](#frameworks)
-  + [Database](#database-1)
-  + [Tools](#tools)
-  + [Supporting Libraries and Packages](#supporting-libraries-and-packages)
+    + [E-commerce Application Database Schema](#e-commerce-application-database-schema)
+- 📄[**Design UI**](#design-ui)
+    + [Design Choices](#design-choices)
+    + [Main Colors](#main-colors)
+    + [Fonts](#fonts)
+    + [Structure](#structure)
+    + [Wireframes](#wireframes)
+- [**Technologies Used**](#technologies-used)
+    + [Languages](#languages)
+    + [Frameworks](#frameworks)
+    + [Cloud Service](#cloud-service)
+    + [Database](#database-1)
+    + [Tools](#tools)
+    + [Supporting Libraries and Packages](#supporting-libraries-and-packages)
 - 📄[**Features**](#features)
-  + [Landing Page:](#landing-page-)
-  + [Blog Pages:](#blog-pages-)
-  + [Blog Detail Page:](#blog-detail-page-)
-  + [User Account Management:](#user-account-management-)
-  + [Navigation:](#navigation-)
-  + [Future Features](#future-features)
+    + [Landing page](#landing-page-)
+    + [Product Page](#product-page-)
+    + [Product Detail Page](#product-detail-page-)
+    + [Article Page](#article-page-)
+    + [Support Page](#support-page-)
+    + [User Account Management](#user-account-management-)
+    + [Navigation](#navigation-)
+    + [Future Features](#future-features)
 - 📄[**Testing**](#testing)
 - 📄[**Bugs**](#bugs)
-  + [Known bugs](#known-bugs)
-  + [Fixed bugs](#fixed-bugs)
+    + [Known bugs](#known-bugs)
+    + [Fixed bugs](#fixed-bugs)
 - 📄[**Deployment**](#deployment)
-  + [App Deployment](#app-deployment)
-  + [Cloudinary](#cloudinary)
-  + [Version Control](#version-control)
-  + [Forking the Repository:](#forking-the-repository-)
-  + [Clone of the Repository:](#clone-of-the-repository-)
+    + [App Deployment](#app-deployment)
+    + [Custom Domain configuration](#custom-domain-configuration)
+    + [Version Control](#version-control)
+    + [Forking the Repository](#forking-the-repository-)
+    + [Clone of the Repository](#clone-of-the-repository-)
 - 📄[**Credits**](#credits)
-  + [Media](#media)
-  + [Django Documentation:](#django-documentation-)
-  + [W3 Schools:](#w3-schools-)
-  + [Bootstrap docs:](#bootstrap-docs-)
-  + [Geeksforgeeks:](#geeksforgeeks-)
-  + [Various tutorials and YouTube channels:](#various-tutorials-and-youtube-channels-)
-  + [Content](#content)
+    + [Media](#media)
+    + [Django Documentation](#django-documentation-)
+    + [Pypi](#pypi-)
+    + [W3 Schools](#w3-schools-)
+    + [Bootstrap docs](#bootstrap-docs-)
+    + [Geeksforgeeks](#geeksforgeeks-)
+    + [Various tutorials and YouTube channels](#various-tutorials-and-youtube-channels-)
+    + [Content](#content)
 - 📄[**Acknowledgments**](#acknowledgments)
+
+
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc and modified by myself</a></i></small>
 
@@ -220,18 +219,63 @@ By optimizing the e-commerce for search engines, it will increase and reach the 
 After finalizing the business model for keyboard selling in the e-commerce sector, I began the process of strategizing how to market the website and identify target keywords. I leveraged Google Trends to uncover popular search terms and employed a tool named SEO quake to assess the competition and learn from their successful tactics. Additionally, I conducted keyword research on wordtracker.com by signing up for a trial to maximize its benefits. This comprehensive approach led to the compilation of a list of both short and long-tail keywords intended for use in this project.
 
 #### Keywords 
+By strategically leveraging short-tail keywords and conducting in-depth analysis through [Google Trends](https://trends.google.com/trends/) and [Wordtracker](https://www.wordtracker.com/?fpr=huynh60), related questions, I've curated a powerful list of long-tail keywords tailored to our niche. These carefully chosen keywords are strategically placed across various sections of the website to enhance visibility and attract a specific audience interested in our unique keyboard and keycap offerings.
+
+#### Short-Tail Keywords:
+1. Mechanical Keyboards
+2. Keycaps
+3. Wireless Keyboards
+4. Gaming Keyboards
+5. Custom Keycaps
+6. Keyboard Accessories
+
+#### Long-Tail Keywords:
+1. Quality Mechanical Keyboards
+2. Affordable Keycaps for Sale
+3. Limited Edition Keyboards
+4. Custom Keycap Retailer
+5. Personalized Mechanical Keyboards
+6. Wireless Gaming Keyboards
+7. Unique Keyboard Accessories
+8. Best Custom Keycap Maker
+9. Exclusive Limited Edition Keyboards
+10. Top-rated Mechanical Keyboards Shop
+
+
+#### Implementation:
+By taking advantage of this keyword, i have implemented this keywords in different ways in my ecommerce site. This will also continuing to be implemented as long the site are live.
+
+Content Integration:
+   - Integrate long-tail keywords into product descriptions, blog posts, and other content sections. Ensure a natural flow of language while highlighting the unique features of each product.
+
+Meta Tags and Descriptions:
+   - Incorporate long-tail keywords into meta tags, meta descriptions, and image alt text. This enhances the search engine optimization (SEO) and improves its ranking for relevant search queries.
+
+Header Tags (H1, H2, H3):
+   - Utilize header tags to structure the content. Long-tail keywords in H1 tags for main headings and H2, H3 tags for subheadings.
+
+Strong Tags (Strong Emphasis):
+   - Apply the `<strong>` HTML tag to emphasize important keywords or phrases. This helps search engines understand the significance of those terms within your content.
+
+Link Descriptions:
+   - Ensure that all internal and external links are appropriately described. Use relevant anchor text that incorporates long-tail keyword.
+
+Alt Text for Images:
+   - When using images, include descriptive alt text that features long-tail keywords.
+
 
 #### Sitemap.xml
+I created a sitemap for the website to ensure effective searchability by search engines like Google once it is live. Implemented and generated the xml file from [Xml Sitemaps](https://www.xml-sitemaps.com/).
 
 #### Robots.txt
+I generated a `robots.txt` file to facilitate Google's crawling of the site. I excluded the accounts app and checkout payment app from being crawled as it doesn't provide any significant benefit for Google to index those pages.
 
 #### Logo
+The favicon and social media logo were crafted using Photoshop and Adobe.
 
-### User Goals
-- Example
+The logo was conceptualized with a keyboard theme in mind, symbolizing the company's focus on keyboards. A catchy word break was implemented for better readability due to the company's lengthy name.
 
-### Site Owner Goals
-- Example
+This logo is prominently featured on all social media platforms and e-commerce sites.
 
 <p align="right">(<a href="#table-of-content">back to top</a>)</p>
 <p align="center">
@@ -424,6 +468,14 @@ When creating the database structure schema for this project, I utilized the [db
 
 </center>
 
+I utilized the terminal command `python manage.py inspectdb > models.py` to generate all the models in my code. Subsequently, I manually selected and removed Django's built-in models as well as those from the Allauth package.
+
+<center> 
+
+![Database Schema image](/docs/readme.md/readme-database_schema-generated.png) 
+
+</center>
+
 ### E-commerce Application Database Schema
 
 <details><summary>Checkout App</summary>
@@ -431,97 +483,116 @@ When creating the database structure schema for this project, I utilized the [db
 #### Order Table
 - Represents order information.
 - Fields:
-  - order_number (CharField)
-  - user_profile (foreign key to UserProfile)
-  - full_name (CharField)
-  - email (EmailField)
-  - phone_number (CharField)
-  - country (CountryField)
-  - postcode (CharField)
-  - town_or_city (CharField)
-  - street_address1 (CharField)
-  - street_address2 (CharField)
-  - county (CharField)
-  - date (DateTimeField)
-  - delivery_cost (DecimalField)
-  - order_total (DecimalField)
-  - grand_total (DecimalField)
-  - original_bag (TextField)
-  - stripe_pid (CharField)
+  - order_number = models.CharField
+  - full_name = models.CharField
+  - country = models.CharField
+  - postcode = models.CharField
+  - town_or_city = models.CharField
+  - street_address1 = models.CharField
+  - street_address2 = models.CharField
+  - county = models.CharField
+  - id = models.BigAutoField
+  - date = models.DateTimeField
+  - delivery_cost = models.DecimalField
+  - order_total = models.DecimalField
+  - grand_total = models.DecimalField
+  - original_bag = models.TextField
+  - stripe_pid = models.CharField
+  - user_profile = models.ForeignKey
 
 #### OrderLineItem Table
 - Stores individual items within an order.
 - Fields:
-  - order (foreign key to Order)
-  - product (foreign key to Product)
-  - product_size (CharField)
-  - quantity (IntegerField)
-  - lineitem_total (DecimalField)
+  - id = models.BigAutoField
+  - quantity = models.IntegerField
+  - lineitem_total = models.DecimalField
+  - order = models.ForeignKey
+  - product = models.ForeignKey
 </details>
+
 <details><summary>Products App</summary>
 
 #### Category Table
 - Stores categories for products.
 - Fields:
-  - name (CharField)
-  - friendly_name (CharField)
+  - id = models.BigAutoField
+  - name = models.CharField
+  - friendly_name = models.CharField
 
 #### Product Table
 - Stores information about products available.
 - Fields:
-  - category (foreign key to Category), sku (CharField), name (CharField), has_sizes (BooleanField), description (TextField), price (DecimalField), rating (DecimalField), reviews (IntegerField), image_url (URLField), image (ImageField)
+  - id = models.BigAutoField
+  - sku = models.CharField
+  - name = models.CharField
+  - description = models.TextField
+  - price = models.DecimalField
+  - image_url = models.CharField
+  - image = models.CharField
+  - category = models.ForeignKey
+  - deal = models.BooleanField
+  - out_of_stock = models.BooleanField
+  - created_at = models.DateTimeField
 </details>
-<details><summary>Profiles App</summary>
+<details>
+<summary>Profiles App</summary>
 
 #### UserProfile Table
 - Extends the User model to store additional user-specific information.
 - Fields:
-  - user_id (OneToOneField to User)
-  - first_name (CharField)
-  - last_name (CharField)
-  - email (CharField)
-  - phone (IntegerField)
-  - street1 (CharField)
-  - street2 (CharField)
-  - city (CharField)
-  - country (CharField)
-  - postcode (CharField)
-  - newsletter (BooleanField)
-
+  - id = models.BigAutoField
+  - default_phone_number = models.CharField
+  - default_country = models.CharField
+  - default_postcode = models.CharField
+  - default_town_or_city = models.CharField
+  - default_street_address1 = models.CharField
+  - default_street_address2 = models.CharField
+  - default_county = models.CharField
+  - user = models.OneToOneField
+  - bio = models.TextField
+  - country = models.CharField
+  - first_name = models.CharField
+  - last_name = models.CharField
+  - profile_picture = models.CharField
 
 </details>
+
 <details><summary>Blog App</summary>
 
-#### Comment Table
+#### Review Table
 - Represents user comments on products.
 - Fields:
-  - comment_id (IntegerField)
-  - body (TextField)
-  - email (CharField)
-  - approved (BooleanField)
-  - created_on (DateTimeField)
-  - product_id (foreign key to Product)
-  - user_id (foreign key to User)
+  - id = models.BigAutoField
+  - text = models.TextField
+  - rating = models.DecimalField
+  - created_at = models.DateTimeField
+  - product = models.ForeignKey
+  - user = models.ForeignKey
 
 #### Post Table
 - Represents blog posts.
 - Fields:
-  - title (CharField)
-  - slug (SlugField)
-  - author_id (foreign key to User)
-  - content (TextField)
-  - created_on (DateTimeField)
-  - featured_image (AmazonWebServicesField)
+  - id = models.BigAutoField
+  - title = models.CharField
+  - slug = models.CharField
+  - content = models.TextField
+  - featured_image = models.CharField
+  - created_on = models.DateTimeField
+  - updated_on = models.DateTimeField
+  - author = models.ForeignKey
+  - status = models.IntegerField
+  - excerpt = models.TextField
 </details>
+
 <details><summary>Home App</summary>
 
-#### Newsletter Table
+#### SubscribeUsers Table
 - Stores information related to newsletters.
 - Fields:
-  - user_id (foreign key to UserProfile)
-  - first_name (CharField)
-  - last_name (CharField)
-  - email (CharField, primary key)
+  - id = models.BigAutoField
+  - email = models.CharField
+  - created_date = models.DateTimeField
+  - subscribed = models.BooleanField
 
 #### User Table
 - Represents user information.
@@ -596,7 +667,7 @@ User-friendly structure, ensuring seamless navigation and easy access to the web
    - *Description:* These pages provide access to various products.
    - *Content:* Visitors can explore products such as keyboards, accessories, and the complete range of items available in the shop. These pages also feature a search function and a list view update that displays price ranges and other information.
 
-**Blog Page:**
+**Article Page:**
    - *Description:* The blog page is a hub for articles related to products and relevant topics.
    - *Content:* Users can read articles, reviews, and guides about various products, making informed decisions.
 
@@ -665,11 +736,14 @@ The wireframes serve as a visual blueprint for our web application, outlining th
 - HTML
 - CSS
 - Python
+- Javascript
 
 ### Frameworks
 - Django: A high-level Python web framework used for building the Gamers Insight Blog web application.
 - Crispy Forms: A Django package used for rendering forms in a more efficient and customizable way.
 - Bootstrap v5.0: A popular CSS framework used for creating responsive and visually appealing user interfaces.
+
+### Cloud Service
 - Amazon Web Services: A cloud-based media management platform used for storing and serving images in the E-commerce plattform.
 
 ### Database
@@ -690,7 +764,29 @@ The wireframes serve as a visual blueprint for our web application, outlining th
 
 
 ### Supporting Libraries and Packages
-- Copy the fully requirements.txt file at the end of the project and paste it here.
+- asgiref==3.7.2
+- boto3==1.29.0
+- botocore==1.32.0
+- dj-database-url==0.5.0
+- Django==3.2.23
+- django-allauth==0.41.0
+- django-countries==7.2.1
+- django-crispy-forms==1.14.0
+- django-environ==0.7.0
+- django-social-share==2.3.0
+- django-storages==1.14.2
+- django-summernote==0.8.20.0
+- gunicorn==21.2.0
+- jmespath==1.0.1
+- oauthlib==3.2.2
+- Pillow==10.1.0
+- psycopg2==2.9.9
+- python3-openid==3.2.0
+- pytz==2023.3.post1
+- requests-oauthlib==1.3.1
+- s3transfer==0.7.0
+- sqlparse==0.4.4
+- stripe==7.5.0
 
 <p align="right">(<a href="#table-of-content">back to top</a>)</p>
 <p align="center">
@@ -698,24 +794,35 @@ The wireframes serve as a visual blueprint for our web application, outlining th
 </p>
 
 # Features
-### Example Page:
-- Text <details><summary>See Screenshot **Examplepage**</summary><img src="docs/features/"></details>
+### Landing page
+- Navbar <details><summary>See Screenshot **Navbar**</summary><img src="docs/readme.md/features/readme-features-navbar.png"></details>
 
-- Text <details><summary>See Screenshot **Text**</summary><img src="docs/features/features"></details><details><summary>See Screenshot **Section**</summary><img src="docs/features/features"></details>
+- Newsletter Signup <details><summary>See Screenshot **Newsletter**</summary><img src="docs/readme.md/features/readme-features-newsletter.png"></details>
+- New Product Sections <details><summary>See Screenshot **New**</summary><img src="docs/readme.md/features/readme-features-newarrival.png"></details>
+- Footer Sections <details><summary>See Screenshot **Footer**</summary><img src="docs/readme.md/features/readme-features-footer.png"></details>
 
-### Example Page:
-- Text <details><summary>See Screenshot **Examplepage**</summary><img src="docs/features/"></details>
+### Product Page
+- All products <details><summary>See Screenshot **All products**</summary><img src="docs/readme.md/features/readme-features-products.png"></details>
 
-- Text <details><summary>See Screenshot **Text**</summary><img src="docs/features/features"></details><details><summary>See Screenshot **Section**</summary><img src="docs/features/features"></details>
+- Grid / list view <details><summary>See Screenshot **Grid / list view**</summary><img src="docs/readme.md/features/readme-features-gridlayout.png"></details>
 
-### Example Page:
-- Text <details><summary>See Screenshot **Examplepage**</summary><img src="docs/features/"></details>
+- Ordered list dropdown <details><summary>See Screenshot **Ordered list dropdown**</summary><img src="docs/readme.md/features/readme-features-orderedlist.png"></details>
 
-- Text <details><summary>See Screenshot **Text**</summary><img src="docs/features/features"></details><details><summary>See Screenshot **Section**</summary><img src="docs/features/features"></details>
+### Product Detail Page
+- Product information section <details><summary>See Screenshot **Product information**</summary><img src="docs/readme.md/features/readme-features-product_details.png"></details>
+- Review section <details><summary>See Screenshot **Review section**</summary><img src="docs/readme.md/features/readme-features-review.png"></details>
+- Multiple image view <details><summary>See Screenshot **Image view**</summary><img src="docs/readme.md/features/readme-features-multiple_img.png"></details>
 
-- Text <details><summary>See Screenshot **Section**</summary><img src="docs/features/features"></details>
+### Article Page
+- Article page <details><summary>See Screenshot **Articles**</summary><img src="docs/readme.md/features/readme-features-articles.png"></details>
+- Article detail page <details><summary>See Screenshot **Articles detail**</summary><img src="docs/readme.md/features/readme-features-article_details.png"></details>
 
-### User Account Management:
+### Support Page
+- Support page <details><summary>See Screenshot **Support**</summary><img src="docs/readme.md/features/readme-features-support.png"></details>
+- FAQ section <details><summary>See Screenshot **FAQ section**</summary><img src="docs/readme.md/features/readme-features-faq.png"></details>
+
+
+### User Account Management
 - The account sign-up form allows new users to create an account and join the exclusive deals at the e-commerce. The form has validation to make sure that the user enters the correct information needed. This is a Django built-in validation system. Such validation is:
 
     - **Username**: Required and has a maximum of 150 characters or fewer. Only letters, digits, and @/./+/-/_ are allowed.
@@ -725,45 +832,35 @@ The wireframes serve as a visual blueprint for our web application, outlining th
         - Must contain at least 8 characters.
         - Cannot be a commonly used password.
         - Cannot be entirely numeric.
-    - See Screenshot<details><summary>**SIGNUP VALIDATION**</summary><img src="docs/features/features-blog-form-valid.png"></details>
+    - See Screenshot<details><summary>**SIGNUP VALIDATION**</summary><img src="docs/readme.md/features/readme-features-signup.png"></details>
 
 - The login form ensures secure access to EasyKeyboardMaker by verifying your username and password. If you face login issues, use the 'Forgot Password?' link to reset your password. The form also displays validation error messages to guide you through any input errors.
-    - See Screenshot<details><summary>**LOGIN VALIDATION**</summary><img src="docs/features/features-login-validation.png"></details>
+    - See Screenshot<details><summary>**LOGIN VALIDATION**</summary><img src="docs/readme.md/features/readme-features-login.png"></details>
 
 
-- When an account is successfully created, the user will receive a confirmation message and gain access to the profile menu.<details><summary>See Screenshot **Success**</summary><img src="docs/features/features"></details>
+- When an account is successfully created, the user will receive a confirmation message and gain access to their account and profile page.<details><summary>See Screenshot **Success**</summary><img src="docs/readme.md/features/readme-features-success_message.png"></details>
+
+- User profile page <details><summary>**profile page**</summary><img src="docs/readme.md/features/readme-features-profile_page.png"></details>
+- User profile update <details><summary>**profile update**</summary><img src="docs/readme.md/features/readme-features-profile_update.png"></details>
+- User profile defualt shipping settings <details><summary>**shipping settings**</summary><img src="docs/readme.md/features/readme-features-shipping.png"></details>
 
 
-- Text **Example Logout**</summary><img src="docs/features/"></details>
+### Navigation
+The navigation are divided in three parts in this project. I have one right top side navbar, one category menu bar, and then i have one mobile view navbar, with an search field input, were users can search for products on the site.
 
+- Navbar <details><summary>See Screenshot **Examplepage**</summary><img src="docs/readme.md/features/readme-features-navbar_section.png"></details>
 
-### Navigation:
-### Example Page:
-- Text <details><summary>See Screenshot **Examplepage**</summary><img src="docs/features/"></details>
-
-- Text <details><summary>See Screenshot **Text**</summary><img src="docs/features/features"></details><details><summary>See Screenshot **Section**</summary><img src="docs/features/features"></details>
-
+On smaller screens, the navigation bar collapses into a burger menu, allowing for a compact and mobile-friendly navigation experience. Users can access the menu by clicking on the burger icon, which reveals the navigation options in a dropdown fashion.
+- Mobile view <details><summary>See Screenshot **Text**</summary><img src="docs/readme.md/features/readme-features-mobile_navbar.png"></details>
 
 ### Future Features
 Here are some exciting features that I would like to add to the EasyKeyboardMaker E-commerce in the future:
 
-- **Example of topic:**  
-  Example
+- <a href="https://github.com/KimBergstroem/PP5/issues/36" style="text-decoration:none">USER STORY: Track Delivery Status of Current Orders</a> _(wont-have)_
+- <a href="https://github.com/KimBergstroem/PP5/issues/41" style="text-decoration:none">USER STORY: Receive Review Notifications</a> _(wont-have)_
+- <a href="https://github.com/KimBergstroem/PP5/issues/44" style="text-decoration:none">USER STORY: Leave Comments on Blog Posts</a> _(wont-have)_
+- <a href="https://github.com/KimBergstroem/PP5/issues/33" style="text-decoration:none">USER STORY: Search History and Result Count</a> _(wont-have)_ 
 
-- **Example of topic:**  
-  Example
-
-- **Example of topic:**  
-  Example
-
-- **Example of topic:**  
-  Example
-
-- **Example of topic:**  
-  Example
-
-- **Example of topic:**  
-  Example
 
 <br>
 These future enhancements aim to enrich EasyKeyboards's user experience, foster community engagement, and expand its reach to a global audience.
@@ -792,6 +889,7 @@ The bug section descriptions have been linked with the bug issues in my document
 
 | **Bug** | **Description** |
 | ------- | --------------- |
+| [Internal Server 500 Error on Subscription Module in Deployed Environment ](https://github.com/KimBergstroem/PP5/issues/60) | This issue persists. |
 | [When the ACCOUNT_EMAIL_VERIFICATION setting is set to 'mandatory' in my Django application, the login system breaks. Attempting to sign up or log in new users results in a server error 500.](https://github.com/KimBergstroem/PP5/issues/57) | This issue persists. |
 | [Clicking the "remove" button in the shopping bag for an item, it's triggers an unnecessary toast success pop-up window, even when already on the shopping bag page. This behavior can be confusing for users, as this pop-up is showing the updated bag items and everything, when user already are in the shopping bag page.](https://github.com/KimBergstroem/PP5/issues/55) | This issue is still unresolved. |
 | [Implementing a MultipleChoiceField for small images in the product form did not behave as expected. The field did not display the small images properly, and attempts to allow superusers to edit, delete, or add new small images during product editing were unsuccessful.](https://github.com/KimBergstroem/PP5/issues/58) | This issue persists, but workaround is implemented. |
@@ -908,7 +1006,7 @@ To manage version control and push code to the main repository on GitHub using G
  **Migrate Models:**
     - In the terminal, migrate the models to the new database connection.
 
-### Forking the Repository:
+### Forking the Repository
 
 By forking the GitHub Repository, can create a copy of the original repository without affecting the original. Follow these steps:
 
@@ -964,9 +1062,10 @@ I would like to express my gratitude to the following resources, which have been
 ### Media
 Images are taken from the following page:
 - [Leonardo.ai](https://leonardo.ai/) **Used as a landing page hero image**
+- [Keychron](https://keychron.com.es/collections/all-keycaps) **Used for some of the product images, this images are not made by me or easy keyboard maker**
 
 
-### Django Documentation:
+### Django Documentation
 The official Django documentation has been an invaluable resource throughout the project, providing comprehensive guidance on models, forms, templates, and various aspects of Django development.
 
 - [Models](https://docs.djangoproject.com/en/4.2/topics/db/models/)
@@ -986,19 +1085,19 @@ The official Django documentation has been an invaluable resource throughout the
 - ['help_text' used to perform sub text under input field in forms](https://docs.djangoproject.com/en/3.2/ref/forms/fields/#help-text)
 - [DoesnotExist, used to check is product is existing](https://docs.djangoproject.com/en/3.2/ref/models/class/#django.db.models.Model.DoesNotExist)
 
-### Pypi:
+### Pypi
 - [Social share](https://pypi.org/project/django-social-share/)
 
-### W3 Schools:
+### W3 Schools
 - [Overrite Bootstraps css variables](https://www.w3schools.com/css/css_important.asp)
 
-### Bootstrap docs:
+### Bootstrap docs
 - [Increase knowledge of bootstrap framework](https://getbootstrap.com/docs/5.3/getting-started/introduction/)
 
-### Geeksforgeeks: 
+### Geeksforgeeks
 - [Using crisp form](https://www.geeksforgeeks.org/styling-django-forms-with-django-crispy-forms/)
 
-### Various tutorials and YouTube channels:
+### Various tutorials and YouTube channels
 I would like to extend my appreciation to the authors of the tutorials and YouTube channels that have shared their knowledge and expertise in Django development, enabling me to learn and apply best practices in building this project.
 - [Django Tutorial - Setup](https://www.youtube.com/watch?v=Z4D3M-NSN58&list=PLzMcBGfZo4-kQkZp-j9PNyKq7Yw5VYjq9)
 - [Style The Login Page With Bootstrap](https://www.youtube.com/watch?v=0Z_3APyKwQ4)
