@@ -13,7 +13,7 @@ class UserProfile(models.Model):
 
     user = models.OneToOneField(User, on_delete=models.CASCADE)
 
-    # Shipping detials
+    # Shipping details
     default_phone_number = models.CharField(
         max_length=20, null=True, blank=True
     )
@@ -38,11 +38,7 @@ class UserProfile(models.Model):
     bio = models.TextField(
         max_length=150, default="Currently no bio", blank=True
     )
-    profile_picture = models.ImageField(
-        blank=True,
-        upload_to="userprofile/",
-        default="images/default_profile.png",
-    )
+    profile_picture = models.ImageField(blank=True, upload_to='userprofile')
     country = models.CharField(
         max_length=30, default="Citizen of the Cyber world", blank=True
     )

@@ -49,21 +49,22 @@ def profile_update(request):
     """
     profile = get_object_or_404(UserProfile, user=request.user)
     orders = profile.orders.all()
-    form = UserProfileForm(request.POST, instance=profile)
+
     if request.method == "POST":
-        personal_form = UpdatePersonalInfoForm(request.POST, instance=profile)
-        if personal_form.is_valid():
+        form = UserProfileForm(request.POST, instance=profile)
+        personal_form = UpdatePersonalInfoForm(request.POST, request.FILES, instance=profile)
+
+        if form.is_valid() and personal_form.is_valid():
+            form.save()
             personal_form.save()
-            messages.success(
-                request, "Personal information updated successfully"
-            )
+            messages.success(request, "Profile updated successfully")
             return redirect("profile")
         else:
-            messages.error(
-                request, "Update failed. Please ensure the form is valid."
-            )
+            messages.error(request, "Update failed. Please ensure the form is valid.")
     else:
+        form = UserProfileForm(instance=profile)
         personal_form = UpdatePersonalInfoForm(instance=profile)
+
     context = {
         "personal_form": personal_form,
         "orders": orders,

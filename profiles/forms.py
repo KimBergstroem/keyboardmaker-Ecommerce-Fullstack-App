@@ -61,6 +61,10 @@ class UpdatePersonalInfoForm(forms.ModelForm):
             "country",
         )
 
+        widgets = {
+                'bio': forms.Textarea(attrs={'style': 'height: 55px;'}),  # Adjust the height as needed
+            }
+
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         placeholders = {
@@ -73,4 +77,4 @@ class UpdatePersonalInfoForm(forms.ModelForm):
         for field_name, placeholder in placeholders.items():
             self.fields[field_name].widget.attrs["placeholder"] = placeholder
         
-        self.fields["profile_picture"].help_text = "Best image resolution is 512x512 and .png format"
+        self.fields["profile_picture"].help_text = "Best image resolution is 512x512 and .webp format"
