@@ -110,6 +110,7 @@ Below you can see the errors that was showing on all the script that was embedde
 
 | **Tested** | **Result** | **View Result** | **Pass** |
 --- | --- | --- | :---:
+|script.js | No errors or warnings |<details><summary>Screenshot of result</summary>![Result](docs/testing.md/JSHint//test-js-script.png)</details>| ✅
 |countryfield.js | No errors or warnings |<details><summary>Screenshot of result</summary>![Result](docs/testing.md/JSHint/test-js-countryfield.png)</details>| ✅
 |stripe_elements.js | No errors or warnings |<details><summary>Screenshot of result</summary>![Result](docs/testing.md/JSHint/test-js-stripe_elements.png)</details>| ✅
 |product_img_changement.html | Only Django errors || ✅
