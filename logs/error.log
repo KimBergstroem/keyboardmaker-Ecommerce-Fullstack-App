@@ -2164,3 +2164,61 @@ Traceback (most recent call last):
     raise parser.error_class("Unexpected end of expression in if tag.")
 django.template.exceptions.TemplateSyntaxError: Unexpected end of expression in if tag.
 "GET /products/?deal=true HTTP/1.1" 500 202548
+"GET /media/keycap-white-esc.webp HTTP/1.1" 500 59
+"GET /media/keycap-green-default.webp HTTP/1.1" 500 59
+"GET /media/yellow-d.webp HTTP/1.1" 500 59
+"GET /media/userprofile/post-ducky.webp HTTP/1.1" 500 59
+"GET /media/userprofile/post-abs.webp HTTP/1.1" 500 59
+"GET /media/keyboard-black-defualt.webp HTTP/1.1" 500 59
+"GET /media/userprofile/ezgif.com-png-to-webp-converted.webp HTTP/1.1" 500 59
+"POST /subscribe HTTP/1.1" 500 59
+"GET /favicon.ico HTTP/1.1" 500 59
+"GET / HTTP/1.1" 500 59
+"GET /favicon.ico HTTP/1.1" 500 59
+"GET /wel HTTP/1.1" 500 59
+"GET /favicon.ico HTTP/1.1" 500 59
+"GET /wel HTTP/1.1" 500 59
+"GET /favicon.ico HTTP/1.1" 500 59
+"GET /wel HTTP/1.1" 500 59
+"GET /favicon.ico HTTP/1.1" 500 59
+"GET / HTTP/1.1" 500 59
+"GET / HTTP/1.1" 500 59
+"GET /favicon.ico HTTP/1.1" 500 59
+"GET / HTTP/1.1" 500 59
+"GET /favicon.ico HTTP/1.1" 500 59
+"GET /test-error-404/ HTTP/1.1" 500 59
+"GET /favicon.ico HTTP/1.1" 500 59
+"GET /test-error-404/ HTTP/1.1" 500 59
+"GET /favicon.ico HTTP/1.1" 500 59
+"GET /test-error-404/ HTTP/1.1" 500 59
+"GET /favicon.ico HTTP/1.1" 500 59
+"GET /test-error-404/ HTTP/1.1" 500 59
+"GET /favicon.ico HTTP/1.1" 500 59
+"GET /test-error-404/ HTTP/1.1" 500 59
+"GET /favicon.ico HTTP/1.1" 500 59
+Internal Server Error: /test-error-404/
+Traceback (most recent call last):
+  File "/workspace/.pyenv_mirror/user/current/lib/python3.12/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.pyenv_mirror/user/current/lib/python3.12/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/PP5/Easykeyboardmaker/views.py", line 31, in test_error_404
+    raise Http404("This is a test 404 error.")
+          ^^^^^^^
+NameError: name 'Http404' is not defined
+"GET /test-error-404/ HTTP/1.1" 500 82436
+"GET /media/keycap-white-esc.webp HTTP/1.1" 500 59
+"GET /media/keyboard-black-defualt.webp HTTP/1.1" 500 59
+"GET /media/yellow-d.webp HTTP/1.1" 500 59
+"GET /media/keycap-green-default.webp HTTP/1.1" 500 59
+"GET /media/userprofile/post-ducky.webp HTTP/1.1" 500 59
+"GET /media/userprofile/ezgif.com-png-to-webp-converted.webp HTTP/1.1" 500 59
+"GET /media/userprofile/post-abs.webp HTTP/1.1" 500 59
+"GET /404 HTTP/1.1" 500 59
+"GET /kuken HTTP/1.1" 500 59
+"GET /kuken HTTP/1.1" 500 59
+"GET /favicon.ico HTTP/1.1" 500 59
+Invalid HTTP_HOST header: '8000-kimbergstroem-pp5-7080wnht9mo.ws-eu107.gitpod.io'. You may need to add '8000-kimbergstroem-pp5-7080wnht9mo.ws-eu107.gitpod.io' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: '8000-kimbergstroem-pp5-7080wnht9mo.ws-eu107.gitpod.io'. You may need to add '8000-kimbergstroem-pp5-7080wnht9mo.ws-eu107.gitpod.io' to ALLOWED_HOSTS.
