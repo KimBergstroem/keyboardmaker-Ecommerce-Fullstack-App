@@ -183,11 +183,11 @@
                             <div class="card-body">
                                 {% if post.featured_image %}
                                     <a href="{% url 'post_detail' post.slug %}">
-                                        <img src="{{ post.featured_image.url }}" class="card-img-top"
+                                        <img src="{{ post.featured_image.url }}" class="image-fit"
                                             alt="{{ post.title }}"></a>
                                 {% else %}
                                 <a href="{% url 'post_detail' post.slug %}">
-                                    <img src="{% static 'images/article-default_img.webp' %}" class="card-img-top"
+                                    <img src="{% static 'images/article-default_img.webp' %}" class="image-fit"
                                         alt="{{ post.title }}"></a>
                                 {% endif %}
                                 <p class="card-text text-uppercase text-monospace mt-2">{{ post.created_on|date:"F j Y"}}
