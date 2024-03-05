@@ -1133,6 +1133,9 @@ I'd like to give recognition to the individuals who supported me in completing t
 
 I am truly grateful for their contributions, which have greatly enriched my learning and development.
 
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 <p align="right">(<a href="#table-of-content">back to top</a>)</p>
 <p align="center">
