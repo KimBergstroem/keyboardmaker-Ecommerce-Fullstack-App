@@ -13,7 +13,7 @@ The application is engineered for easy navigation and efficient shopping, provid
 
 
 Developer: [Kim Bergström](https://github.com/KimBergstroem) <br>
-[Live webpage]()<br>
+[Live webpage](https://easykeyboardmaker-ffb468c2d2d7.herokuapp.com/)<br>
 [Project Repository](https://github.com/KimBergstroem/PP5)<br>
 
 
@@ -1133,6 +1133,9 @@ I'd like to give recognition to the individuals who supported me in completing t
 
 I am truly grateful for their contributions, which have greatly enriched my learning and development.
 
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 <p align="right">(<a href="#table-of-content">back to top</a>)</p>
 <p align="center">
